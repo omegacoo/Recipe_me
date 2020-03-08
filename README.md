@@ -14,19 +14,19 @@
 
 * [ ] Backend Functionality
 * * [ ] Endpoints
- * * [ ] Log in
- * * [ ] Log out
- * * [ ] Register
- * * [ ] Get current ingredients
- * * [ ] Get current recipes
- * * [ ] Edit ingredients
- * * [ ] Edit recipes
- * * [ ] Submit ingredients
- * * [ ] Submit recipes
+  * * [ ] Log in
+  * * [ ] Log out
+  * * [ ] Register
+  * * [ ] Get current ingredients
+  * * [ ] Get current recipes
+  * * [ ] Edit ingredients
+  * * [ ] Edit recipes
+  * * [ ] Submit ingredients
+  * * [ ] Submit recipes
 * * [ ] Database
- * * [ ] Map out PostgreSQL tables
- * * [ ] Create tables
- * * [ ] Insure endpoints talk to DB
+  * * [ ] Map out PostgreSQL tables
+  * * [ ] Create tables
+  * * [ ] Insure endpoints talk to DB
 
 * [ ] Frontend Functionality
 * * [ ] Move from page to page
