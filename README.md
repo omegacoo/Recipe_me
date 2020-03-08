@@ -4,7 +4,7 @@
 
 ### `Roadmap`
 * [ ] Wireframe
-* * [ ] Landing
+* * [X] Landing
 * * [ ] Log in
 * * [ ] Registration
 * * [ ] Input Select
