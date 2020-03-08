@@ -3,7 +3,7 @@
 > A new project
 
 ### `Roadmap`
-[ ] Wireframe
+- [ ] Wireframe
 * [ ] Landing
 * [ ] Log in
 * [ ] Registration
@@ -12,7 +12,7 @@
 * [ ] Input Recipes
 * [ ] Available Recipes
 
-[ ] Backend Functionality
+- [ ] Backend Functionality
 * [ ] Endpoints
 * * [ ] Log in
 * * [ ] Log out
@@ -28,7 +28,7 @@
 * * [ ] Create tables
 * * [ ] Insure endpoints talk to DB
 
-[ ] Frontend Functionality
+- [ ] Frontend Functionality
 * [ ] Move from page to page
 * [ ] Log in
 * [ ] Register
