@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing component renders UI correctly 1`] = `
+<div
+  className="Landing"
+>
+  <a
+    className="Button"
+    href="/login"
+    onClick={[Function]}
+  >
+    login
+  </a>
+  <a
+    className="Button"
+    href="/register"
+    onClick={[Function]}
+  >
+    register
+  </a>
+  <a
+    className="Button"
+    href="/guest"
+    onClick={[Function]}
+  >
+    guest
+  </a>
+</div>
+`;
