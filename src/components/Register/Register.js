@@ -29,7 +29,6 @@ export default class Register extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state.username + ':' + this.state.password + ':' + this.state.confirmPassword);
     };
 
     handleBack = () => {
