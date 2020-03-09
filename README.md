@@ -5,7 +5,7 @@
 ### `Roadmap`
 * [ ] Wireframe
 * * [X] Landing
-* * [ ] Log in
+* * [X] Log in
 * * [ ] Registration
 * * [ ] Input Select
 * * [ ] Input Ingredients
