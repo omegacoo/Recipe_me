@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import StoreContext from '../../StoreContext';
 
+import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
@@ -22,9 +23,7 @@ export default class App extends React.Component {
 
         return(
             <StoreContext.Provider value={contextValue}>
-                <header>
-                    <h1>Recipe Me</h1>
-                </header>
+                <Header />
                 <Route 
                     exact path={'/'}
                     component={Landing}

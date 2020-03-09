@@ -20,7 +20,7 @@ exports[`Landing component renders UI correctly 1`] = `
   </a>
   <a
     className="Button"
-    href="/guest"
+    href="/inputSelect"
     onClick={[Function]}
   >
     guest

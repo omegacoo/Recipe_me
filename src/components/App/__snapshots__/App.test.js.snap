@@ -26,7 +26,7 @@ Array [
     </a>
     <a
       className="Button"
-      href="/guest"
+      href="/inputSelect"
       onClick={[Function]}
     >
       guest
