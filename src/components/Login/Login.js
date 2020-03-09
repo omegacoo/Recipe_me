@@ -24,8 +24,13 @@ export default class Login extends React.Component {
         e.preventDefault();
     };
 
+    handleBack = e => {
+        window.history.back();
+    }
+
     render(){
         return(
+            <>
             <form 
                 className='Login'
                 onSubmit={this.handleSubmit}
@@ -50,6 +55,13 @@ export default class Login extends React.Component {
                     Login
                 </button>
             </form>
+            <button 
+                className='Login_back'
+                onClick={this.handleBack}
+            >
+                back
+            </button>
+            </>
         );
     };
 };

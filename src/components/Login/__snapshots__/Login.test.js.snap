@@ -1,37 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login component renders UI correctly 1`] = `
-<form
-  className="Login"
-  onSubmit={[Function]}
->
-  <label
-    htmlFor="Login_username"
+Array [
+  <form
+    className="Login"
+    onSubmit={[Function]}
   >
-    Username: 
-  </label>
-  <input
-    className="Login_username"
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
-  <br />
-  <label
-    htmlFor="Login_password"
-  >
-    Password: 
-  </label>
-  <input
-    className="Login_password"
-    onChange={[Function]}
-    type="password"
-    value=""
-  />
+    <label
+      htmlFor="Login_username"
+    >
+      Username: 
+    </label>
+    <input
+      className="Login_username"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <label
+      htmlFor="Login_password"
+    >
+      Password: 
+    </label>
+    <input
+      className="Login_password"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Login
+    </button>
+  </form>,
   <button
-    type="submit"
+    className="Login_back"
+    onClick={[Function]}
   >
-    Login
-  </button>
-</form>
+    back
+  </button>,
+]
 `;
