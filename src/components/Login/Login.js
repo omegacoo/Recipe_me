@@ -41,7 +41,7 @@ export default class Login extends React.Component {
                     type='text'
                     value={this.state.username}
                     onChange={this.handleUsernameChange}
-                /><br></br>
+                /><br/>
                 <label htmlFor='Login_password'>Password: </label>
                 <input 
                     className='Login_password'

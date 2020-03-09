@@ -1,0 +1,23 @@
+.Register {
+    border: 2px solid black;
+    width: 55vw;
+    text-align: center;
+    padding: 5px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+}
+
+.Register button {
+    margin-top: 15px;
+    width: 20vw;
+}
+
+.Register_back {
+    display: block;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 23vh;
+}

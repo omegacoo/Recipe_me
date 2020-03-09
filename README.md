@@ -6,7 +6,7 @@
 * [ ] Wireframe
 * * [X] Landing
 * * [X] Log in
-* * [ ] Registration
+* * [X] Registration
 * * [ ] Input Select
 * * [ ] Input Ingredients
 * * [ ] Input Recipes
