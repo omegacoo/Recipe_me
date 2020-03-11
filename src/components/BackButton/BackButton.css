@@ -1,0 +1,11 @@
+.BackButton {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5vh;
+    bottom: 0;
+    background-color: red;
+    color: white;
+    border-style: none;
+    text-align: center;
+}

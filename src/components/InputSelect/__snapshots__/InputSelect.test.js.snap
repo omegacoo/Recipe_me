@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputSelect component renders UI correctly 1`] = `
+<div
+  className="InputSelect"
+>
+  <a
+    className="Button"
+    href="/ingredients"
+    onClick={[Function]}
+  >
+    ingredients
+  </a>
+  <a
+    className="Button"
+    href="/recipes"
+    onClick={[Function]}
+  >
+    recipes
+  </a>
+</div>
+`;

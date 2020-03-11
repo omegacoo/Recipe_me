@@ -31,13 +31,8 @@ export default class Register extends React.Component {
         e.preventDefault();
     };
 
-    handleBack = () => {
-        window.history.back();
-    };
-
     render(){
         return(
-            <>
             <form
                 className='Register'
                 onSubmit={this.handleSubmit}
@@ -69,13 +64,6 @@ export default class Register extends React.Component {
                     Register
                 </button>
             </form>
-            <button
-                className='Register_back'
-                onClick={this.handleBack}
-            >
-                back
-            </button>
-            </>
         );
     };
 };

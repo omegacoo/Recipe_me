@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import StoreContext from '../../../StoreContext';
+import StoreContext from '../../StoreContext';
 
 import './Button.css';
 
@@ -12,7 +12,7 @@ export default class Button extends React.Component {
         return(
             <Link 
                 className='Button'
-                to={this.props.name === 'guest' ? '/inputSelect' : `/${this.props.name}`}
+                to={this.props.name === 'guest' ? '/inputselect' : `/${this.props.name}`}
             >
                 {this.props.name}
             </Link>
