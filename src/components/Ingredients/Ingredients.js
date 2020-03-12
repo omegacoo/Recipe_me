@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 
 import StoreContext from '../../StoreContext';
 
@@ -8,41 +9,50 @@ export default class Ingredients extends React.Component {
     static contextType = StoreContext;
 
     state = {
-        currentIngredient: null,
+        currentIngredient: '',
         newIngredients: []
     };
 
-    handleAddNewIngredient = () => {
-        this.context.handleAddNewIngredient();
+    handleNewIngredientChange = currentIngredient => {
+        this.setState({
+            currentIngredient
+        });
     };
 
-    submitNewIngredient = e => {
-        // this.context.submitNewIngredient(e);
-        console.log(e);
+    submitNewIngredient = () => {
+        if(this.state.currentIngredient !== ''){
+            this.setState({
+                newIngredients: [
+                    ...this.state.newIngredients,
+                    this.state.currentIngredient
+                ]
+            });
+        };
+    };
+
+    checkForIngredient = () => {
+        for(let i = 0; i < this.state.newIngredients.length; i++){
+            if(this.state.currentIngredient.id === this.state.newIngredients[i].id){
+                return false
+            };
+        };
+        this.submitNewIngredient();
+        return true
     };
 
     render(){
         return(
-            <>
-                <ul className='Ingredients'>
-                    {this.context.userIngredients.map(userIngredient => 
-                        <li>
-                            <select id={userIngredient.name}>
-                                {this.context.ingredients.map(ingredient => 
-                                    <option value={ingredient.name}>{ingredient.name}</option>
-                                )}
-                            </select>
-                            <button 
-                                onClick={e => this.submitNewIngredient(e)}
-                            >
-                                Add
-                            </button>
-                        </li>
-                    )}
-                </ul>
+            <> 
+                <Select 
+                    className='newIngredient' 
+                    id={this.state.currentIngredient}
+                    value={this.state.currentIngredient}
+                    onChange={this.handleNewIngredientChange}
+                    options={this.context.ingredients.map(i => i = { ...i, label: i.name })}
+                />
                 <button
                     className='addNewIngredient'
-                    onClick={this.handleAddNewIngredient}
+                    onClick={this.checkForIngredient}
                 >
                     +
                 </button>
