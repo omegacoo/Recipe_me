@@ -27,6 +27,7 @@
     margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 3vh;
     list-style: none;
     overflow: scroll;
 }
@@ -34,9 +35,10 @@
 .submitIngredients {
     height: 50px;
     font-size: 30px;
-    margin-top: 20px;
     border-radius: 15px;
     background-color: #2ecc71;
     border-style: none;
     padding: 5px;
+    text-decoration: none;
+    color: black;
 }

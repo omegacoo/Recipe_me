@@ -1,0 +1,16 @@
+.RecipeCard {
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    list-style: none;
+    text-align: center;
+}
+
+.RecipeCard li {
+    text-align: left;
+    margin: 1vh;
+    margin-left: 10vw;
+}

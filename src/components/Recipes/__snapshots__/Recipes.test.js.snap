@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipes component renders UI correctly 1`] = `
+<div
+  className="Recipes"
+>
+  <ul
+    className="RecipesList"
+  />
+  <a
+    className="toIngredients"
+    href="/ingredients"
+    onClick={[Function]}
+  >
+    Ingredients
+  </a>
+</div>
+`;

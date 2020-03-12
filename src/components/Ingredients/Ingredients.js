@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+import { Link } from 'react-router-dom';
 
 import StoreContext from '../../StoreContext';
 
@@ -74,9 +75,12 @@ export default class Ingredients extends React.Component {
                 <ul className='ingredientsToAdd'>
                     {this.renderList()}
                 </ul>
-                <button className='submitIngredients'>
+                <Link 
+                    className='submitIngredients'
+                    to={'/recipes'}
+                >
                     Submit
-                </button>
+                </Link>
             </div>
         );
     };

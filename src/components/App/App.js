@@ -9,6 +9,7 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 import InputSelect from '../InputSelect/InputSelect';
 import Ingredients from '../Ingredients/Ingredients';
+import Recipes from '../Recipes/Recipes';
 import BackButton from '../BackButton/BackButton';
 
 import './App.css';
@@ -98,6 +99,144 @@ export default class App extends React.Component {
             },
         ],
         userIngredients: [],
+        recipes: [
+            {
+                name: 'Soup',
+                ingredients: [
+                    {
+                        name: 'bouillan',
+                        id: '30'
+                    },
+                    {
+                        name: 'carrot',
+                        id: '31'
+                    },
+                    {
+                        name: 'chicken',
+                        id: '32'
+                    }
+                ]
+            },
+            {
+                name: 'Souffle',
+                ingredients: [
+                    {
+                        name: 'egg',
+                        id: '33'
+                    },
+                    {
+                        name: 'flour',
+                        id: '34'
+                    },
+                    {
+                        name: 'bacon',
+                        id: '35'
+                    }
+                ]
+            },
+            {
+                name: 'Soup',
+                ingredients: [
+                    {
+                        name: 'bouillan',
+                        id: '30'
+                    },
+                    {
+                        name: 'carrot',
+                        id: '31'
+                    },
+                    {
+                        name: 'chicken',
+                        id: '32'
+                    }
+                ]
+            },
+            {
+                name: 'Souffle',
+                ingredients: [
+                    {
+                        name: 'egg',
+                        id: '33'
+                    },
+                    {
+                        name: 'flour',
+                        id: '34'
+                    },
+                    {
+                        name: 'bacon',
+                        id: '35'
+                    }
+                ]
+            },
+            {
+                name: 'Soup',
+                ingredients: [
+                    {
+                        name: 'bouillan',
+                        id: '30'
+                    },
+                    {
+                        name: 'carrot',
+                        id: '31'
+                    },
+                    {
+                        name: 'chicken',
+                        id: '32'
+                    }
+                ]
+            },
+            {
+                name: 'Souffle',
+                ingredients: [
+                    {
+                        name: 'egg',
+                        id: '33'
+                    },
+                    {
+                        name: 'flour',
+                        id: '34'
+                    },
+                    {
+                        name: 'bacon',
+                        id: '35'
+                    }
+                ]
+            },
+            {
+                name: 'Soup',
+                ingredients: [
+                    {
+                        name: 'bouillan',
+                        id: '30'
+                    },
+                    {
+                        name: 'carrot',
+                        id: '31'
+                    },
+                    {
+                        name: 'chicken',
+                        id: '32'
+                    }
+                ]
+            },
+            {
+                name: 'Souffle',
+                ingredients: [
+                    {
+                        name: 'egg',
+                        id: '33'
+                    },
+                    {
+                        name: 'flour',
+                        id: '34'
+                    },
+                    {
+                        name: 'bacon',
+                        id: '35'
+                    }
+                ]
+            },
+        ]
     }
 
     onLandingPageLoginClick = () => {
@@ -131,6 +270,7 @@ export default class App extends React.Component {
     render(){
         let contextValue = {
             ingredients: this.state.ingredients,
+            recipes: this.state.recipes,
             userIngredients: this.state.userIngredients,
             onLandingPageLoginClick: this.onLandingPageLoginClick,
             handleAddNewIngredient: this.handleAddNewIngredient,
@@ -160,6 +300,10 @@ export default class App extends React.Component {
                     <Route 
                         path={'/ingredients'}
                         component={Ingredients}
+                    />
+                    <Route 
+                        path={'/recipes'}
+                        component={Recipes}
                     />
                     <Route 
                         path={['/login',
