@@ -45,7 +45,7 @@ export default class Ingredients extends React.Component {
         let displayList;
         if(this.state.newIngredients.length !== 0){
             displayList = this.state.newIngredients.map(i => 
-                <li id={i.id}>
+                <li id={i.id} key={i.id}>
                     {i.name}
                 </li>    
             )

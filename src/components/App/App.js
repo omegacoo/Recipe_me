@@ -102,6 +102,7 @@ export default class App extends React.Component {
         recipes: [
             {
                 name: 'Soup',
+                id: '1',
                 ingredients: [
                     {
                         name: 'bouillan',
@@ -119,6 +120,7 @@ export default class App extends React.Component {
             },
             {
                 name: 'Souffle',
+                id: '2',
                 ingredients: [
                     {
                         name: 'egg',
@@ -136,6 +138,7 @@ export default class App extends React.Component {
             },
             {
                 name: 'Soup',
+                id: '3',
                 ingredients: [
                     {
                         name: 'bouillan',
@@ -153,6 +156,7 @@ export default class App extends React.Component {
             },
             {
                 name: 'Souffle',
+                id: '4',
                 ingredients: [
                     {
                         name: 'egg',
@@ -170,6 +174,7 @@ export default class App extends React.Component {
             },
             {
                 name: 'Soup',
+                id: '5',
                 ingredients: [
                     {
                         name: 'bouillan',
@@ -187,6 +192,7 @@ export default class App extends React.Component {
             },
             {
                 name: 'Souffle',
+                id: '6',
                 ingredients: [
                     {
                         name: 'egg',
@@ -204,6 +210,7 @@ export default class App extends React.Component {
             },
             {
                 name: 'Soup',
+                id: '7',
                 ingredients: [
                     {
                         name: 'bouillan',
@@ -221,6 +228,7 @@ export default class App extends React.Component {
             },
             {
                 name: 'Souffle',
+                id: '8',
                 ingredients: [
                     {
                         name: 'egg',

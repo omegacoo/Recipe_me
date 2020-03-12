@@ -17,6 +17,7 @@ export default class Recipes extends React.Component {
                     {this.context.recipes.map(r =>
                         <RecipeCard 
                             recipe={r}
+                            key={r.id}
                         />
                     )}
                 </ul>
