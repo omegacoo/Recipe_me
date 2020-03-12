@@ -1,3 +1,7 @@
+.ingredients {
+    text-align: center;
+}
+
 .newIngredient {
     height: 30px;
     margin-left: auto;
@@ -9,10 +13,30 @@
     width: 50px;
     height: 50px;
     font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    background-color: #2ecc71;
+    border-style: none;
+}
+
+.ingredientsToAdd {
+    border: 2px solid black;
+    width: 75vw;
+    height: 40vh;
+    margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
+    list-style: none;
+    overflow: scroll;
+}
+
+.submitIngredients {
+    height: 50px;
+    font-size: 30px;
     margin-top: 20px;
     border-radius: 15px;
     background-color: #2ecc71;
     border-style: none;
+    padding: 5px;
 }

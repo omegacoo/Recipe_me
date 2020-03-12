@@ -40,9 +40,23 @@ export default class Ingredients extends React.Component {
         return true
     };
 
+    renderList = () => {
+        let displayList;
+        if(this.state.newIngredients.length !== 0){
+            displayList = this.state.newIngredients.map(i => 
+                <li id={i.id}>
+                    {i.name}
+                </li>    
+            )
+        } else {
+            displayList = ['Nothing added...'];
+        };
+        return displayList
+    };
+
     render(){
         return(
-            <> 
+            <div className='ingredients'> 
                 <Select 
                     className='newIngredient' 
                     id={this.state.currentIngredient}
@@ -56,7 +70,14 @@ export default class Ingredients extends React.Component {
                 >
                     +
                 </button>
-            </>
+                <h3>To add:</h3>
+                <ul className='ingredientsToAdd'>
+                    {this.renderList()}
+                </ul>
+                <button className='submitIngredients'>
+                    Submit
+                </button>
+            </div>
         );
     };
 };

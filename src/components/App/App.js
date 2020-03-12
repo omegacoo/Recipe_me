@@ -36,6 +36,66 @@ export default class App extends React.Component {
                 name: 'bread',
                 id: '5'
             },
+            {
+                name: 'tomato',
+                id: '6'
+            },
+            {
+                name: 'radish',
+                id: '7'
+            },
+            {
+                name: 'ham',
+                id: '8'
+            },
+            {
+                name: 'parsley',
+                id: '9'
+            },
+            {
+                name: 'bread',
+                id: '10'
+            },
+            {
+                name: 'tomato',
+                id: '11'
+            },
+            {
+                name: 'radish',
+                id: '12'
+            },
+            {
+                name: 'ham',
+                id: '13'
+            },
+            {
+                name: 'parsley',
+                id: '14'
+            },
+            {
+                name: 'bread',
+                id: '15'
+            },
+            {
+                name: 'tomato',
+                id: '16'
+            },
+            {
+                name: 'radish',
+                id: '17'
+            },
+            {
+                name: 'ham',
+                id: '18'
+            },
+            {
+                name: 'parsley',
+                id: '19'
+            },
+            {
+                name: 'bread',
+                id: '20'
+            },
         ],
         userIngredients: [],
     }
