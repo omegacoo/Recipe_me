@@ -12,6 +12,7 @@
     height: 60vh;
     overflow: scroll;
     padding: 1vh;
+    overscroll-behavior: none;
 }
 
 .toIngredients {
