@@ -30,6 +30,7 @@
     margin-bottom: 3vh;
     list-style: none;
     overflow: scroll;
+    overscroll-behavior: none;
 }
 
 .submitIngredients {
