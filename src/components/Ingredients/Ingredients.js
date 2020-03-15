@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+// import Select from 'react-select';
 import { Link } from 'react-router-dom';
 
 import StoreContext from '../../StoreContext';
@@ -10,35 +10,35 @@ export default class Ingredients extends React.Component {
     static contextType = StoreContext;
 
     state = {
-        currentIngredient: '',
+        leftOverIngredients: this.context.ingredients,
         newIngredients: []
     };
 
-    handleNewIngredientChange = currentIngredient => {
+    state = {
+        ...this.state,
+        currentIngredient: this.state.leftOverIngredients[0]
+    };
+
+    handleNewIngredientChange = e => {
+        let ingredient = this.context.ingredients.find(i => i.name === e.target.value);
         this.setState({
-            currentIngredient
+            currentIngredient: ingredient
         });
     };
 
     submitNewIngredient = () => {
-        if(this.state.currentIngredient !== ''){
+        if(this.state.leftOverIngredients.length > 0){
+            let newLeftOverIngredients = this.state.leftOverIngredients.filter(i => i !== this.state.currentIngredient);
             this.setState({
                 newIngredients: [
                     ...this.state.newIngredients,
                     this.state.currentIngredient
-                ]
+                ],
+                leftOverIngredients: newLeftOverIngredients,
+                currentIngredient: newLeftOverIngredients[0]
             });
+            return false
         };
-    };
-
-    checkForIngredient = () => {
-        for(let i = 0; i < this.state.newIngredients.length; i++){
-            if(this.state.currentIngredient.id === this.state.newIngredients[i].id){
-                return false
-            };
-        };
-        this.submitNewIngredient();
-        return true
     };
 
     renderList = () => {
@@ -47,7 +47,7 @@ export default class Ingredients extends React.Component {
             displayList = this.state.newIngredients.map(i => 
                 <li id={i.id} key={i.id}>
                     {i.name}
-                </li>    
+                </li>
             )
         } else {
             displayList = ['Nothing added...'];
@@ -55,19 +55,27 @@ export default class Ingredients extends React.Component {
         return displayList
     };
 
+    getLeftoverIngredients = () => {
+        let newArray = this.state.leftOverIngredients.map(i => i = { ...i, label: i.name });
+        newArray = newArray.map(i => <option id={i.id} key={i.id}>{i.name}</option>);
+
+        return newArray
+    };
+
     render(){
         return(
             <div className='ingredients'> 
-                <Select 
+                <select 
                     className='newIngredient' 
                     id={this.state.currentIngredient}
-                    value={this.state.currentIngredient}
+                    currentvalue={this.state.currentIngredient}
                     onChange={this.handleNewIngredientChange}
-                    options={this.context.ingredients.map(i => i = { ...i, label: i.name })}
-                />
+                >
+                    {this.getLeftoverIngredients()}
+                </select>
                 <button
                     className='addNewIngredient'
-                    onClick={this.checkForIngredient}
+                    onClick={this.submitNewIngredient}
                 >
                     +
                 </button>
