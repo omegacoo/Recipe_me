@@ -17,21 +17,21 @@ exports[`App component renders UI correctly 1`] = `
       href="/login"
       onClick={[Function]}
     >
-      login
+      Log in
     </a>
     <a
       className="Button"
       href="/register"
       onClick={[Function]}
     >
-      register
+      Register
     </a>
     <a
       className="Button"
       href="/inputselect"
       onClick={[Function]}
     >
-      guest
+      Guest
     </a>
   </div>
 </div>

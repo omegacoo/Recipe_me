@@ -11,6 +11,8 @@ import InputSelect from '../InputSelect/InputSelect';
 import Ingredients from '../Ingredients/Ingredients';
 import Recipes from '../Recipes/Recipes';
 import BackButton from '../BackButton/BackButton';
+import Pantry from '../Pantry/Pantry';
+
 import sampleData from '../../sampleData';
 
 import './App.css';
@@ -52,6 +54,16 @@ export default class App extends React.Component {
         });
     };
 
+    setAvailableIngredients = () => {
+        let leftoverUserIngredients = sampleData.sampleIngredients.filter(i => !this.state.userIngredients.includes(i));
+        console.log(leftoverUserIngredients);
+        this.setState({
+            ingredients: leftoverUserIngredients
+        },
+            this.setAvailableRecipes
+        );
+    };
+
     submitNewIngredients = newIngredients => {
         let newFilteredIngredients = newIngredients.filter(i => !this.state.userIngredients.includes(i));
         this.setState({
@@ -60,7 +72,15 @@ export default class App extends React.Component {
                 ...newFilteredIngredients
             ]
         },
-            this.setAvailableRecipes
+            this.setAvailableIngredients
+        );
+    };
+
+    submitRemainingIngredients = remainingIngredients => {
+        this.setState({
+            userIngredients: remainingIngredients
+        },
+            this.setAvailableIngredients
         );
     };
 
@@ -72,12 +92,16 @@ export default class App extends React.Component {
             units: this.state.units,
             onLandingPageLoginClick: this.onLandingPageLoginClick,
             submitNewIngredients: this.submitNewIngredients,
+            submitRemainingIngredients: this.submitRemainingIngredients
         };
 
         return(
             <div className='App'>
                 <StoreContext.Provider value={contextValue}>
-                    <Header />
+                    <Route 
+                        exact path={['/', '/login', '/register']}
+                        component={Header}
+                    />
                     <Route 
                         exact path={'/'}
                         component={Landing}
@@ -103,12 +127,17 @@ export default class App extends React.Component {
                         component={Recipes}
                     />
                     <Route 
+                        path={'/pantry'}
+                        component={Pantry}
+                    />
+                    <Route 
                         path={['/login',
                                '/register', 
                                '/inputselect',
                                '/ingredients',
                                '/recipes',
-                               '/available']}
+                               '/available',
+                               '/pantry']}
                         component={BackButton}
                     />
                 </StoreContext.Provider>

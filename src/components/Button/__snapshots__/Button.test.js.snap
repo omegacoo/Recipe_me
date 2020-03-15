@@ -3,7 +3,7 @@
 exports[`Button component renders UI correctly 1`] = `
 <a
   className="Button"
-  href="/undefined"
+  href=""
   onClick={[Function]}
 />
 `;

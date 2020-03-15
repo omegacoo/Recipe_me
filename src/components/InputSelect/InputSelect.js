@@ -10,10 +10,16 @@ export default class InputSelect extends React.Component {
         return(
             <div className='InputSelect'>
                 <Button 
-                    name={'ingredients'}
+                    name={'My Pantry'}
+                    target={'pantry'}
                 />
                 <Button 
-                    name={'recipes'}
+                    name={'Add Ingredients'}
+                    target={'ingredients'}
+                />
+                <Button 
+                    name={'My Makeable Recipes'}
+                    target={'recipes'}
                 />
             </div>
         );

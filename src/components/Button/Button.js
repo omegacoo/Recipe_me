@@ -12,7 +12,7 @@ export default class Button extends React.Component {
         return(
             <Link 
                 className='Button'
-                to={this.props.name === 'guest' ? '/inputselect' : `/${this.props.name}`}
+                to={this.props.target}
             >
                 {this.props.name}
             </Link>

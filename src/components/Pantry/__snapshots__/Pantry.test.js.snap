@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pantry component renders UI correctly 1`] = `
+<div
+  className="Pantry"
+>
+  <ol
+    className="pantryList"
+  />
+  <button
+    onClick={[Function]}
+  >
+    Save
+  </button>
+</div>
+`;

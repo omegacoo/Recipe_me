@@ -10,13 +10,16 @@ export default class Landing extends React.Component {
         return(
             <div className='Landing'>
                 <Button 
-                    name={'login'}
+                    name={'Log in'}
+                    target={'login'}
                 />
                 <Button 
-                    name={'register'}
+                    name={'Register'}
+                    target={'register'}
                 />
                 <Button 
-                    name={'guest'}
+                    name={'Guest'}
+                    target={'inputselect'}
                 />
             </div>
         );
