@@ -56,7 +56,6 @@ export default class App extends React.Component {
 
     setAvailableIngredients = () => {
         let leftoverUserIngredients = sampleData.sampleIngredients.filter(i => !this.state.userIngredients.includes(i));
-        console.log(leftoverUserIngredients);
         this.setState({
             ingredients: leftoverUserIngredients
         },

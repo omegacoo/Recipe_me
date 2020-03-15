@@ -1,0 +1,43 @@
+.pantryList {
+    width: 65vw;
+    height: 70vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    list-style: none;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.pantryList li {
+    margin-top: 6px;
+}
+
+.removeNewIngredient {
+    margin-right: 5px;
+    color: white;
+    background-color: red;
+    font-weight: bolder;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+}
+
+.saveList {
+    height: 50px;
+    width: 30vw;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: #2ecc71;
+    border-style: none;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import StoreContext from '../../StoreContext';
+
+import './Pantry.css';
 
 export default class Pantry extends React.Component {
     static contextType = StoreContext;
@@ -19,7 +22,7 @@ export default class Pantry extends React.Component {
     renderPantry = () => {
         return this.state.userIngredients.map(i => 
             <li id={i.id} key={i.id}>
-                <span className='removeIngredient' onClick={() => this.handleRemoveIngredient(i.id)}>X</span>
+                <span className='removeNewIngredient' onClick={() => this.handleRemoveIngredient(i.id)}>X</span>
                 {i.name}
             </li>
         );
@@ -32,14 +35,16 @@ export default class Pantry extends React.Component {
     render(){
         return(
             <div className='Pantry'>
-                <ol className='pantryList'>
+                <ul className='pantryList'>
                     {this.renderPantry()}
-                </ol>
-                <button
+                </ul>
+                <Link
+                    className='saveList'
                     onClick={this.submitRemainingIngredients}
+                    to={'/recipes'}
                 >
                     Save
-                </button>
+                </Link>
             </div>
         );
     };
