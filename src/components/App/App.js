@@ -116,18 +116,6 @@ export default class App extends React.Component {
         console.log('onLandingPageLoginClick()');
     };
 
-    handleAddNewIngredient = () => {
-        this.setState({
-            userIngredients: [
-                ...this.state.userIngredients,
-                {
-                    name: '',
-                    id: ''
-                }
-            ]
-        });
-    };
-
     setAvailableRecipes = () => {
         let availableRecipes = [];
         let ing = this.state.userIngredients.map(i => i.id);
@@ -153,8 +141,12 @@ export default class App extends React.Component {
     };
 
     submitNewIngredients = newIngredients => {
+        let newFilteredIngredients = newIngredients.filter(i => !this.state.userIngredients.includes(i));
         this.setState({
-            userIngredients: newIngredients
+            userIngredients: [
+                ...this.state.userIngredients,
+                ...newFilteredIngredients
+            ]
         },
             this.setAvailableRecipes
         );
