@@ -3,12 +3,12 @@ import React from 'react';
 const StoreContext = React.createContext({
     ingredients: [],
     userIngredients: [],
-    recipes: [],
+    availableRecipes: [],
+    units: [],
     onLandingPageLogInClick: () => {},
     onLandingPageRegisterClick: () => {},
     onLandingPageGuestClick: () => {},
-    handleAddNewIngredient: () => {},
-    submitNewIngredient: () => {},
+    submitNewIngredients: () => {},
 });
 
 export default StoreContext;

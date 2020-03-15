@@ -4,10 +4,14 @@ exports[`Ingredients component renders UI correctly 1`] = `
 <div
   className="ingredients"
 >
-  <select
-    className="newIngredient"
-    onChange={[Function]}
-  />
+  <section
+    className="options"
+  >
+    <select
+      className="newIngredient"
+      onChange={[Function]}
+    />
+  </section>
   <button
     className="addNewIngredient"
     onClick={[Function]}

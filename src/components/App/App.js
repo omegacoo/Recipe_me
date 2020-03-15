@@ -36,67 +36,32 @@ export default class App extends React.Component {
             {
                 name: 'bread',
                 id: '5'
+
             },
             {
-                name: 'tomato',
+                name: 'bouillan',
                 id: '6'
             },
             {
-                name: 'radish',
+                name: 'carrot',
                 id: '7'
             },
             {
-                name: 'ham',
+                name: 'chicken',
                 id: '8'
             },
             {
-                name: 'parsley',
+                name: 'egg',
                 id: '9'
             },
             {
-                name: 'bread',
+                name: 'flour',
                 id: '10'
             },
             {
-                name: 'tomato',
+                name: 'bacon',
                 id: '11'
-            },
-            {
-                name: 'radish',
-                id: '12'
-            },
-            {
-                name: 'ham',
-                id: '13'
-            },
-            {
-                name: 'parsley',
-                id: '14'
-            },
-            {
-                name: 'bread',
-                id: '15'
-            },
-            {
-                name: 'tomato',
-                id: '16'
-            },
-            {
-                name: 'radish',
-                id: '17'
-            },
-            {
-                name: 'ham',
-                id: '18'
-            },
-            {
-                name: 'parsley',
-                id: '19'
-            },
-            {
-                name: 'bread',
-                id: '20'
-            },
+            }
         ],
         userIngredients: [],
         recipes: [
@@ -106,15 +71,15 @@ export default class App extends React.Component {
                 ingredients: [
                     {
                         name: 'bouillan',
-                        id: '30'
+                        id: '6'
                     },
                     {
                         name: 'carrot',
-                        id: '31'
+                        id: '7'
                     },
                     {
                         name: 'chicken',
-                        id: '32'
+                        id: '8'
                     }
                 ]
             },
@@ -124,126 +89,26 @@ export default class App extends React.Component {
                 ingredients: [
                     {
                         name: 'egg',
-                        id: '33'
+                        id: '9'
                     },
                     {
                         name: 'flour',
-                        id: '34'
+                        id: '10'
                     },
                     {
                         name: 'bacon',
-                        id: '35'
+                        id: '11'
                     }
                 ]
-            },
-            {
-                name: 'Soup',
-                id: '3',
-                ingredients: [
-                    {
-                        name: 'bouillan',
-                        id: '30'
-                    },
-                    {
-                        name: 'carrot',
-                        id: '31'
-                    },
-                    {
-                        name: 'chicken',
-                        id: '32'
-                    }
-                ]
-            },
-            {
-                name: 'Souffle',
-                id: '4',
-                ingredients: [
-                    {
-                        name: 'egg',
-                        id: '33'
-                    },
-                    {
-                        name: 'flour',
-                        id: '34'
-                    },
-                    {
-                        name: 'bacon',
-                        id: '35'
-                    }
-                ]
-            },
-            {
-                name: 'Soup',
-                id: '5',
-                ingredients: [
-                    {
-                        name: 'bouillan',
-                        id: '30'
-                    },
-                    {
-                        name: 'carrot',
-                        id: '31'
-                    },
-                    {
-                        name: 'chicken',
-                        id: '32'
-                    }
-                ]
-            },
-            {
-                name: 'Souffle',
-                id: '6',
-                ingredients: [
-                    {
-                        name: 'egg',
-                        id: '33'
-                    },
-                    {
-                        name: 'flour',
-                        id: '34'
-                    },
-                    {
-                        name: 'bacon',
-                        id: '35'
-                    }
-                ]
-            },
-            {
-                name: 'Soup',
-                id: '7',
-                ingredients: [
-                    {
-                        name: 'bouillan',
-                        id: '30'
-                    },
-                    {
-                        name: 'carrot',
-                        id: '31'
-                    },
-                    {
-                        name: 'chicken',
-                        id: '32'
-                    }
-                ]
-            },
-            {
-                name: 'Souffle',
-                id: '8',
-                ingredients: [
-                    {
-                        name: 'egg',
-                        id: '33'
-                    },
-                    {
-                        name: 'flour',
-                        id: '34'
-                    },
-                    {
-                        name: 'bacon',
-                        id: '35'
-                    }
-                ]
-            },
+            }
+        ],
+        availableRecipes: [],
+        units: [
+            'cups',
+            'lbs',
+            'Tbsps',
+            'tsps',
+            'ounces'
         ]
     }
 
@@ -263,26 +128,46 @@ export default class App extends React.Component {
         });
     };
 
-    submitNewIngredient = newIngredient => {
-        let newUserIngredient = this.state.ingredients.find(i => i.name === newIngredient.name);
+    setAvailableRecipes = () => {
+        let availableRecipes = [];
+        let ing = this.state.userIngredients.map(i => i.id);
 
-        this.setState({
-            userIngredients: [
-                ...this.state.userIngredients,
-                newUserIngredient
-            ]
+        if(this.state.userIngredients.length <= 0){
+            return false
+        };
+
+        this.state.recipes.map(r => {
+            let rKey = r.ingredients.values();
+            for(const key of rKey){
+                if(!ing.includes(key.id)){
+                    return false
+                };
+            };
+            availableRecipes.push(r);
+            return true
         });
-        console.log('here');
+        
+        this.setState({
+            availableRecipes
+        });
+    };
+
+    submitNewIngredients = newIngredients => {
+        this.setState({
+            userIngredients: newIngredients
+        },
+            this.setAvailableRecipes
+        );
     };
 
     render(){
         let contextValue = {
             ingredients: this.state.ingredients,
-            recipes: this.state.recipes,
+            availableRecipes: this.state.availableRecipes,
             userIngredients: this.state.userIngredients,
+            units: this.state.units,
             onLandingPageLoginClick: this.onLandingPageLoginClick,
-            handleAddNewIngredient: this.handleAddNewIngredient,
-            submitNewIngredient: this.submitNewIngredient,
+            submitNewIngredients: this.submitNewIngredients,
         };
 
         return(

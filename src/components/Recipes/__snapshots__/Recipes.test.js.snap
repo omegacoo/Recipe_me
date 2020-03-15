@@ -6,7 +6,9 @@ exports[`Recipes component renders UI correctly 1`] = `
 >
   <ul
     className="RecipesList"
-  />
+  >
+    Sorry, no recipes found...
+  </ul>
   <a
     className="toIngredients"
     href="/ingredients"

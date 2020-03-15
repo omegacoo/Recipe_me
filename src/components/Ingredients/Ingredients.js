@@ -11,6 +11,8 @@ export default class Ingredients extends React.Component {
 
     state = {
         leftOverIngredients: this.context.ingredients,
+        units: this.context.units,
+        currentUnit: this.context.units[0],
         newIngredients: []
     };
 
@@ -26,7 +28,13 @@ export default class Ingredients extends React.Component {
         });
     };
 
-    submitNewIngredient = () => {
+    handleUnitChange = e => {
+        this.setState({
+            currentUnit: e.target.value
+        });
+    };
+
+    addNewIngredient = () => {
         if(this.state.leftOverIngredients.length > 0){
             let newLeftOverIngredients = this.state.leftOverIngredients.filter(i => i !== this.state.currentIngredient);
             this.setState({
@@ -62,20 +70,34 @@ export default class Ingredients extends React.Component {
         return newArray
     };
 
+    submitNewIngredients = () => {
+        this.context.submitNewIngredients(this.state.newIngredients);
+    };
+
     render(){
         return(
-            <div className='ingredients'> 
-                <select 
-                    className='newIngredient' 
-                    id={this.state.currentIngredient}
-                    currentvalue={this.state.currentIngredient}
-                    onChange={this.handleNewIngredientChange}
-                >
-                    {this.getLeftoverIngredients()}
-                </select>
+            <div className='ingredients'>
+                <section className='options'>
+                    <select 
+                        className='newIngredient' 
+                        id={this.state.currentIngredient}
+                        currentvalue={this.state.currentIngredient}
+                        onChange={this.handleNewIngredientChange}
+                    >
+                        {this.getLeftoverIngredients()}
+                    </select>
+                    {/* <select
+                        className='currentUnit'
+                        id={this.state.currentUnit}
+                        currentvalue={this.state.currentUnit}
+                        onChange={this.handleUnitChange}
+                    >
+                        {this.state.units.map(u => <option id={u} key={u}>{u}</option>)}
+                    </select> */}
+                </section>
                 <button
                     className='addNewIngredient'
-                    onClick={this.submitNewIngredient}
+                    onClick={this.addNewIngredient}
                 >
                     +
                 </button>
@@ -85,6 +107,7 @@ export default class Ingredients extends React.Component {
                 </ul>
                 <Link 
                     className='submitIngredients'
+                    onClick={this.submitNewIngredients}
                     to={'/recipes'}
                 >
                     Submit
