@@ -49,11 +49,26 @@ export default class Ingredients extends React.Component {
         };
     };
 
+    handleRemoveNewIngredient = id => {
+        let returnedIngredient = this.state.newIngredients.filter(i => i.id === id);
+        returnedIngredient = returnedIngredient[0];
+        let modifiedNewIngredients = this.state.newIngredients.filter(i => i.id !== id);
+
+        this.setState({
+            newIngredients: modifiedNewIngredients,
+            leftOverIngredients: [
+                ...this.state.leftOverIngredients,
+                returnedIngredient
+            ]
+        });
+    };
+
     renderList = () => {
         let displayList;
         if(this.state.newIngredients.length !== 0){
             displayList = this.state.newIngredients.map(i => 
                 <li id={i.id} key={i.id}>
+                    <span className='removeNewIngredient' onClick={() => this.handleRemoveNewIngredient(i.id)}>X</span>
                     {i.name}
                 </li>
             )

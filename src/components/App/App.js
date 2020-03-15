@@ -11,105 +11,17 @@ import InputSelect from '../InputSelect/InputSelect';
 import Ingredients from '../Ingredients/Ingredients';
 import Recipes from '../Recipes/Recipes';
 import BackButton from '../BackButton/BackButton';
+import sampleData from '../../sampleData';
 
 import './App.css';
 
 export default class App extends React.Component {
     state = {
-        ingredients: [
-            {
-                name: 'tomato',
-                id: '1'
-            },
-            {
-                name: 'radish',
-                id: '2'
-            },
-            {
-                name: 'ham',
-                id: '3'
-            },
-            {
-                name: 'parsley',
-                id: '4'
-            },
-            {
-                name: 'bread',
-                id: '5'
-
-            },
-            {
-                name: 'bouillan',
-                id: '6'
-            },
-            {
-                name: 'carrot',
-                id: '7'
-            },
-            {
-                name: 'chicken',
-                id: '8'
-            },
-            {
-                name: 'egg',
-                id: '9'
-            },
-            {
-                name: 'flour',
-                id: '10'
-            },
-            {
-                name: 'bacon',
-                id: '11'
-            }
-        ],
+        ingredients: sampleData.sampleIngredients,
         userIngredients: [],
-        recipes: [
-            {
-                name: 'Soup',
-                id: '1',
-                ingredients: [
-                    {
-                        name: 'bouillan',
-                        id: '6'
-                    },
-                    {
-                        name: 'carrot',
-                        id: '7'
-                    },
-                    {
-                        name: 'chicken',
-                        id: '8'
-                    }
-                ]
-            },
-            {
-                name: 'Souffle',
-                id: '2',
-                ingredients: [
-                    {
-                        name: 'egg',
-                        id: '9'
-                    },
-                    {
-                        name: 'flour',
-                        id: '10'
-                    },
-                    {
-                        name: 'bacon',
-                        id: '11'
-                    }
-                ]
-            }
-        ],
+        recipes: sampleData.sampleRecipes,
         availableRecipes: [],
-        units: [
-            'cups',
-            'lbs',
-            'Tbsps',
-            'tsps',
-            'ounces'
-        ]
+        units: sampleData.sampleUnits
     }
 
     onLandingPageLoginClick = () => {
