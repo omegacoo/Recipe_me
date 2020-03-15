@@ -4,13 +4,15 @@ exports[`Pantry component renders UI correctly 1`] = `
 <div
   className="Pantry"
 >
-  <ol
+  <ul
     className="pantryList"
   />
-  <button
+  <a
+    className="saveList"
+    href="/recipes"
     onClick={[Function]}
   >
     Save
-  </button>
+  </a>
 </div>
 `;
