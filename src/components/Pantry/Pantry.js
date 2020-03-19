@@ -23,7 +23,7 @@ export default class Pantry extends React.Component {
         return this.state.userIngredients.map(i => 
             <li id={i.id} key={i.id}>
                 <span className='removeNewIngredient' onClick={() => this.handleRemoveIngredient(i.id)}>X</span>
-                {i.name}
+                {i.title}
             </li>
         );
     };

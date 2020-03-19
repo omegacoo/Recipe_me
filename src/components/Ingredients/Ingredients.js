@@ -10,19 +10,20 @@ export default class Ingredients extends React.Component {
     static contextType = StoreContext;
 
     state = {
-        leftOverIngredients: this.context.ingredients,
-        units: this.context.units,
-        currentUnit: this.context.units[0],
-        newIngredients: []
+        leftOverIngredients: [],
+        newIngredients: [],
+        currentIngredient: {}
     };
 
-    state = {
-        ...this.state,
-        currentIngredient: this.state.leftOverIngredients[0]
+    componentDidMount = () => {
+        this.setState({
+            leftOverIngredients: this.context.ingredients,
+            currentIngredient: this.context.ingredients[0]
+        });
     };
 
     handleNewIngredientChange = e => {
-        let ingredient = this.context.ingredients.find(i => i.name === e.target.value);
+        let ingredient = this.context.ingredients.find(i => i.title === e.target.value);
         this.setState({
             currentIngredient: ingredient
         });
@@ -69,7 +70,7 @@ export default class Ingredients extends React.Component {
             displayList = this.state.newIngredients.map(i => 
                 <li id={i.id} key={i.id}>
                     <span className='removeNewIngredient' onClick={() => this.handleRemoveNewIngredient(i.id)}>X</span>
-                    {i.name}
+                    {i.title}
                 </li>
             )
         } else {
@@ -79,8 +80,8 @@ export default class Ingredients extends React.Component {
     };
 
     getLeftoverIngredients = () => {
-        let newArray = this.state.leftOverIngredients.map(i => i = { ...i, label: i.name });
-        newArray = newArray.map(i => <option id={i.id} key={i.id}>{i.name}</option>);
+        let newArray = this.state.leftOverIngredients.map(i => i = { ...i, label: i.title });
+        newArray = newArray.map(i => <option id={i.id} key={i.id}>{i.title}</option>);
 
         return newArray
     };

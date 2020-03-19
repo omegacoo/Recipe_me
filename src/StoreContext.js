@@ -4,7 +4,6 @@ const StoreContext = React.createContext({
     ingredients: [],
     userIngredients: [],
     availableRecipes: [],
-    units: [],
     onLandingPageLogInClick: () => {},
     onLandingPageRegisterClick: () => {},
     onLandingPageGuestClick: () => {},

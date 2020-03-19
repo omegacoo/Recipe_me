@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import StoreContext from '../../StoreContext';
+import config from '../../config';
 
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
@@ -19,12 +20,35 @@ import './App.css';
 
 export default class App extends React.Component {
     state = {
-        ingredients: sampleData.sampleIngredients,
+        baseIngredients: [],
+        ingredients: [],
         userIngredients: [],
         recipes: sampleData.sampleRecipes,
-        availableRecipes: [],
-        units: sampleData.sampleUnits
-    }
+        availableRecipes: []
+    };
+
+    fetchIngredients(){
+        fetch(config.API_ENDPOINT + '/api/ingredients')
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText)
+                };
+                return res.json()
+            })
+            .then(resJson => {
+                this.setState({
+                    baseIngredients: resJson,
+                    ingredients: resJson
+                });
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    };
+
+    componentDidMount(){
+        this.fetchIngredients();
+    };
 
     onLandingPageLoginClick = () => {
         console.log('onLandingPageLoginClick()');
@@ -55,7 +79,7 @@ export default class App extends React.Component {
     };
 
     setAvailableIngredients = () => {
-        let leftoverUserIngredients = sampleData.sampleIngredients.filter(i => !this.state.userIngredients.includes(i));
+        let leftoverUserIngredients = this.state.baseIngredients.filter(i => !this.state.userIngredients.includes(i));
         this.setState({
             ingredients: leftoverUserIngredients
         },
@@ -88,7 +112,6 @@ export default class App extends React.Component {
             ingredients: this.state.ingredients,
             availableRecipes: this.state.availableRecipes,
             userIngredients: this.state.userIngredients,
-            units: this.state.units,
             onLandingPageLoginClick: this.onLandingPageLoginClick,
             submitNewIngredients: this.submitNewIngredients,
             submitRemainingIngredients: this.submitRemainingIngredients
