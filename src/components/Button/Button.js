@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import StoreContext from '../../StoreContext';
 
 import './Button.css';
 
-export default class Button extends React.Component {
+class Button extends React.Component {
     static contextType = StoreContext;
-    static propTypes = {
-        target: PropTypes.string.isRequired
-    };
 
     render(){
         return(
@@ -23,3 +19,9 @@ export default class Button extends React.Component {
         );
     };
 };
+
+Button.defaultProps = {
+    target: '/'
+};
+
+export default Button;
