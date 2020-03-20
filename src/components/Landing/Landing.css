@@ -4,7 +4,6 @@
 
 .description {
     margin: 4vh;
-    font-family: 'Bellota Text', cursive;
 }
 
 .landingButton {
@@ -17,7 +16,7 @@
     width: 55vw;
     height: 20vh;
     text-align: center;
-    padding-top: 5vh;
+    padding-top: 6vh;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vh;
