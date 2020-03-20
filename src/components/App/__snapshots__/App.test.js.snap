@@ -4,34 +4,40 @@ exports[`App component renders UI correctly 1`] = `
 <div
   className="App"
 >
-  <header>
-    <h1>
-      Recipe Me
-    </h1>
+  <header
+    className="Header"
+  >
+    <img
+      alt="Pantry Buddy logo"
+      className="logo"
+      src="logo.png"
+    />
+    <i
+      className="fas fa-key login_icon"
+      onClick={[Function]}
+    />
   </header>
   <div
     className="Landing"
   >
+    <h1
+      className="description"
+    >
+               Ever wonder what you could throw together with all the odds and ends in your pantry?
+    </h1>
     <a
-      className="Button"
-      href="/login"
+      className="landingButton"
+      href="/inputselect"
       onClick={[Function]}
     >
-      Log in
+      Take a tour!
     </a>
     <a
-      className="Button"
+      className="landingButton"
       href="/register"
       onClick={[Function]}
     >
       Register
-    </a>
-    <a
-      className="Button"
-      href="/inputselect"
-      onClick={[Function]}
-    >
-      Guest
     </a>
   </div>
 </div>

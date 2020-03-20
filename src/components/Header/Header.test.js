@@ -10,7 +10,7 @@ describe('Header component', () => {
 
         ReactDOM.render(
             <BrowserRouter>
-                <Header />
+                <Header location={ { pathname:'/' } }/>
             </BrowserRouter>, 
             div
         );
@@ -21,7 +21,7 @@ describe('Header component', () => {
         expect(
         renderer.create(
             <BrowserRouter>
-                <Header />
+                <Header  location={ { pathname:'/' } }/>
             </BrowserRouter>).toJSON()
         ).toMatchSnapshot();
     });

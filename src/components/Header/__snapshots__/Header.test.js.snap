@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header component renders UI correctly 1`] = `
-<header>
-  <h1>
-    Recipe Me
-  </h1>
+<header
+  className="Header"
+>
+  <img
+    alt="Pantry Buddy logo"
+    className="logo"
+    src="logo.png"
+  />
+  <i
+    className="fas fa-key login_icon"
+    onClick={[Function]}
+  />
 </header>
 `;
