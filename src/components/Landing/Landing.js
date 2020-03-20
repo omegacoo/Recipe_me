@@ -1,6 +1,5 @@
 import React from 'react';
-
-import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 import './Landing.css';
 
@@ -9,18 +8,13 @@ export default class Landing extends React.Component {
     render(){
         return(
             <div className='Landing'>
-                <Button 
-                    name={'Log in'}
-                    target={'login'}
-                />
-                <Button 
-                    name={'Register'}
-                    target={'register'}
-                />
-                <Button 
-                    name={'Guest'}
-                    target={'inputselect'}
-                />
+                <h1 className='description'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Ever wonder what you could throw together with all the odds and ends in your pantry?</h1>
+                <Link className='landingButton' to={'/inputselect'}>
+                    Take a tour!
+                </Link>
+                <Link className='landingButton' to={'/register'}>
+                    Register
+                </Link>
             </div>
         );
     };

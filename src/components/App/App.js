@@ -6,13 +6,9 @@ import config from '../../config';
 
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
-import Login from '../Login/Login';
 import Register from '../Register/Register';
 import InputSelect from '../InputSelect/InputSelect';
-import Ingredients from '../Ingredients/Ingredients';
-import Recipes from '../Recipes/Recipes';
 import BackButton from '../BackButton/BackButton';
-import Pantry from '../Pantry/Pantry';
 
 import sampleData from '../../sampleData';
 
@@ -121,16 +117,12 @@ export default class App extends React.Component {
             <div className='App'>
                 <StoreContext.Provider value={contextValue}>
                     <Route 
-                        exact path={['/', '/login', '/register']}
+                        path={'/'}
                         component={Header}
                     />
                     <Route 
                         exact path={'/'}
                         component={Landing}
-                    />
-                    <Route 
-                        path={'/login'}
-                        component={Login}
                     />
                     <Route 
                         path={'/register'}
@@ -139,18 +131,6 @@ export default class App extends React.Component {
                     <Route 
                         path={'/inputselect'}
                         component={InputSelect}
-                    />
-                    <Route 
-                        path={'/ingredients'}
-                        component={Ingredients}
-                    />
-                    <Route 
-                        path={'/recipes'}
-                        component={Recipes}
-                    />
-                    <Route 
-                        path={'/pantry'}
-                        component={Pantry}
                     />
                     <Route 
                         path={['/login',

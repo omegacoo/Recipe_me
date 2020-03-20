@@ -1,6 +1,95 @@
-header h1 {
-    font-size: 20vw;
+.Header {
+    height: 7vh;
+    background-color: #6495ED;
+    display: grid;
+    grid-template-columns: 7vh;
+    grid-template-rows: 10vw 80vw 10vw;
+}
+
+.logo {
+    margin: 1vh;
+    height: 10vh;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+
+.login_icon {
+    grid-column: 13;
+    width: 30px;
+    font-size: 30px;
+    color: white;
+    margin-top: 1.3vh;
+}
+
+.popupContainer {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popup {
+    z-index: 1;
+    background-color: white;
+    color: black;
+    border: 5px solid black;
+    border-radius: 15px;;
+    padding: 2vh;
+    position: absolute;
+    right: -85vw;
+    top: -5vh;
+    width: min-content;
+}
+
+.popup input {
+    width: 50vw;
+}
+
+.popup ul {
+    margin-top: 3vh;
     text-align: center;
-    margin-bottom: 2vh;
-    margin-top: 2vh;
+}
+
+.popup li {
+    list-style: none;
+    margin: 4vh;
+}
+
+.navLink {
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 1vh;
+    background-color: #6495ED;
+    color: white;
+}
+
+.closePopup {
+    background-color: #6495ED;
+    border-radius: 50%;
+    font-size: large;
+    float: right;
+}
+
+.forgotInfo {
+    font-size: 1.7vh;
+}
+
+.login_button {
+    display: block;
+    margin-top: 1vh;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #6495ED;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 1vh;
+}
+
+.hamburger {
+    grid-column: 13;
+    width: 30px;
+    font-size: 30px;
+    color: white;
+    margin-top: 1.3vh;
 }
