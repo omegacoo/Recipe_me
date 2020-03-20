@@ -9,7 +9,7 @@ import './Button.css';
 export default class Button extends React.Component {
     static contextType = StoreContext;
     static propTypes = {
-        target: PropTypes.object.isRequired
+        target: PropTypes.string.isRequired
     };
 
     render(){
