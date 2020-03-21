@@ -64,7 +64,8 @@
 }
 
 .closePopup {
-    background-color: #6495ED;
+    background-color: red;
+    color: white;
     border-radius: 50%;
     font-size: large;
     float: right;
