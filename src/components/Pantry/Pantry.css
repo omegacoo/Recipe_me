@@ -56,6 +56,8 @@
     border: 1px solid black;
     border-radius: 15px;
     background-color: #c0392b;
+    height: 5vh;
+    padding-top: .8vh;
 }
 
 .popup_title {

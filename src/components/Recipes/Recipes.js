@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import RecipeCard from '../RecipeCard/RecipeCard';
 
@@ -26,15 +25,10 @@ export default class Recipes extends React.Component {
     render(){
         return(
             <div className='Recipes'>
+                <h1 className='Recipes_title'>&nbsp;Let's see what you can make!</h1>
                 <ul className='RecipesList'>
                     {this.renderRecipes()}
                 </ul>
-                <Link 
-                    className='toIngredients'
-                    to={'/ingredients'}
-                >
-                    Ingredients
-                </Link>
             </div>
         );
     };

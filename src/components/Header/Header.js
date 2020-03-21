@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import config from '../../config';
+import StoreContext from '../../StoreContext';
 
 import logo from '../../assets/logo.png';
 
@@ -11,6 +13,7 @@ import './Header.css';
 // TODO: make some of the code on this component simpler.
 
 export default class Header extends React.Component {
+    static contextType = StoreContext;
     static propTypes = {
         location: PropTypes.object.isRequired
     };
@@ -36,7 +39,27 @@ export default class Header extends React.Component {
 
     handleLoginSubmit = e => {
         e.preventDefault();
-        console.log('add login functionality');
+
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        const myBody = JSON.stringify({ "user_name": this.state.username, "password": this.state.password });
+
+        fetch(config.API_ENDPOINT + '/api/auth/login',  {method: 'POST', headers: myHeaders, body: myBody })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText)
+                };
+                return res.text()
+            })
+            .then(resText => {
+                this.context.onLogin(this.state.username);
+                this.toggleLogin();
+                this.props.history.push('/pantry');
+            })
+            .catch(err => {
+                console.log(err, myBody);
+            })
+            
     };
 
     handleUsernameChange = e => {

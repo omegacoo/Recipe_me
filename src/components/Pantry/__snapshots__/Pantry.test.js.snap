@@ -7,7 +7,9 @@ exports[`Pantry component renders UI correctly 1`] = `
   <h1
     className="Pantry_title"
   >
-     Let's fill that Pantry, buddy!
+     Let's fill that Pantry, 
+    buddy
+    !
   </h1>
   <section
     className="Pantry_icons"

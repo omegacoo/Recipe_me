@@ -87,7 +87,7 @@ export default class Pantry extends React.Component {
     render(){
         return(
             <div className='Pantry'>
-                <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, buddy!</h1>
+                <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, { this.context.userName !== '' ? this.context.userName : 'buddy' }!</h1>
                 <section className='Pantry_icons'>
                     <i className='fas fa-drumstick-bite' id='meat' onClick={this.togglePopup}></i>
                     <i className='fas fa-carrot' id='vegetable' onClick={this.togglePopup}></i>

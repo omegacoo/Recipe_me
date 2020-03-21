@@ -9,6 +9,7 @@ import Landing from '../Landing/Landing';
 import Register from '../Register/Register';
 import BackButton from '../BackButton/BackButton';
 import Pantry from '../Pantry/Pantry';
+import Recipes from '../Recipes/Recipes';
 
 import sampleData from '../../sampleData';
 
@@ -19,7 +20,9 @@ export default class App extends React.Component {
         baseIngredients: [],
         userIngredients: [],
         recipes: sampleData.sampleRecipes,
-        availableRecipes: []
+        availableRecipes: [],
+        loggedIn: false,
+        userName: ''
     };
 
     fetchIngredients(){
@@ -79,13 +82,24 @@ export default class App extends React.Component {
         });
     };
 
+    onLogin = userName => {
+        let properUserName = userName[0].toUpperCase() + userName.slice(1);
+        this.setState({
+            loggedIn: true,
+            userName: properUserName
+        });
+    };
+
     render(){
         let contextValue = {
             baseIngredients: this.state.baseIngredients,
             availableRecipes: this.state.availableRecipes,
             userIngredients: this.state.userIngredients,
+            loggedIn: this.state.loggedIn,
+            userName: this.state.userName,
             onLandingPageLoginClick: this.onLandingPageLoginClick,
-            updateUserIngredients: this.updateUserIngredients
+            updateUserIngredients: this.updateUserIngredients,
+            onLogin: this.onLogin
         };
 
         return(
@@ -106,6 +120,10 @@ export default class App extends React.Component {
                     <Route 
                         path={'/pantry'}
                         component={Pantry}
+                    />
+                    <Route 
+                        path={'/recipes'}
+                        component={Recipes}
                     />
                     <Route 
                         path={['/login',
