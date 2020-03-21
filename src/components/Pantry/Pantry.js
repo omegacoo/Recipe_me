@@ -1,50 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import StoreContext from '../../StoreContext';
 
 import './Pantry.css';
 
 export default class Pantry extends React.Component {
-    static contextType = StoreContext;
-
-    state = {
-        userIngredients: this.context.userIngredients
-    };
-
-    handleRemoveIngredient = id => {
-        let newIngredients = this.state.userIngredients.filter(i => i.id !== id);
-        this.setState({
-            userIngredients: newIngredients
-        });
-    };
-
-    renderPantry = () => {
-        return this.state.userIngredients.map(i => 
-            <li id={i.id} key={i.id}>
-                <span className='removeNewIngredient' onClick={() => this.handleRemoveIngredient(i.id)}>X</span>
-                {i.title}
-            </li>
-        );
-    };
-
-    submitRemainingIngredients = () => {
-        this.context.submitRemainingIngredients(this.state.userIngredients);
-    };
 
     render(){
         return(
             <div className='Pantry'>
-                <ul className='pantryList'>
-                    {this.renderPantry()}
-                </ul>
-                <Link
-                    className='saveList'
-                    onClick={this.submitRemainingIngredients}
-                    to={'/recipes'}
-                >
-                    Save
-                </Link>
+                <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, buddy!</h1>
+                <section className='Pantry_icons'>
+                    <i className='fas fa-drumstick-bite Pantry_meats'></i>
+                    <i className='fas fa-carrot Pantry_vegetables'></i>
+                    <i className='fas fa-cheese Pantry_dairy'></i>
+                    <i className='fas fa-bread-slice Pantry_grains'></i>
+                    <i className='fas fa-apple-alt Pantry_fruits'></i>
+                    <i className='fas fa-mortar-pestle Pantry_condiments'></i>
+                </section>
             </div>
         );
     };

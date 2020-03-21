@@ -8,8 +8,8 @@ export default class Landing extends React.Component {
     render(){
         return(
             <div className='Landing'>
-                <h1 className='description'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Ever wonder what you could throw together with all the odds and ends in your pantry?</h1>
-                <Link className='landingButton' to={'/inputselect'}>
+                <h1 className='description'>&nbsp;Ever wonder what you could throw together with all the odds and ends in your pantry?</h1>
+                <Link className='landingButton' to={'/pantry'}>
                     Take a tour!
                 </Link>
                 <Link className='landingButton' to={'/register'}>

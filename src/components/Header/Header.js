@@ -85,8 +85,8 @@ export default class Header extends React.Component {
                     <span className='popup'>
                         <i className='closePopup far fa-times-circle' onClick={this.toggleNav} />
                         <ul className='navList'>
+                            <li><Link className='navLink' onClick={this.toggleNav} to={'/pantry'}>Pantry</Link></li>
                             <li><Link className='navLink' onClick={this.toggleNav} to={'/recipes'}>Recipes</Link></li>
-                            <li><Link className='navLink' onClick={this.toggleNav} to={'/ingredients'}>Ingredients</Link></li>
                             <li><Link className='navLink' onClick={this.toggleNav} to={'/'}>Home</Link></li>
                         </ul>
                     </span>
