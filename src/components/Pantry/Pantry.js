@@ -42,16 +42,24 @@ export default class Pantry extends React.Component {
 
     renderList = () => {
         return(
-            this.context.baseIngredients.map(i => 
-                <li 
-                    id={i.id} 
-                    key={i.id} 
-                    onClick={this.handleIngredientClick}
-                    style={this.state.userIngredients.find(item => item.id === i.id) ? {backgroundColor: '#16a085'} : {backgroundColor: '#c0392b'}}
-                >
-                    {i.title}
-                </li>    
-            )
+            this.context.baseIngredients.map(i => {
+                if(i.category === this.state.currentList){
+                    return(
+                        <li 
+                            id={i.id} 
+                            key={i.id} 
+                            onClick={this.handleIngredientClick}
+                            style={
+                                this.state.userIngredients.find(item => item.id === i.id) 
+                                                                        ? {backgroundColor: '#16a085'} 
+                                                                        : {backgroundColor: '#c0392b'}
+                            }
+                        >
+                            {i.title}
+                        </li>
+                    )
+                };
+            })
         )
     };
 
@@ -59,6 +67,7 @@ export default class Pantry extends React.Component {
         return(
             <div className='popupContainer'>
                 <span className='popup'>
+                    <i className='closePopup far fa-times-circle' onClick={this.togglePopup} />
                     <h1 className='popup_title'>{this.state.currentList}</h1>
                     <ul className='Pantry_list'>
                         { this.renderList() }
@@ -81,7 +90,7 @@ export default class Pantry extends React.Component {
                 <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, buddy!</h1>
                 <section className='Pantry_icons'>
                     <i className='fas fa-drumstick-bite' id='meat' onClick={this.togglePopup}></i>
-                    <i className='fas fa-carrot' id='vegetable_legume' onClick={this.togglePopup}></i>
+                    <i className='fas fa-carrot' id='vegetable' onClick={this.togglePopup}></i>
                     <i className='fas fa-cheese' id='dairy' onClick={this.togglePopup}></i>
                     <i className='fas fa-bread-slice' id='grain' onClick={this.togglePopup}></i>
                     <i className='fas fa-apple-alt' id='fruit' onClick={this.togglePopup}></i>

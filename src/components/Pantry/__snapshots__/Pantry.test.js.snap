@@ -19,7 +19,7 @@ exports[`Pantry component renders UI correctly 1`] = `
     />
     <i
       className="fas fa-carrot"
-      id="vegetable_legume"
+      id="vegetable"
       onClick={[Function]}
     />
     <i
