@@ -17,6 +17,7 @@
     margin-top: 5vh;
     font-size: 3vh;
     font-weight: bold;
+    background-color: #6495ED;
 }
 
 .Register button {
@@ -30,7 +31,7 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5vh;
+    margin-top: 3vh;
     text-decoration: none;
     font-size: 5vh;
     font-weight: bolder;

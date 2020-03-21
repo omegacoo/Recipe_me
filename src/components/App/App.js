@@ -7,8 +7,8 @@ import config from '../../config';
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Register from '../Register/Register';
-import InputSelect from '../InputSelect/InputSelect';
 import BackButton from '../BackButton/BackButton';
+import Pantry from '../Pantry/Pantry';
 
 import sampleData from '../../sampleData';
 
@@ -129,8 +129,8 @@ export default class App extends React.Component {
                         component={Register}
                     />
                     <Route 
-                        path={'/inputselect'}
-                        component={InputSelect}
+                        path={'/pantry'}
+                        component={Pantry}
                     />
                     <Route 
                         path={['/login',

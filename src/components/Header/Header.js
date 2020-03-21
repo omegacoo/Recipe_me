@@ -6,6 +6,10 @@ import logo from '../../assets/logo.png';
 
 import './Header.css';
 
+// TODO: There is going to need to be a state in the App component which keeps track
+// TODO: of whether or not the user is logged in, this will control what they see and
+// TODO: make some of the code on this component simpler.
+
 export default class Header extends React.Component {
     static propTypes = {
         location: PropTypes.object.isRequired
@@ -48,7 +52,7 @@ export default class Header extends React.Component {
     };
 
     renderPopup = () => {
-        if(this.props.location.pathname === '/' && this.state.logingIn){
+        if((this.props.location.pathname === '/' || this.props.location.pathname === '/register') && this.state.logingIn){
             return(
                 <div className='popupContainer'>
                     <span className='popup'>
@@ -101,7 +105,7 @@ export default class Header extends React.Component {
                 className='logo'
                 alt='Pantry Buddy logo'    
             />
-            {   location.pathname === '/' 
+            {   location.pathname === '/' || location.pathname === '/register' 
                 ?  <i className='fas fa-key login_icon' onClick={this.toggleLogin} />
                 : <i className='fas fa-bars hamburger' onClick={this.toggleNav}></i> 
             }

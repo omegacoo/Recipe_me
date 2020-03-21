@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: 7vh;
     grid-template-rows: 10vw 80vw 10vw;
+    border-bottom: 3px solid black;
 }
 
 .logo {
@@ -38,6 +39,7 @@
     right: -85vw;
     top: -5vh;
     width: min-content;
+    font-weight: bold;
 }
 
 .popup input {
@@ -85,7 +87,7 @@
     border: 2px solid black;
     border-radius: 15px;
     padding: 1vh;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .hamburger {
