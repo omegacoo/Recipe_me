@@ -17,7 +17,6 @@ import './App.css';
 export default class App extends React.Component {
     state = {
         baseIngredients: [],
-        ingredients: [],
         userIngredients: [],
         recipes: sampleData.sampleRecipes,
         availableRecipes: []
@@ -74,43 +73,19 @@ export default class App extends React.Component {
         });
     };
 
-    setAvailableIngredients = () => {
-        let leftoverUserIngredients = this.state.baseIngredients.filter(i => !this.state.userIngredients.includes(i));
+    updateUserIngredients = userIngredients => {
         this.setState({
-            ingredients: leftoverUserIngredients
-        },
-            this.setAvailableRecipes
-        );
-    };
-
-    submitNewIngredients = newIngredients => {
-        let newFilteredIngredients = newIngredients.filter(i => !this.state.userIngredients.includes(i));
-        this.setState({
-            userIngredients: [
-                ...this.state.userIngredients,
-                ...newFilteredIngredients
-            ]
-        },
-            this.setAvailableIngredients
-        );
-    };
-
-    submitRemainingIngredients = remainingIngredients => {
-        this.setState({
-            userIngredients: remainingIngredients
-        },
-            this.setAvailableIngredients
-        );
+            userIngredients
+        });
     };
 
     render(){
         let contextValue = {
-            ingredients: this.state.ingredients,
+            baseIngredients: this.state.baseIngredients,
             availableRecipes: this.state.availableRecipes,
             userIngredients: this.state.userIngredients,
             onLandingPageLoginClick: this.onLandingPageLoginClick,
-            submitNewIngredients: this.submitNewIngredients,
-            submitRemainingIngredients: this.submitRemainingIngredients
+            updateUserIngredients: this.updateUserIngredients
         };
 
         return(

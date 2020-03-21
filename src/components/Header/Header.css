@@ -25,11 +25,10 @@
 .popupContainer {
     position: relative;
     display: inline-block;
-    cursor: pointer;
 }
 
 .popup {
-    z-index: 1;
+    z-index: 2;
     background-color: #6495ED;
     color: black;
     border: 5px solid black;

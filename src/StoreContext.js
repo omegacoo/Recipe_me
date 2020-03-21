@@ -7,8 +7,7 @@ const StoreContext = React.createContext({
     onLandingPageLogInClick: () => {},
     onLandingPageRegisterClick: () => {},
     onLandingPageGuestClick: () => {},
-    submitNewIngredients: () => {},
-    submitRemainingIngredients: () => {},
+    updateUserIngredients: () => {},
 });
 
 export default StoreContext;

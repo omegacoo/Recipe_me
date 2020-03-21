@@ -4,15 +4,44 @@ exports[`Pantry component renders UI correctly 1`] = `
 <div
   className="Pantry"
 >
-  <ul
-    className="pantryList"
-  />
-  <a
-    className="saveList"
-    href="/recipes"
-    onClick={[Function]}
+  <h1
+    className="Pantry_title"
   >
-    Save
-  </a>
+     Let's fill that Pantry, buddy!
+  </h1>
+  <section
+    className="Pantry_icons"
+  >
+    <i
+      className="fas fa-drumstick-bite"
+      id="meat"
+      onClick={[Function]}
+    />
+    <i
+      className="fas fa-carrot"
+      id="vegetable_legume"
+      onClick={[Function]}
+    />
+    <i
+      className="fas fa-cheese"
+      id="dairy"
+      onClick={[Function]}
+    />
+    <i
+      className="fas fa-bread-slice"
+      id="grain"
+      onClick={[Function]}
+    />
+    <i
+      className="fas fa-apple-alt"
+      id="fruit"
+      onClick={[Function]}
+    />
+    <i
+      className="fas fa-mortar-pestle"
+      id="condiment"
+      onClick={[Function]}
+    />
+  </section>
 </div>
 `;

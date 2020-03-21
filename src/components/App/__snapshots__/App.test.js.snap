@@ -23,11 +23,11 @@ exports[`App component renders UI correctly 1`] = `
     <h1
       className="description"
     >
-               Ever wonder what you could throw together with all the odds and ends in your pantry?
+       Ever wonder what you could throw together with all the odds and ends in your pantry?
     </h1>
     <a
       className="landingButton"
-      href="/inputselect"
+      href="/pantry"
       onClick={[Function]}
     >
       Take a tour!
