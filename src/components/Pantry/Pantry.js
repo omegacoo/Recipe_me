@@ -68,7 +68,7 @@ export default class Pantry extends React.Component {
             <div className='popupContainer'>
                 <span className='popup'>
                     <i className='closePopup far fa-times-circle' onClick={this.togglePopup} />
-                    <h1 className='popup_title'>{this.state.currentList}</h1>
+                    <h1 className='popup_title'>{this.state.currentList === 'dairy' ? this.state.currentList : this.state.currentList + 's'}</h1>
                     <ul className='Pantry_list'>
                         { this.renderList() }
                     </ul>
