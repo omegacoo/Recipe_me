@@ -1,49 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Register component renders UI correctly 1`] = `
-<form
-  className="Register"
-  onSubmit={[Function]}
->
-  <label
-    htmlFor="Register_username"
+Array [
+  <h1
+    className="Register_title"
   >
-    Username: 
-  </label>
-  <input
-    className="Register_username"
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
-  <br />
-  <label
-    htmlFor="Register_password"
+    You are on your way to some great meals! So close now...
+  </h1>,
+  <form
+    className="Register"
+    onSubmit={[Function]}
   >
-    Password: 
-  </label>
-  <input
-    className="Register_password"
-    onChange={[Function]}
-    type="password"
-    value=""
-  />
-  <br />
-  <label
-    htmlFor="Register_confirmPassword"
-  >
-    Confirm Password: 
-  </label>
-  <input
-    className="Register_confirmPassword"
-    onChange={[Function]}
-    type="password"
-    value=""
-  />
-  <button
-    type="submit"
-  >
-    Register
-  </button>
-</form>
+    <label
+      htmlFor="Register_username"
+    >
+      Username: 
+    </label>
+    <br />
+    <input
+      className="Register_username"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <label
+      htmlFor="Register_password"
+    >
+      Password: 
+    </label>
+    <br />
+    <input
+      className="Register_password"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <br />
+    <label
+      htmlFor="Register_confirmPassword"
+    >
+      Confirm Password: 
+    </label>
+    <br />
+    <input
+      className="Register_confirmPassword"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <br />
+    <label
+      htmlFor="Register_email"
+    >
+      Email: 
+    </label>
+    <br />
+    <input
+      className="Register_email"
+      onChange={[Function]}
+      type="email"
+      value=""
+    />
+    <br />
+    <button
+      type="submit"
+    >
+      Register
+    </button>
+  </form>,
+]
 `;
