@@ -44,10 +44,10 @@ export default class Header extends React.Component {
         myHeaders.append("Content-Type", "application/json");
         const myBody = JSON.stringify({ "user_name": this.state.username, "password": this.state.password });
 
-        fetch(config.API_ENDPOINT + '/api/auth/login',  {method: 'POST', headers: myHeaders, body: myBody })
+        fetch(config.API_ENDPOINT + '/api/auth/login',  { method: 'POST', body: myBody, headers: myHeaders, credentials: 'include' })
             .then(res => {
                 if(!res.ok){
-                    throw new Error(res.statusText)
+                    throw new Error(res.status) 
                 };
                 return res.text()
             })

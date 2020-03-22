@@ -25,6 +25,10 @@ export default class App extends React.Component {
         userName: ''
     };
 
+    componentDidMount = () => {
+        this.fetchIngredients();
+    };
+
     fetchIngredients(){
         fetch(config.API_ENDPOINT + '/api/ingredients')
             .then(res => {
@@ -42,10 +46,6 @@ export default class App extends React.Component {
             .catch(err => {
                 console.log(err)
             })
-    };
-
-    componentDidMount(){
-        this.fetchIngredients();
     };
 
     onLandingPageLoginClick = () => {
@@ -99,7 +99,7 @@ export default class App extends React.Component {
             userName: this.state.userName,
             onLandingPageLoginClick: this.onLandingPageLoginClick,
             updateUserIngredients: this.updateUserIngredients,
-            onLogin: this.onLogin
+            onLogin: this.onLogin,
         };
 
         return(
