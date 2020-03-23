@@ -7,10 +7,17 @@
     margin-bottom: 20px;
     list-style: none;
     text-align: center;
+    background-color: #A5C2FF;
+    overflow: hidden;
 }
 
-.RecipeCard li {
-    text-align: left;
+.RecipeCard_title {
+    border-bottom: 1px solid black;
+    background-color: #6495ED;
+    font-weight: bolder;
+}
+
+.RecipeCard_description  {
+    font-size: .8em;
     margin: 1vh;
-    margin-left: 10vw;
 }

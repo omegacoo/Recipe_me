@@ -59,58 +59,61 @@ const sampleIngredients = [
 
 const sampleRecipes = [
     {
-        name: 'Soup',
+        title: 'Soup',
         id: '1',
         ingredients: [
             {
-                name: 'bouillan',
+                title: 'bouillan',
                 id: '6'
             },
             {
-                name: 'carrot',
+                title: 'carrot',
                 id: '7'
             },
             {
-                name: 'chicken',
+                title: 'chicken',
                 id: '8'
             }
-        ]
+        ],
+        description: 'Yummy soup'
     },
     {
-        name: 'Souffle',
+        title: 'Souffle',
         id: '2',
         ingredients: [
             {
-                name: 'egg',
+                title: 'egg',
                 id: '9'
             },
             {
-                name: 'flour',
+                title: 'flour',
                 id: '10'
             },
             {
-                name: 'bacon',
+                title: 'bacon',
                 id: '11'
             }
-        ]
+        ],
+        description: 'Yummy souffle'
     },
     {
-        name: 'Scramble',
+        title: 'Scramble',
         id: '3',
         ingredients: [
             {
-                name: 'egg',
+                title: 'egg',
                 id: '9'
             },
             {
-                name: 'ham',
+                title: 'ham',
                 id: '3'
             },
             {
-                name: 'tomato',
+                title: 'tomato',
                 id: '1'
             }
-        ]
+        ],
+        description: 'Yummy scramble'
     }
 ];
 

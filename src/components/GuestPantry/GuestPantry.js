@@ -6,21 +6,25 @@ import sampleData from '../../sampleData';
 import './GuestPantry.css';
 
 export default class GuestPantry extends React.Component {
+    static contextType = StoreContext;
+
     state = {
         currentList: '',
         listOpen: false,
-        baseIngredients: sampleData.sampleIngredients,
-        userIngredients: []
+        baseIngredients: this.context.guestIngredients,
+        userIngredients: this.context.guestUserIngredients
     };
 
     handleIngredientClick = e => {
         let item = this.state.baseIngredients.find(i => i.id == e.target.id);
         if(this.state.userIngredients.find(i => i.id == item.id)){
             let newUserList = this.state.userIngredients.filter(i => i.id !== item.id);
+            this.context.updateGuestUserIngredients(newUserList);
             this.setState({
                 userIngredients: newUserList
             });
         } else {
+            this.context.updateGuestUserIngredients([...this.state.userIngredients, item]);
             this.setState({
                 userIngredients: [
                     ...this.state.userIngredients,
@@ -75,6 +79,7 @@ export default class GuestPantry extends React.Component {
     };
 
     handleRecipesClick = () => {
+        this.context.setAvailableGuestRecipes();
         this.props.history.push('/guestrecipes');
     };
 

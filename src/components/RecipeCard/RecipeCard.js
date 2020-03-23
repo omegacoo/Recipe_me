@@ -9,17 +9,8 @@ export default class RecipeCard extends React.Component {
                 className='RecipeCard' 
                 id={this.props.recipe.id}
             >
-                {this.props.recipe.title}
-                <ol>
-                    {this.props.recipe.ingredients.map(i => 
-                        <li 
-                            id={i.id} 
-                            key={i.id}
-                        >
-                            {i.title}
-                        </li>
-                    )}
-                </ol>
+                <section className='RecipeCard_title'>{this.props.recipe.title}</section>
+                <section className='RecipeCard_description'>{this.props.recipe.description}</section>
             </li>
         );
     };

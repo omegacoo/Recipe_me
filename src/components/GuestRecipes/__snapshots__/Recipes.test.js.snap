@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipes component renders UI correctly 1`] = `
+<div
+  className="Recipes"
+>
+  <h1
+    className="Recipes_title"
+  >
+     Let's see what you can make!
+  </h1>
+  <ul
+    className="RecipesList"
+  >
+    Sorry, no recipes found...
+  </ul>
+</div>
+`;

@@ -3,7 +3,9 @@ import React from 'react';
 const StoreContext = React.createContext({
     ingredients: [],
     userIngredients: [],
-    availableRecipes: [],
+    availableGuestRecipes: [],
+    guestIngredients: [],
+    guestUserIngredients: [],
     loggedIn: Boolean,
     userName: '',
     onLandingPageLogInClick: () => {},
@@ -11,6 +13,8 @@ const StoreContext = React.createContext({
     onLandingPageGuestClick: () => {},
     updateUserIngredients: () => {},
     onLogin: () => {},
+    updateGuestUserIngredients: () => {},
+    setAvailableGuestRecipes: () => {},
 });
 
 export default StoreContext;

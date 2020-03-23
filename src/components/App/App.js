@@ -11,6 +11,7 @@ import BackButton from '../BackButton/BackButton';
 import Pantry from '../Pantry/Pantry';
 import Recipes from '../Recipes/Recipes';
 import GuestPantry from '../GuestPantry/GuestPantry';
+import GuestRecipes from '../GuestRecipes/GuestRecipes';
 
 import sampleData from '../../sampleData';
 
@@ -21,9 +22,12 @@ export default class App extends React.Component {
         baseIngredients: [],
         userIngredients: [],
         recipes: sampleData.sampleRecipes,
-        availableRecipes: [],
+        availableGuestRecipes: [],
         loggedIn: false,
-        userName: ''
+        userName: '',
+        guestIngredients: sampleData.sampleIngredients,
+        guestRecipes: sampleData.sampleRecipes,
+        guestUserIngredients: []
     };
 
     componentDidMount = () => {
@@ -49,37 +53,39 @@ export default class App extends React.Component {
             })
     };
 
-    onLandingPageLoginClick = () => {
-        console.log('onLandingPageLoginClick()');
-    };
+    setAvailableGuestRecipes = () => {
+        let availableGuestRecipes = [];
+        let ing = this.state.guestUserIngredients.map(i => i.id);
 
-    setAvailableRecipes = () => {
-        let availableRecipes = [];
-        let ing = this.state.userIngredients.map(i => i.id);
-
-        if(this.state.userIngredients.length <= 0){
+        if(this.state.guestUserIngredients.length <= 0){
             return false
         };
 
-        this.state.recipes.map(r => {
+        this.state.guestRecipes.map(r => {
             let rKey = r.ingredients.values();
             for(const key of rKey){
                 if(!ing.includes(key.id)){
                     return false
                 };
             };
-            availableRecipes.push(r);
+            availableGuestRecipes.push(r);
             return true
         });
         
         this.setState({
-            availableRecipes
+            availableGuestRecipes
         });
     };
 
     updateUserIngredients = userIngredients => {
         this.setState({
             userIngredients
+        });
+    };
+
+    updateGuestUserIngredients = guestUserIngredients => {
+        this.setState({
+            guestUserIngredients
         });
     };
 
@@ -94,13 +100,17 @@ export default class App extends React.Component {
     render(){
         let contextValue = {
             baseIngredients: this.state.baseIngredients,
-            availableRecipes: this.state.availableRecipes,
+            availableGuestRecipes: this.state.availableGuestRecipes,
             userIngredients: this.state.userIngredients,
             loggedIn: this.state.loggedIn,
             userName: this.state.userName,
+            guestIngredients: this.state.guestIngredients,
+            guestUserIngredients: this.state.guestUserIngredients,
             onLandingPageLoginClick: this.onLandingPageLoginClick,
             updateUserIngredients: this.updateUserIngredients,
             onLogin: this.onLogin,
+            updateGuestUserIngredients: this.updateGuestUserIngredients,
+            setAvailableGuestRecipes: this.setAvailableGuestRecipes,
         };
 
         return(
@@ -129,6 +139,10 @@ export default class App extends React.Component {
                     <Route 
                         path={'/guestpantry'}
                         component={GuestPantry}
+                    />
+                    <Route 
+                        path={'/guestrecipes'}
+                        component={GuestRecipes}
                     />
                     <Route 
                         path={['/login',
