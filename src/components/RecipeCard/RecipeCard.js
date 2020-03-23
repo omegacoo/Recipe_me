@@ -9,14 +9,14 @@ export default class RecipeCard extends React.Component {
                 className='RecipeCard' 
                 id={this.props.recipe.id}
             >
-                {this.props.recipe.name}
+                {this.props.recipe.title}
                 <ol>
                     {this.props.recipe.ingredients.map(i => 
                         <li 
                             id={i.id} 
                             key={i.id}
                         >
-                            {i.name}
+                            {i.title}
                         </li>
                     )}
                 </ol>

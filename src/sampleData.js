@@ -1,48 +1,59 @@
 const sampleIngredients = [
     {
-        name: 'tomato',
-        id: '1'
+        title: 'tomato',
+        id: '1',
+        category: 'vegetable'
     },
     {
-        name: 'radish',
-        id: '2'
+        title: 'radish',
+        id: '2',
+        category: 'vegetable'
     },
     {
-        name: 'ham',
-        id: '3'
+        title: 'ham',
+        id: '3',
+        category: 'meat'
     },
     {
-        name: 'parsley',
-        id: '4'
+        title: 'parsley',
+        id: '4',
+        category: 'condiment'
     },
     {
-        name: 'bread',
-        id: '5'
+        title: 'bread',
+        id: '5',
+        category: 'grain'
 
     },
     {
-        name: 'bouillan',
-        id: '6'
+        title: 'bouillan',
+        id: '6',
+        category: 'condiment'
     },
     {
-        name: 'carrot',
-        id: '7'
+        title: 'carrot',
+        id: '7',
+        category: 'vegetable'
     },
     {
-        name: 'chicken',
-        id: '8'
+        title: 'chicken',
+        id: '8',
+        category: 'meat'
     },
     {
-        name: 'egg',
-        id: '9'
+        title: 'egg',
+        id: '9',
+        category: 'dairy'
     },
     {
-        name: 'flour',
-        id: '10'
+        title: 'flour',
+        id: '10',
+        category: 'grain'
     },
     {
-        name: 'bacon',
-        id: '11'
+        title: 'bacon',
+        id: '11',
+        category: 'meat'
     }
 ];
 

@@ -75,7 +75,7 @@ export default class Header extends React.Component {
     };
 
     renderPopup = () => {
-        if((this.props.location.pathname === '/' || this.props.location.pathname === '/register') && this.state.logingIn){
+        if(!this.context.loggedIn && this.state.logingIn){
             return(
                 <div className='popupContainer'>
                     <span className='popup'>
@@ -107,11 +107,13 @@ export default class Header extends React.Component {
                 <div className='popupContainer'>
                     <span className='popup'>
                         <i className='closePopup far fa-times-circle' onClick={this.toggleNav} />
-                        <ul className='navList'>
-                            <li><Link className='navLink' onClick={this.toggleNav} to={'/pantry'}>Pantry</Link></li>
-                            <li><Link className='navLink' onClick={this.toggleNav} to={'/recipes'}>Recipes</Link></li>
-                            <li><Link className='navLink' onClick={this.toggleNav} to={'/'}>Home</Link></li>
-                        </ul>
+                            <ul className='navList'>
+                                <li><Link className='navLink' onClick={this.toggleNav} to={'/pantry'}>Pantry</Link></li>
+                                
+                                <li><Link className='navLink' onClick={this.toggleNav} to={'/recipes'}>Recipes</Link></li>
+                                
+                                <li><Link className='navLink' onClick={this.toggleNav} to={'/'}>Home</Link></li>
+                            </ul>
                     </span>
                 </div>
             )
@@ -128,9 +130,9 @@ export default class Header extends React.Component {
                 className='logo'
                 alt='Pantry Buddy logo'    
             />
-            {   location.pathname === '/' || location.pathname === '/register' 
+            {   !this.context.loggedIn  
                 ?  <i className='fas fa-key login_icon' onClick={this.toggleLogin} />
-                : <i className='fas fa-bars hamburger' onClick={this.toggleNav}></i> 
+                : <i className='fas fa-bars hamburger' onClick={this.toggleNav} />
             }
             { this.renderPopup() }
         </header>

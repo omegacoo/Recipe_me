@@ -10,6 +10,7 @@ import Register from '../Register/Register';
 import BackButton from '../BackButton/BackButton';
 import Pantry from '../Pantry/Pantry';
 import Recipes from '../Recipes/Recipes';
+import GuestPantry from '../GuestPantry/GuestPantry';
 
 import sampleData from '../../sampleData';
 
@@ -126,13 +127,19 @@ export default class App extends React.Component {
                         component={Recipes}
                     />
                     <Route 
+                        path={'/guestpantry'}
+                        component={GuestPantry}
+                    />
+                    <Route 
                         path={['/login',
                                '/register', 
                                '/inputselect',
                                '/ingredients',
                                '/recipes',
                                '/available',
-                               '/pantry']}
+                               '/pantry',
+                               '/guestpantry',
+                               '/guestrecipes']}
                         component={BackButton}
                     />
                 </StoreContext.Provider>
