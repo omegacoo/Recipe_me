@@ -120,9 +120,16 @@ export default class Header extends React.Component {
         }
     };
 
-    render(){
-        const { location } = this.props;
+    renderLoginOrHamburger = () => {
+        if(!this.context.loggedIn){
+            return <i className='fas fa-key login_icon' onClick={this.toggleLogin} />
+        }
+        console.log();
+        
+        return <i className='fas fa-bars hamburger' onClick={this.toggleNav} />
+    };
 
+    render(){
         return(
         <header className='Header'>
             <img 
@@ -130,10 +137,7 @@ export default class Header extends React.Component {
                 className='logo'
                 alt='Pantry Buddy logo'    
             />
-            {   !this.context.loggedIn  
-                ?  <i className='fas fa-key login_icon' onClick={this.toggleLogin} />
-                : <i className='fas fa-bars hamburger' onClick={this.toggleNav} />
-            }
+            { this.renderLoginOrHamburger() }
             { this.renderPopup() }
         </header>
         );

@@ -35,6 +35,12 @@ export default class App extends React.Component {
         this.fetchIngredients();
     };
 
+    handleTokenRefresh = () => {
+        if(this.state.loggedIn){
+            console.log('logged in!');
+        };
+    };
+
     fetchIngredients(){
         fetch(config.API_ENDPOINT + '/api/ingredients')
             .then(res => {
