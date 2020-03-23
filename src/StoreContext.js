@@ -3,6 +3,7 @@ import React from 'react';
 const StoreContext = React.createContext({
     ingredients: [],
     userIngredients: [],
+    availableRecipes: [],
     availableGuestRecipes: [],
     guestIngredients: [],
     guestUserIngredients: [],

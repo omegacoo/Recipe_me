@@ -10,7 +10,7 @@ exports[`Header component renders UI correctly 1`] = `
     src="logo.png"
   />
   <i
-    className="fas fa-key login_icon"
+    className="fas fa-bars hamburger"
     onClick={[Function]}
   />
 </header>

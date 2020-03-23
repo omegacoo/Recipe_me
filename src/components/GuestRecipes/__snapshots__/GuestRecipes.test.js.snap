@@ -14,5 +14,11 @@ exports[`Recipes component renders UI correctly 1`] = `
   >
     Sorry, no recipes found...
   </ul>
+  <button
+    className="guest_ingredients"
+    onClick={[Function]}
+  >
+    Ingredients
+  </button>
 </div>
 `;

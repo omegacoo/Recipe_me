@@ -21,6 +21,7 @@ export default class App extends React.Component {
     state = {
         baseIngredients: [],
         userIngredients: [],
+        availableRecipes: [],
         recipes: sampleData.sampleRecipes,
         availableGuestRecipes: [],
         loggedIn: false,
@@ -100,6 +101,7 @@ export default class App extends React.Component {
     render(){
         let contextValue = {
             baseIngredients: this.state.baseIngredients,
+            availableRecipes: this.state.availableRecipes,
             availableGuestRecipes: this.state.availableGuestRecipes,
             userIngredients: this.state.userIngredients,
             loggedIn: this.state.loggedIn,

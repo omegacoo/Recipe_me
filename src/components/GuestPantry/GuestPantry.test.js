@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import Pantry from './Pantry';
+import GuestPantry from './GuestPantry';
 
 describe('Pantry component', () => {
     it('renders without crashing', () => {
@@ -10,7 +10,7 @@ describe('Pantry component', () => {
 
         ReactDOM.render(
             <BrowserRouter>
-                <Pantry />
+                <GuestPantry />
             </BrowserRouter>, 
             div
         );
@@ -21,7 +21,7 @@ describe('Pantry component', () => {
         expect(
         renderer.create(
             <BrowserRouter>
-                <Pantry />
+                <GuestPantry />
             </BrowserRouter>).toJSON()
         ).toMatchSnapshot();
     });

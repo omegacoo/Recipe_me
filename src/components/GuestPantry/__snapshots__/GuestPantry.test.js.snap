@@ -7,9 +7,7 @@ exports[`Pantry component renders UI correctly 1`] = `
   <h1
     className="Pantry_title"
   >
-     Let's fill that Pantry, 
-    buddy
-    !
+     Let's fill that Pantry, Guest!
   </h1>
   <section
     className="Pantry_icons"
@@ -45,5 +43,11 @@ exports[`Pantry component renders UI correctly 1`] = `
       onClick={[Function]}
     />
   </section>
+  <button
+    className="guest_recipes"
+    onClick={[Function]}
+  >
+    Recipes
+  </button>
 </div>
 `;

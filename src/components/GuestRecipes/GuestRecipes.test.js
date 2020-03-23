@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import Recipes from './Recipes';
+import GuestRecipes from './GuestRecipes';
 
 describe('Recipes component', () => {
     it('renders without crashing', () => {
@@ -10,7 +10,7 @@ describe('Recipes component', () => {
 
         ReactDOM.render(
             <BrowserRouter>
-                <Recipes />
+                <GuestRecipes />
             </BrowserRouter>, 
             div
         );
@@ -21,7 +21,7 @@ describe('Recipes component', () => {
         expect(
         renderer.create(
             <BrowserRouter>
-                <Recipes />
+                <GuestRecipes />
             </BrowserRouter>).toJSON()
         ).toMatchSnapshot();
     });
