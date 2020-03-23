@@ -15,6 +15,10 @@ export default class GuestPantry extends React.Component {
         userIngredients: this.context.guestUserIngredients
     };
 
+    componentDidMount = () => {
+        alert('This is just a small sample of what the fully featured App will contain. Please enjoy!');
+    };
+
     handleIngredientClick = e => {
         let item = this.state.baseIngredients.find(i => i.id == e.target.id);
         if(this.state.userIngredients.find(i => i.id == item.id)){
