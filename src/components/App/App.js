@@ -22,7 +22,7 @@ export default class App extends React.Component {
         baseIngredients: [],
         userIngredients: [],
         availableRecipes: [],
-        recipes: sampleData.sampleRecipes,
+        recipes: [],
         availableGuestRecipes: [],
         loggedIn: false,
         userName: '',
@@ -98,10 +98,32 @@ export default class App extends React.Component {
 
     onLogin = userName => {
         let properUserName = userName[0].toUpperCase() + userName.slice(1);
+        
         this.setState({
             loggedIn: true,
             userName: properUserName
         });
+    };
+
+    fetchRecipes = () => {
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        const myHeaders = new Headers();
+        myHeaders.append("Cookies", cookie);
+        fetch(config.API_ENDPOINT + '/api/recipes', { headers: myHeaders })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText)
+                };
+                return res.json()
+            })
+            .then(resJson => {
+                this.setState({
+                    recipes: resJson
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            })
     };
 
     render(){
@@ -119,6 +141,7 @@ export default class App extends React.Component {
             onLogin: this.onLogin,
             updateGuestUserIngredients: this.updateGuestUserIngredients,
             setAvailableGuestRecipes: this.setAvailableGuestRecipes,
+            fetchRecipes: this.fetchRecipes,
         };
 
         return(

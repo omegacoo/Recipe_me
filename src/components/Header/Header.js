@@ -48,16 +48,16 @@ export default class Header extends React.Component {
             .then(res => {
                 if(!res.ok){
                     throw new Error(res.status) 
-                };
+                };                
                 return res.text()
             })
-            .then(resText => {
+            .then(resText => {                
                 this.context.onLogin(this.state.username);
                 this.toggleLogin();
                 this.props.history.push('/pantry');
             })
             .catch(err => {
-                console.log(err, myBody);
+                console.log(err);
             })
             
     };
