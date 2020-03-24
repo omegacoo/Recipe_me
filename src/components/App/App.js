@@ -136,7 +136,6 @@ export default class App extends React.Component {
             userName: this.state.userName,
             guestIngredients: this.state.guestIngredients,
             guestUserIngredients: this.state.guestUserIngredients,
-            onLandingPageLoginClick: this.onLandingPageLoginClick,
             updateUserIngredients: this.updateUserIngredients,
             onLogin: this.onLogin,
             updateGuestUserIngredients: this.updateGuestUserIngredients,

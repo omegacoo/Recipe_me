@@ -31,3 +31,9 @@
 .landingButton:active {
     color: black;
 } 
+
+.version {
+    font-size: 2vh;
+    bottom: 0;
+    position: absolute;
+}
