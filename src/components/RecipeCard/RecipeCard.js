@@ -9,10 +9,10 @@ export default class RecipeCard extends React.Component {
     };
 
     handleCardClick = e => {
-        this.context.recipes
-        this.setState({
+        // this.context.recipes
+        // this.setState({
 
-        });
+        // });
     };
 
     render(){
