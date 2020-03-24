@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 import StoreContext from '../../StoreContext';
+import jwt from 'jsonwebtoken';
 
 import logo from '../../assets/logo.png';
 
@@ -44,14 +45,27 @@ export default class Header extends React.Component {
         myHeaders.append("Content-Type", "application/json");
         const myBody = JSON.stringify({ "user_name": this.state.username, "password": this.state.password });
 
-        fetch(config.API_ENDPOINT + '/api/auth/login',  { method: 'POST', body: myBody, headers: myHeaders, credentials: 'include' })
+        fetch(config.API_ENDPOINT + '/api/auth/login',  { method: 'POST', body: myBody, headers: myHeaders })
             .then(res => {
                 if(!res.ok){
                     throw new Error(res.status) 
                 };                
+                const Xtoken = res.headers.get('X-token');
+                
+                try{
+                    jwt.verify(Xtoken, config.JWT_SECRET)
+                } catch(e) {
+                    if(e instanceof jwt.JsonWebTokenError){
+                        return res.status(401).end()
+                    };
+                    return res.status(400).end()
+                };
+                
+                document.cookie = `token=${Xtoken}`;
+                                 
                 return res.text()
             })
-            .then(resText => {                
+            .then(resText => {    
                 this.context.onLogin(this.state.username);
                 this.toggleLogin();
                 this.props.history.push('/pantry');

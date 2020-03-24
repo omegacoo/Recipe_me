@@ -109,7 +109,7 @@ export default class App extends React.Component {
         const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         const myHeaders = new Headers();
         myHeaders.append("Cookies", cookie);
-        fetch(config.API_ENDPOINT + '/api/recipes')
+        fetch(config.API_ENDPOINT + '/api/recipes', { headers: myHeaders })
             .then(res => {
                 if(!res.ok){
                     throw new Error(res.statusText)
