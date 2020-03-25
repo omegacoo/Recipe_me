@@ -61,7 +61,7 @@ export default class RecipeCard extends React.Component {
             return(
                 <div className='RecipeCard_full'>
                     <i className='closePopup far fa-times-circle' onClick={this.toggleCardOpen} />
-                    <h2 className='RecipeCard_full_title'>{this.props.recipe.title}</h2>
+                    <div className='title_container'><h2 className='RecipeCard_full_title'>{this.props.recipe.title}</h2></div>
                     <section className='Recipe_times'>
                         <span className='prep_time'>prep time: {this.props.recipe.prep_time}</span>
                         <span className='cook_time'>cook time: {this.props.recipe.cook_time}</span>

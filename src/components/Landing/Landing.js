@@ -15,7 +15,7 @@ export default class Landing extends React.Component {
                 <Link className='landingButton' to={'/register'}>
                     Register
                 </Link>
-                <p className='version'>Alpha v 2.0</p>
+                <p className='version'>Alpha v2.1.0</p>
             </div>
         );
     };
