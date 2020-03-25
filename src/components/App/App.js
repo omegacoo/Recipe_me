@@ -62,7 +62,7 @@ export default class App extends React.Component {
 
     setAvailableGuestRecipes = () => {
         let availableGuestRecipes = [];
-        let ing = this.state.guestUserIngredients.map(i => i.id);
+        let ingredients = this.state.guestUserIngredients.map(i => i.id);
 
         if(this.state.guestUserIngredients.length <= 0){
             return false
@@ -71,7 +71,7 @@ export default class App extends React.Component {
         this.state.guestRecipes.map(r => {
             let rKey = r.ingredients.values();
             for(const key of rKey){
-                if(!ing.includes(key.id)){
+                if(!ingredients.includes(key)){
                     return false
                 };
             };
