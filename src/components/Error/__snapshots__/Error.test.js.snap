@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component renders UI correctly 1`] = `
+<div
+  className="Error"
+>
+  An error has occured.
+  <button
+    onClick={[Function]}
+  >
+    Return Home
+  </button>
+</div>
+`;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import StoreContext from '../../StoreContext';
 import config from '../../config';
@@ -105,13 +105,18 @@ export default class App extends React.Component {
         });
     };
 
+    // Goal is to POST updated userIngredients and receive updated available recipes
     fetchRecipes = () => {
         const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         const myHeaders = new Headers();
         myHeaders.append("Cookies", cookie);
+
         fetch(config.API_ENDPOINT + '/api/recipes', { headers: myHeaders })
             .then(res => {
                 if(!res.ok){
+                    this.setState({
+                        loggedIn: false
+                    });
                     throw new Error(res.statusText)
                 };
                 return res.json()
@@ -147,16 +152,11 @@ export default class App extends React.Component {
             <div className='App'>
                 <StoreContext.Provider value={contextValue}>
                     <Route 
-                        path={'/'}
                         component={Header}
                     />
                     <Route 
                         exact path={'/'}
                         component={Landing}
-                    />
-                    <Route 
-                        path={'/register'}
-                        component={Register}
                     />
                     <Route 
                         path={'/pantry'}
@@ -167,6 +167,10 @@ export default class App extends React.Component {
                         component={Recipes}
                     />
                     <Route 
+                        path={'/register'}
+                        component={Register}
+                    /> 
+                    <Route 
                         path={'/guestpantry'}
                         component={GuestPantry}
                     />
@@ -175,15 +179,9 @@ export default class App extends React.Component {
                         component={GuestRecipes}
                     />
                     <Route 
-                        path={['/login',
-                               '/register', 
-                               '/inputselect',
-                               '/ingredients',
-                               '/recipes',
-                               '/available',
-                               '/pantry',
-                               '/guestpantry',
-                               '/guestrecipes']}
+                        path={['/register',
+                            '/guestpantry',
+                            '/guestrecipes']}
                         component={BackButton}
                     />
                 </StoreContext.Provider>

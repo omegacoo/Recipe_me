@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Error from '../Error/Error';
+
 import StoreContext from '../../StoreContext';
 
 import './Pantry.css';
@@ -84,20 +86,30 @@ export default class Pantry extends React.Component {
         });
     };
 
+    renderView = () => {
+        if(this.context.loggedIn){
+            return(
+                <div className='Pantry'>
+                    <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, { this.context.userName !== '' ? this.context.userName : 'buddy' }!</h1>
+                    <section className='Pantry_icons'>
+                        <i className='fas fa-drumstick-bite' id='meat' onClick={this.togglePopup}></i>
+                        <i className='fas fa-carrot' id='vegetable' onClick={this.togglePopup}></i>
+                        <i className='fas fa-cheese' id='dairy' onClick={this.togglePopup}></i>
+                        <i className='fas fa-bread-slice' id='grain' onClick={this.togglePopup}></i>
+                        <i className='fas fa-apple-alt' id='fruit' onClick={this.togglePopup}></i>
+                        <i className='fas fa-mortar-pestle' id='condiment' onClick={this.togglePopup}></i>
+                    </section>
+                    { this.state.listOpen ? this.renderPopup() : null }
+                </div>
+            )        
+        } else {
+            return  <Error 
+                        history={this.props.history}
+                    />
+        }
+    };
+
     render(){
-        return(
-            <div className='Pantry'>
-                <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, { this.context.userName !== '' ? this.context.userName : 'buddy' }!</h1>
-                <section className='Pantry_icons'>
-                    <i className='fas fa-drumstick-bite' id='meat' onClick={this.togglePopup}></i>
-                    <i className='fas fa-carrot' id='vegetable' onClick={this.togglePopup}></i>
-                    <i className='fas fa-cheese' id='dairy' onClick={this.togglePopup}></i>
-                    <i className='fas fa-bread-slice' id='grain' onClick={this.togglePopup}></i>
-                    <i className='fas fa-apple-alt' id='fruit' onClick={this.togglePopup}></i>
-                    <i className='fas fa-mortar-pestle' id='condiment' onClick={this.togglePopup}></i>
-                </section>
-                { this.state.listOpen ? this.renderPopup() : null }
-            </div>
-        );
+        return <>{this.renderView()}</>
     };
 };

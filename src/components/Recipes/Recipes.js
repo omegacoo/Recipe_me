@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Error from '../Error/Error';
+
 import RecipeCard from '../RecipeCard/RecipeCard';
 
 import './Recipes.css';
@@ -26,14 +28,24 @@ export default class Recipes extends React.Component {
         };
     };
 
+    renderView = () => {
+        if(this.context.loggedIn){
+            return(
+                <div className='Recipes'>
+                    <h1 className='Recipes_title'>&nbsp;Let's see what you can make!</h1>
+                    <ul className='RecipesList'>
+                        {this.renderRecipes()}
+                    </ul>
+                </div>
+            )
+        } else {
+            return  <Error  
+                        history={this.props.history}
+                    />
+        }
+    };
+
     render(){
-        return(
-            <div className='Recipes'>
-                <h1 className='Recipes_title'>&nbsp;Let's see what you can make!</h1>
-                <ul className='RecipesList'>
-                    {this.renderRecipes()}
-                </ul>
-            </div>
-        );
+        return <>{this.renderView()}</>
     };
 };

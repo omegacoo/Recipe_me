@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 import StoreContext from '../../StoreContext';
@@ -15,9 +14,6 @@ import './Header.css';
 
 export default class Header extends React.Component {
     static contextType = StoreContext;
-    static propTypes = {
-        location: PropTypes.object.isRequired
-    };
 
     state = {
         username: '',
@@ -125,8 +121,6 @@ export default class Header extends React.Component {
                                 <li><Link className='navLink' onClick={this.toggleNav} to={'/pantry'}>Pantry</Link></li>
                                 
                                 <li><Link className='navLink' onClick={this.toggleNav} to={'/recipes'}>Recipes</Link></li>
-                                
-                                <li><Link className='navLink' onClick={this.toggleNav} to={'/'}>Home</Link></li>
                             </ul>
                     </span>
                 </div>

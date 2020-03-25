@@ -1,0 +1,16 @@
+.Error {
+    color: red;
+    font-size: 5vh;
+    text-align: center;
+    margin-top: 25vh;
+}
+
+.Error button {
+    border: 5px solid black;
+    border-radius: 15px;
+    margin: 5vh;
+    padding: 5vh;
+    background-color: white; 
+    font-size: 5vw;
+    overflow: hidden;
+}
