@@ -42,7 +42,7 @@ exports[`App component renders UI correctly 1`] = `
     <p
       className="version"
     >
-      Alpha v 2.0
+      Alpha v2.1.0
     </p>
   </div>
 </div>
