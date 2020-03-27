@@ -62,7 +62,12 @@ export default class App extends React.Component {
     };
 
     fetchUserIngredients = (userId) => {
-        fetch(config.API_ENDPOINT + '/api/user_ingredients', { headers: { user_id: userId } })
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        const myHeaders = new Headers();
+        myHeaders.append("Cookies", cookie);
+        myHeaders.append('user_id', userId);
+
+        fetch(config.API_ENDPOINT + '/api/user_ingredients', { headers: myHeaders })
             .then(res => {
                 if(!res.ok){
                     throw new Error(res.statusText)
@@ -155,7 +160,7 @@ export default class App extends React.Component {
     };
 
     // Goal is to POST updated userIngredients and receive updated available recipes
-    fetchRecipes = () => {
+    fetchAvailableRecipes = () => {
         const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         const myHeaders = new Headers();
         myHeaders.append("Cookies", cookie);
