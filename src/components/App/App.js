@@ -26,6 +26,7 @@ export default class App extends React.Component {
         availableGuestRecipes: [],
         loggedIn: false,
         userName: '',
+        userId: null,
         guestIngredients: sampleData.sampleIngredients,
         guestRecipes: sampleData.sampleRecipes,
         guestUserIngredients: []
@@ -60,6 +61,26 @@ export default class App extends React.Component {
             })
     };
 
+    fetchUserIngredients = (userId) => {
+        fetch(config.API_ENDPOINT + '/api/user_ingredients', { headers: { user_id: userId } })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText)
+                };
+                return res.json()
+            })
+            .then(resJson => {
+                let newRes = resJson.map(i => i = this.state.ingredients.find(({ id }) => id === i.ingredient_id));
+                
+                this.setState({
+                    userIngredients: newRes
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    };
+
     setAvailableGuestRecipes = () => {
         let availableGuestRecipes = [];
         let ingredients = this.state.guestUserIngredients.map(i => i.id);
@@ -85,6 +106,30 @@ export default class App extends React.Component {
     };
 
     updateUserIngredients = userIngredients => {
+        userIngredients = userIngredients.map(i => i = { ingredient_id: i.id, user_id: this.state.userId });
+        
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");  
+        myHeaders.append("user_id", this.state.userId);
+
+        const fetchOptions = {
+            method: 'POST',
+            body: JSON.stringify(userIngredients),
+            headers: myHeaders
+        };
+        
+
+        fetch(config.API_ENDPOINT + '/api/user_ingredients', fetchOptions)
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText)
+                };
+            })
+            .catch(err => {
+                console.log(err);                
+            })
+
+
         this.setState({
             userIngredients
         });
@@ -96,13 +141,17 @@ export default class App extends React.Component {
         });
     };
 
-    onLogin = userName => {
+    onLogin = (userName, userId) => {
         let properUserName = userName[0].toUpperCase() + userName.slice(1);
-        
+        userId = parseInt(userId);
+
         this.setState({
             loggedIn: true,
-            userName: properUserName
-        });
+            userName: properUserName,
+            userId
+        },            
+            this.fetchUserIngredients(userId)
+        );
     };
 
     // Goal is to POST updated userIngredients and receive updated available recipes
@@ -146,6 +195,7 @@ export default class App extends React.Component {
             updateGuestUserIngredients: this.updateGuestUserIngredients,
             setAvailableGuestRecipes: this.setAvailableGuestRecipes,
             fetchRecipes: this.fetchRecipes,
+            fetchUserIngredients: this.fetchUserIngredients
         };
 
         return(

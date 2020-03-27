@@ -45,11 +45,6 @@ const sampleIngredients = [
         category: 'condiment'
     },
     {
-        title: 'water',
-        id: 10,
-        category: 'condiment'
-    },
-    {
         title: 'vanilla extract',
         id: 11,
         category: 'condiment'
@@ -120,12 +115,12 @@ const sampleRecipes = [
     {
         id: '2',
         title: 'Brownie in a mug',
-        description: `Easiest brownie ever! Single serving brownie microwaved in a mug. Takse 5 minutes to make.`,
+        description: `Easiest brownie ever! Single serving brownie microwaved in a mug. Takes 5 minutes to make.`,
         diet: null,
         instructions: `1. Add the dry ingredients to the mug and stir: place flour, sugar, cocoa, salt, and cinnamon in a microwave safe ceramic mug. Stir with a fork or spoon to mix well and break up any clumps. 2. Add the wet ingredients and stir: add the oil, water, and vanilla to the cup and stir until the mixture is smooth and there are no lumps. 3. Zap in microwave: place in microwave on high heat until the mixture is cooked through, about 1 minute and 40 seconds for a 1000 watt microwave, or 1 minute 10 seconds for a 1650 watt microwave. 4. Top with heavy whipping cream: let cool for a minute and serve with a teaspoon or two of whipping cream poured over.`,
         prep_time: '3 minutes',
         cook_time: '2 minutes',
-        ingredients: [7, 8, 13, 9, 3, 10, 21, 11, 12]
+        ingredients: [7, 8, 13, 9, 3, 21, 11, 12]
     },
     {
         id: '3',

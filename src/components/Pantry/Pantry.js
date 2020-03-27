@@ -82,7 +82,8 @@ export default class Pantry extends React.Component {
     togglePopup = e => {
         this.setState({
             currentList: e.target.id,
-            listOpen: !this.state.listOpen
+            listOpen: !this.state.listOpen,
+            userIngredients: this.context.userIngredients
         });
     };
 

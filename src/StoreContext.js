@@ -17,6 +17,7 @@ const StoreContext = React.createContext({
     updateGuestUserIngredients: () => {},
     setAvailableGuestRecipes: () => {},
     fetchRecipes: () => {},
+    fetchUserIngredients: () => {},
 });
 
 export default StoreContext;

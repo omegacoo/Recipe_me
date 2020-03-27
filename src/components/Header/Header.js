@@ -18,6 +18,7 @@ export default class Header extends React.Component {
     state = {
         username: '',
         password: '',
+        userId: null,
         logingIn: false,
         navigating: false
     };
@@ -47,6 +48,11 @@ export default class Header extends React.Component {
                     throw new Error(res.status) 
                 };                
                 const Xtoken = res.headers.get('X-token');
+                const userId = res.headers.get('user_id');
+
+                this.setState({
+                    userId
+                });
                 
                 try{
                     jwt.verify(Xtoken, config.JWT_SECRET)
@@ -62,7 +68,7 @@ export default class Header extends React.Component {
                 return res.text()
             })
             .then(resText => {    
-                this.context.onLogin(this.state.username);
+                this.context.onLogin(this.state.username, this.state.userId);
                 this.toggleLogin();
                 this.props.history.push('/pantry');
             })
