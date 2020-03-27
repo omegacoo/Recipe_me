@@ -11,10 +11,6 @@ import StoreContext from '../../StoreContext';
 export default class Recipes extends React.Component {
     static contextType = StoreContext;
 
-    componentDidMount = () => {
-        this.context.fetchAvailableRecipes();
-    };
-
     renderRecipes = () => {
         if(this.context.availableRecipes.length > 0){
             return this.context.availableRecipes.map(r =>

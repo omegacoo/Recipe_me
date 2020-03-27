@@ -36,12 +36,6 @@ export default class App extends React.Component {
         this.fetchIngredients();
     };
 
-    handleTokenRefresh = () => {
-        if(this.state.loggedIn){
-            console.log('logged in!');
-        };
-    };
-
     fetchIngredients(){
         fetch(config.API_ENDPOINT + '/api/ingredients')
             .then(res => {
@@ -111,11 +105,14 @@ export default class App extends React.Component {
     };
 
     updateUserIngredients = userIngredients => {
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
         userIngredients = userIngredients.map(i => i = { ingredient_id: i.id, user_id: this.state.userId });
         
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");  
         myHeaders.append("user_id", this.state.userId);
+        myHeaders.append("cookies", cookie);
 
         const fetchOptions = {
             method: 'POST',
@@ -129,6 +126,7 @@ export default class App extends React.Component {
                 if(!res.ok){
                     throw new Error(res.statusText)
                 };
+                console.log(res);
             })
             .catch(err => {
                 console.log(err);                
@@ -159,32 +157,6 @@ export default class App extends React.Component {
         );
     };
 
-    // Goal is to POST updated userIngredients and receive updated available recipes
-    fetchAvailableRecipes = () => {
-        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-        const myHeaders = new Headers();
-        myHeaders.append("Cookies", cookie);
-
-        fetch(config.API_ENDPOINT + '/api/recipes', { headers: myHeaders })
-            .then(res => {
-                if(!res.ok){
-                    this.setState({
-                        loggedIn: false
-                    });
-                    throw new Error(res.statusText)
-                };
-                return res.json()
-            })
-            .then(resJson => {
-                this.setState({
-                    recipes: resJson
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    };
-
     render(){
         let contextValue = {
             baseIngredients: this.state.baseIngredients,
@@ -199,7 +171,6 @@ export default class App extends React.Component {
             onLogin: this.onLogin,
             updateGuestUserIngredients: this.updateGuestUserIngredients,
             setAvailableGuestRecipes: this.setAvailableGuestRecipes,
-            fetchAvailableRecipes: this.fetchRecipes,
             fetchUserIngredients: this.fetchUserIngredients
         };
 
