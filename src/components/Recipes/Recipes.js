@@ -12,7 +12,7 @@ export default class Recipes extends React.Component {
     static contextType = StoreContext;
 
     componentDidMount = () => {
-        this.context.fetchRecipes();
+        this.context.fetchAvailableRecipes();
     };
 
     renderRecipes = () => {

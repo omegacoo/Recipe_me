@@ -16,7 +16,7 @@ const StoreContext = React.createContext({
     onLogin: () => {},
     updateGuestUserIngredients: () => {},
     setAvailableGuestRecipes: () => {},
-    fetchRecipes: () => {},
+    fetchAvailableRecipes: () => {},
     fetchUserIngredients: () => {},
 });
 

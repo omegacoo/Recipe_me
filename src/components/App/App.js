@@ -194,7 +194,7 @@ export default class App extends React.Component {
             onLogin: this.onLogin,
             updateGuestUserIngredients: this.updateGuestUserIngredients,
             setAvailableGuestRecipes: this.setAvailableGuestRecipes,
-            fetchRecipes: this.fetchRecipes,
+            fetchAvailableRecipes: this.fetchRecipes,
             fetchUserIngredients: this.fetchUserIngredients
         };
 
