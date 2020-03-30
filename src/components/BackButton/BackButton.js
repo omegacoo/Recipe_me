@@ -4,7 +4,7 @@ import './BackButton.css';
 
 export default class BackButton extends React.Component {
     handleClick = () => {
-        this.props.history.goBack();
+        this.props.history.push('/');
     };
 
     render(){
