@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { BrowserHistory } from 'react-router';
-
 import './Error.css';
 
 export default class Error extends React.Component {
