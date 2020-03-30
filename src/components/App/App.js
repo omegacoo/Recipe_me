@@ -55,7 +55,7 @@ export default class App extends React.Component {
             })
     };
 
-    fetchUserIngredients = (userId) => {
+    fetchUserIngredients = userId => {
         const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         const myHeaders = new Headers();
         myHeaders.append("Cookies", cookie);
@@ -77,6 +77,29 @@ export default class App extends React.Component {
             })
             .catch(err => {
                 console.log(err);
+            })
+    };
+
+    fetchAvailableRecipes = userId => {
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        const myHeaders = new Headers();
+        myHeaders.append("Cookies", cookie);
+        myHeaders.append('user_id', userId);
+
+        fetch(config.API_ENDPOINT + '/api/available_recipes', { headers: myHeaders })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText)
+                };
+                return res.json();                                
+            })
+            .then(resJson => {
+                this.setState({
+                    availableRecipes: resJson
+                })
+            })
+            .catch(err => {
+                console.log(err);                
             })
     };
 
@@ -107,6 +130,10 @@ export default class App extends React.Component {
     updateUserIngredients = userIngredients => {
         const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
+        this.setState({
+            userIngredients
+        });
+
         userIngredients = userIngredients.map(i => i = { ingredient_id: i.id, user_id: this.state.userId });
         
         let myHeaders = new Headers();
@@ -126,16 +153,11 @@ export default class App extends React.Component {
                 if(!res.ok){
                     throw new Error(res.statusText)
                 };
-                console.log(res);
+                this.fetchAvailableRecipes(this.state.userId);
             })
             .catch(err => {
                 console.log(err);                
             })
-
-
-        this.setState({
-            userIngredients
-        });
     };
 
     updateGuestUserIngredients = guestUserIngredients => {
@@ -153,7 +175,8 @@ export default class App extends React.Component {
             userName: properUserName,
             userId
         },            
-            this.fetchUserIngredients(userId)
+            this.fetchUserIngredients(userId),
+            this.fetchAvailableRecipes(userId)
         );
     };
 

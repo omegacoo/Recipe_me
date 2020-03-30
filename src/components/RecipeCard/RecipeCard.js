@@ -22,7 +22,7 @@ export default class RecipeCard extends React.Component {
     renderIngredients = () => {
         let ingredientIds = this.props.recipe.ingredients;
 
-        let ingredients = ingredientIds.map(i => i = this.context.guestIngredients.find(gI => gI.id === i));
+        let ingredients = ingredientIds.map(i => i = this.context.guestIngredients.find(gI => gI.id === i) || this.context.userIngredients.find(uI => uI.id === i));
         
 
         return ingredients.map(i => 
