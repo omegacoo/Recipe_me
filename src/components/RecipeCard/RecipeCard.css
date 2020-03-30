@@ -84,7 +84,7 @@
 }
 
 .Recipe_ingredients {
-    width: 75%;
+    width: fit-content;
     height: fit-content;
     margin-top: 1vh;
     margin-bottom: 1vh;

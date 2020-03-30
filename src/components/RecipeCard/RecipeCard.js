@@ -20,14 +20,22 @@ export default class RecipeCard extends React.Component {
     };
 
     renderIngredients = () => {
-        let ingredientIds = this.props.recipe.ingredients;
+        let ingredients = this.props.recipe.ingredients;
 
-        let ingredients = ingredientIds.map(i => i = this.context.guestIngredients.find(gI => gI.id === i) || this.context.userIngredients.find(uI => uI.id === i));
-        
-
-        return ingredients.map(i => 
-            <li key={i.id} id={i.id}>{i.title}</li>
-        );
+        if(this.context.loggedIn){
+            ingredients = this.props.recipe.ingredients;
+            ingredients = ingredients.map(i => i = {...i, ...this.context.ingredients.find(I => I.id === i.ingredient_id)});
+            
+            return ingredients.map(i => 
+                <li key={i.ingredient_id} id={i.ingredient_id}>{i.quantity} {i.unit} {i.title}</li>    
+            )
+        } else {
+            ingredients = ingredients.map(i => i = this.context.guestIngredients.find(gI => gI.id === i));
+            
+            return ingredients.map(i => 
+                <li key={i.id} id={i.id}>{i.title}</li>
+            );
+        };
     };
 
     renderInstructions = () => {

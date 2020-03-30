@@ -186,6 +186,7 @@ export default class App extends React.Component {
             availableRecipes: this.state.availableRecipes,
             availableGuestRecipes: this.state.availableGuestRecipes,
             userIngredients: this.state.userIngredients,
+            ingredients: this.state.ingredients,
             loggedIn: this.state.loggedIn,
             userName: this.state.userName,
             guestIngredients: this.state.guestIngredients,
