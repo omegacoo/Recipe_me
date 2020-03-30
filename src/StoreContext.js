@@ -14,6 +14,7 @@ const StoreContext = React.createContext({
     onLandingPageGuestClick: () => {},
     updateUserIngredients: () => {},
     onLogin: () => {},
+    onLogout: () => {},
     updateGuestUserIngredients: () => {},
     setAvailableGuestRecipes: () => {},
     fetchUserIngredients: () => {},

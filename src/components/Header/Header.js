@@ -8,10 +8,6 @@ import logo from '../../assets/logo.png';
 
 import './Header.css';
 
-// TODO: There is going to need to be a state in the App component which keeps track
-// TODO: of whether or not the user is logged in, this will control what they see and
-// TODO: make some of the code on this component simpler.
-
 export default class Header extends React.Component {
     static contextType = StoreContext;
 
@@ -78,6 +74,18 @@ export default class Header extends React.Component {
             
     };
 
+    logOut = () => {
+        this.setState({
+            user_name: '',
+            password: '',
+            userId: null,
+            logingIn: false,
+            navigating: false
+        },
+            this.context.onLogout()
+        );
+    };
+
     handleUsernameChange = e => {
         this.setState({
             username: e.target.value
@@ -127,6 +135,8 @@ export default class Header extends React.Component {
                                 <li><Link className='navLink' onClick={this.toggleNav} to={'/pantry'}>Pantry</Link></li>
                                 
                                 <li><Link className='navLink' onClick={this.toggleNav} to={'/recipes'}>Recipes</Link></li>
+
+                                <li><Link className='log_out' onClick={this.logOut} to={'/'}>logout</Link></li>
                             </ul>
                     </span>
                 </div>
