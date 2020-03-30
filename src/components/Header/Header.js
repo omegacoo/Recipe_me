@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 import StoreContext from '../../StoreContext';
-import jwt from 'jsonwebtoken';
 
 import logo from '../../assets/logo.png';
 
@@ -49,15 +48,6 @@ export default class Header extends React.Component {
                 this.setState({
                     userId
                 });
-                
-                try{
-                    jwt.verify(Xtoken, config.JWT_SECRET)
-                } catch(e) {
-                    if(e instanceof jwt.JsonWebTokenError){
-                        return res.status(401).end()
-                    };
-                    return res.status(400).end()
-                };
                 
                 document.cookie = `token=${Xtoken}`;
                                  

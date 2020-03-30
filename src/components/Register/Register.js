@@ -1,5 +1,7 @@
 import React from 'react';
 
+import config from '../../config';
+
 import './Register.css';
 
 export default class Register extends React.Component {
@@ -7,7 +9,8 @@ export default class Register extends React.Component {
         username: '',
         password: '',
         confirmPassword: '',
-        email: ''
+        email: '',
+        error: null
     };
 
     handleUsernameChange = e => {
@@ -36,7 +39,40 @@ export default class Register extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        console.log('implement registration!');
+        
+        if(this.state.password !== this.state.confirmPassword){
+            this.setState({
+                error: 'passwords must match'
+            });
+            return false
+        };
+        
+        const myBody = {
+            user_name: this.state.username,
+            password: this.state.password,
+            email: this.state.email
+        };
+
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const fetchOptions = {
+            method: 'POST',
+            body: JSON.stringify(myBody),
+            headers: myHeaders
+        };
+
+        fetch(config.API_ENDPOINT + '/api/register', fetchOptions)
+            .then(res => {
+                if(!res.ok){
+                    throw new Error(res.statusText)
+                };
+                console.log('User created successfully');
+                this.props.history.push('/');
+            })
+            .catch(err => {
+                console.log(err);
+            })
     };
 
     render(){
