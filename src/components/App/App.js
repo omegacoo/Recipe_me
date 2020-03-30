@@ -56,7 +56,7 @@ export default class App extends React.Component {
     };
 
     fetchUserIngredients = userId => {
-        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1");
         const myHeaders = new Headers();
         myHeaders.append("Cookies", cookie);
         myHeaders.append('user_id', userId);
@@ -81,7 +81,7 @@ export default class App extends React.Component {
     };
 
     fetchAvailableRecipes = userId => {
-        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1");
         const myHeaders = new Headers();
         myHeaders.append("Cookies", cookie);
         myHeaders.append('user_id', userId);
@@ -128,7 +128,7 @@ export default class App extends React.Component {
     };
 
     updateUserIngredients = userIngredients => {
-        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        const cookie = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1");
 
         this.setState({
             userIngredients
