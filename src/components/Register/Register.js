@@ -77,7 +77,7 @@ export default class Register extends React.Component {
 
     render(){
         return(
-            <>
+            <div className='Register_main'>
                 <h1 className='Register_title'>&nbsp;You are on your way to some great meals! So close now...</h1>
                 <form
                     className='Register'
@@ -125,7 +125,7 @@ export default class Register extends React.Component {
                         Register
                     </button>
                 </form>
-            </>
+            </div>
         );
     };
 };
