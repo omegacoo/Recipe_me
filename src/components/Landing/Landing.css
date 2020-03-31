@@ -1,9 +1,12 @@
+/* Mobile Phone Portrait */
 .Landing {
     height: 100vh;
+    box-shadow: -1px -5px 10px;
 }
 
 .description {
     margin: 4vh;
+    font-size: 10vw;
 }
 
 .landingButton {
@@ -21,7 +24,7 @@
     margin-right: auto;
     margin-top: 5vh;
     text-decoration: none;
-    font-size: 5vh;
+    font-size: 8vw;
     font-weight: bolder;
 }
 
@@ -36,4 +39,11 @@
     font-size: 2vh;
     bottom: 0;
     position: absolute;
+}
+
+/* iPad 768x1024 */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+    .description {
+        font-size: 8vw;
+    }
 }

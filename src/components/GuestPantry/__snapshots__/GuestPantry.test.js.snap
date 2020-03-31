@@ -12,35 +12,41 @@ exports[`Pantry component renders UI correctly 1`] = `
   <section
     className="Pantry_icons"
   >
-    <i
-      className="fas fa-drumstick-bite"
+    <img
+      alt="meat"
       id="meat"
       onClick={[Function]}
+      src="sausage.png"
     />
-    <i
-      className="fas fa-carrot"
+    <img
+      alt="vegetable"
       id="vegetable"
       onClick={[Function]}
+      src="broccoli.png"
     />
-    <i
-      className="fas fa-cheese"
+    <img
+      alt="dairy"
       id="dairy"
       onClick={[Function]}
+      src="milk.png"
     />
-    <i
-      className="fas fa-bread-slice"
+    <img
+      alt="grain"
       id="grain"
       onClick={[Function]}
+      src="loaf.png"
     />
-    <i
-      className="fas fa-apple-alt"
+    <img
+      alt="fruit"
       id="fruit"
       onClick={[Function]}
+      src="strawberry.png"
     />
-    <i
-      className="fas fa-mortar-pestle"
+    <img
+      alt="condiment"
       id="condiment"
       onClick={[Function]}
+      src="Salt_n_Pepper.png"
     />
   </section>
   <button

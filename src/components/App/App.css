@@ -10,5 +10,6 @@ body * {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: #A5C2FF;
+    background-image: url('../../assets/background.png');
+    background-size: cover;
 }

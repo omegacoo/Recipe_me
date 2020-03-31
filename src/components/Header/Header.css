@@ -1,25 +1,25 @@
+/* Mobile Phone Portrait */
 .Header {
     height: 7vh;
-    background-color: #6495ED;
+    background-image: url('../../assets/marble.jpg');
+    background-size: cover;
     display: grid;
     grid-template-columns: 7vh;
     grid-template-rows: 10vw 80vw 10vw;
-    border-bottom: 3px solid black;
 }
 
 .logo {
-    margin: 1vh;
-    height: 10vh;
-    border: 3px solid black;
-    border-radius: 50%;
+    margin: 1vw;
+    height: 11vh;
+    z-index: 2;
 }
 
 .login_icon {
     grid-column: 13;
-    width: 30px;
-    font-size: 30px;
-    color: white;
-    margin-top: 1.3vh;
+    width: 5vh;
+    font-size: 5vh;
+    color: black;
+    margin-top: 1vh;
 }
 
 .popupContainer {
@@ -29,20 +29,25 @@
 
 .popup {
     z-index: 2;
-    background-color: #6495ED;
+    background-image: url('../../assets/postit.png');
+    background-size: 60vw 100%;
+    background-repeat: no-repeat;
     color: black;
-    border: 5px solid black;
-    border-radius: 15px;;
     padding: 2vh;
     position: absolute;
-    right: -85vw;
+    right: -87vw;
     top: -5vh;
-    width: min-content;
+    width: 60vw;
     font-weight: bold;
 }
 
 .popup input {
     width: 50vw;
+    border: none;
+    box-shadow: -1px -1px 10px;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .popup ul {
@@ -53,6 +58,7 @@
 .popup li {
     list-style: none;
     margin: 4vh;
+    margin-bottom: 0;
 }
 
 .navLink {
@@ -68,8 +74,11 @@
     background-color: red;
     color: white;
     border-radius: 50%;
-    font-size: large;
-    float: right;
+    font-size: 3vh;
+    position: absolute;
+    right: 6vw;
+    top: 1vh;
+    box-shadow: 3px 3px 5px black;
 }
 
 .forgotInfo {
@@ -87,12 +96,58 @@
     border-radius: 15px;
     padding: 1vh;
     font-weight: bolder;
+    box-shadow: 5px 5px 5px;
 }
 
 .hamburger {
     grid-column: 13;
     width: 30px;
-    font-size: 30px;
+    font-size: 4vh;
     color: white;
-    margin-top: 1.3vh;
+    margin-top: 1.5vh;
+}
+
+.log_out {
+    font-size: 2vh;
+}
+
+/* iPhone X 375x812 */
+@media only screen and (min-width: 375px) and (min-height: 812px) {
+    .popup {
+        top: -4vh;
+        right: -85vw;
+    }
+}
+
+/* iPad 768x1024*/
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+    .login_icon {
+        width: 2vh;
+    }
+
+    .popup {
+        top: -7vh;
+        right: -90vw;
+        width: 40vw;
+        background-size: 40vw;
+    }
+
+    .popup label {
+        font-size: 3vw;
+    }
+
+    .popup input {
+        width: 30vw;
+        height: 3vh;
+        font-size: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    .login_button {
+        font-size: 3vw;
+    }
+
+    .navLink {
+        font-size: 3vh;
+    }
 }

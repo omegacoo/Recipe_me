@@ -3,6 +3,14 @@ import React from 'react';
 import StoreContext from '../../StoreContext';
 import sampleData from '../../sampleData';
 
+import meat from '../../assets/sausage.png';
+import vegetable from '../../assets/broccoli.png';
+import grain from '../../assets/loaf.png';
+import dairy from '../../assets/milk.png';
+import condiment from '../../assets/Salt_n_Pepper.png';
+import fruit from '../../assets/strawberry.png';
+import book from '../../assets/book.png';
+
 import './GuestPantry.css';
 
 export default class GuestPantry extends React.Component {
@@ -88,15 +96,15 @@ export default class GuestPantry extends React.Component {
             <div className='Pantry'>
                 <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, Guest!</h1>
                 <section className='Pantry_icons'>
-                    <i className='fas fa-drumstick-bite' id='meat' onClick={this.togglePopup}></i>
-                    <i className='fas fa-carrot' id='vegetable' onClick={this.togglePopup}></i>
-                    <i className='fas fa-cheese' id='dairy' onClick={this.togglePopup}></i>
-                    <i className='fas fa-bread-slice' id='grain' onClick={this.togglePopup}></i>
-                    <i className='fas fa-apple-alt' id='fruit' onClick={this.togglePopup}></i>
-                    <i className='fas fa-mortar-pestle' id='condiment' onClick={this.togglePopup}></i>
+                    <img src={meat} alt='meat' id='meat' onClick={this.togglePopup} />
+                    <img src={vegetable} alt='vegetable' id='vegetable' onClick={this.togglePopup} />
+                    <img src={dairy} alt='dairy' id='dairy' onClick={this.togglePopup} />
+                    <img src={grain} alt='grain' id='grain' onClick={this.togglePopup} />
+                    <img src={fruit} alt='fruit' id='fruit' onClick={this.togglePopup} />
+                    <img src={condiment} alt='condiment' id='condiment' onClick={this.togglePopup} />
                 </section>
                 { this.state.listOpen ? this.renderPopup() : null }
-                <button className='guest_recipes' onClick={this.handleRecipesClick}>Recipes</button>
+                <img src={book} alt='recipe_book' className='guest_recipes' onClick={this.handleRecipesClick} />
             </div>
         );
     };

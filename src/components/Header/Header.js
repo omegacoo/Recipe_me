@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import config from '../../config';
 import StoreContext from '../../StoreContext';
 
-import logo from '../../assets/logo.png';
+import logo from '../../assets/pantry.png';
 
 import './Header.css';
 
@@ -121,13 +121,13 @@ export default class Header extends React.Component {
                 <div className='popupContainer'>
                     <span className='popup'>
                         <i className='closePopup far fa-times-circle' onClick={this.toggleNav} />
-                            <ul className='navList'>
-                                <li><Link className='navLink' onClick={this.toggleNav} to={'/pantry'}>Pantry</Link></li>
-                                
-                                <li><Link className='navLink' onClick={this.toggleNav} to={'/recipes'}>Recipes</Link></li>
-
-                                <li><Link className='log_out' onClick={this.logOut} to={'/'}>logout</Link></li>
-                            </ul>
+                        <ul className='navList'>
+                            <li><Link className='navLink' onClick={this.toggleNav} to={'/pantry'}>Pantry</Link></li>
+                            
+                            <li><Link className='navLink' onClick={this.toggleNav} to={'/recipes'}>Recipes</Link></li>
+                            
+                            <li><Link className='log_out' onClick={this.logOut} to={'/'}>logout</Link></li>
+                        </ul>
                     </span>
                 </div>
             )
@@ -149,7 +149,8 @@ export default class Header extends React.Component {
             <img 
                 src={logo} 
                 className='logo'
-                alt='Pantry Buddy logo'    
+                alt='Pantry Buddy logo'
+                onClick={() => this.props.history.push('/')}  
             />
             { this.renderLoginOrHamburger() }
             { this.renderPopup() }

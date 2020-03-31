@@ -7,7 +7,6 @@ import config from '../../config';
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Register from '../Register/Register';
-import BackButton from '../BackButton/BackButton';
 import Pantry from '../Pantry/Pantry';
 import Recipes from '../Recipes/Recipes';
 import GuestPantry from '../GuestPantry/GuestPantry';
@@ -245,12 +244,6 @@ export default class App extends React.Component {
                     <Route 
                         path={'/guestrecipes'}
                         component={GuestRecipes}
-                    />
-                    <Route 
-                        path={['/register',
-                            '/guestpantry',
-                            '/guestrecipes']}
-                        component={BackButton}
                     />
                 </StoreContext.Provider>
             </div>
