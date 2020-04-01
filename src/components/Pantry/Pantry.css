@@ -1,65 +1,132 @@
+/* Mobile Phone Portrait */
+.Pantry {
+    box-shadow: -1px -5px 10px;
+}
+
 .Pantry_title {
     margin: 4vh;
-    text-align: justify;
+    margin-bottom: 0vh;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 10vw;
 }
 
 .Pantry_icons {
-    width: 75vw;
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-columns: 51% 51%;
-    grid-template-rows: 20vh 20vh 20vh;
-    text-align: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 18vh 18vh 18vh;
 }
 
-.Pantry_icons i {
-    border: 5px solid black;
+.Pantry_icons img {
+    border-bottom: .5vh solid rgb(90, 88, 80);
+    border-right: .5vh solid rgb(90, 88, 80);
     border-radius: 15px;
     margin: 2vh;
     padding-top: 1px;
-    background-color: white; 
-    font-size: 25vw;
+    background-color: #F0EAD6;
     overflow: hidden;
+    width: 17vh;
 }
 
 .Pantry .popupContainer {
     position: absolute;
 }
 
-.Pantry .popup {
+.Pantry_popup {
     z-index: 1;
-    background-color: #6495ED;
+    background-image: url('../../assets/drawer.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
     color: black;
-    border: 5px solid black;
-    border-radius: 15px;;
     padding: 2vh;
     position: absolute;
     width: min-content;
     font-weight: bold;
-    width: 80vw;
+    width: 100vw;
     height: 61vh;
-    left: 10vw;
-    top: -63vh;
+    top: -60vh;
     text-align: center;
+}
+
+.Pantry_popup .closePopup {
+    margin-right: 2vw;
+    margin-top: 2vh;
 }
 
 .Pantry_list {
     height: 75%;
+    width: 75%;
     overflow: scroll;
-    border: 2px solid black;
-    background-color: white;
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .Pantry_list li {
     margin: 1vh;
+    margin-top: 1.5vh;
     border: 1px solid black;
     border-radius: 15px;
     background-color: #c0392b;
+    background: linear-gradient(#c0392b, #6b2018);
     height: 5vh;
     padding-top: .8vh;
+    box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
 }
 
 .popup_title {
-    margin-top: -2vh;
+    margin-top: 5vh;
+    font-size: 3vh;
+    text-shadow: 0 -1px 0 #000;
+}
+
+.recipes {
+    border-bottom: .5vh solid rgb(90, 88, 80);
+    border-right: .5vh solid rgb(90, 88, 80);
+    border-radius: 15px;
+    background-color: #F0EAD6;
+    padding: 5px;
+    display: block;
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bolder;
+    width: 30vw;
+}
+
+/* iPhone X 375x812 Portrait */
+@media only screen and (min-width: 375px) and (min-height: 812px) {
+    .Pantry_title {
+        margin-top: 8vh;
+    }
+}
+
+/* iPad 768x1024 Portrait */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+    .Pantry_title {
+        text-align: center;
+        margin-top: 4vh;
+    }
+    
+    .Pantry_icons {
+        grid-template-rows: 17vh 17vh 17vh;
+        margin-bottom: 2vh;
+    }
+    
+    .Pantry_icons img {
+        width: 16vh;
+    }
+
+    .guest_recipes {
+        width: 15vh;
+    }
+
+    .Pantry_popup li {
+        font-size: 2.5vh;
+    }
 }

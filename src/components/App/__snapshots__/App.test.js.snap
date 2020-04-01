@@ -10,7 +10,8 @@ exports[`App component renders UI correctly 1`] = `
     <img
       alt="Pantry Buddy logo"
       className="logo"
-      src="logo.png"
+      onClick={[Function]}
+      src="pantry.png"
     />
     <i
       className="fas fa-key login_icon"
@@ -25,20 +26,18 @@ exports[`App component renders UI correctly 1`] = `
     >
        Ever wonder what you could throw together with all the odds and ends in your pantry?
     </h1>
-    <a
-      className="landingButton"
-      href="/guestpantry"
+    <img
+      alt="tour image"
+      className="tourButton"
       onClick={[Function]}
-    >
-      Take a tour!
-    </a>
-    <a
-      className="landingButton"
-      href="/register"
+      src="tour.png"
+    />
+    <img
+      alt="register image"
+      className="registerButton"
       onClick={[Function]}
-    >
-      Register
-    </a>
+      src="register.png"
+    />
     <p
       className="version"
     >

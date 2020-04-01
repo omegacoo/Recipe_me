@@ -14,19 +14,12 @@ export default class Header extends React.Component {
         username: '',
         password: '',
         userId: null,
-        logingIn: false,
-        navigating: false
+        logingIn: false
     };
 
     toggleLogin = () => {
         this.setState({
             logingIn: !this.state.logingIn
-        });
-    };
-
-    toggleNav = () => {
-        this.setState({
-            navigating: !this.state.navigating
         });
     };
 
@@ -69,8 +62,7 @@ export default class Header extends React.Component {
             user_name: '',
             password: '',
             userId: null,
-            logingIn: false,
-            navigating: false
+            logingIn: false
         },
             this.context.onLogout()
         );
@@ -103,6 +95,7 @@ export default class Header extends React.Component {
                                 value={this.state.username}
                                 onChange={this.handleUsernameChange}
                                 type='text'
+                                autoFocus
                             />
                             <label htmlFor='login_password'>Password: </label>
                             <input
@@ -116,31 +109,15 @@ export default class Header extends React.Component {
                     </span>
                 </div>
             )
-        } else if(this.state.navigating){
-            return(
-                <div className='popupContainer'>
-                    <span className='popup'>
-                        <i className='closePopup far fa-times-circle' onClick={this.toggleNav} />
-                        <ul className='navList'>
-                            <li><Link className='navLink' onClick={this.toggleNav} to={'/pantry'}>Pantry</Link></li>
-                            
-                            <li><Link className='navLink' onClick={this.toggleNav} to={'/recipes'}>Recipes</Link></li>
-                            
-                            <li><Link className='log_out' onClick={this.logOut} to={'/'}>logout</Link></li>
-                        </ul>
-                    </span>
-                </div>
-            )
-        }
+        };
     };
 
-    renderLoginOrHamburger = () => {
+    renderLoginOrLogout = () => {
         if(!this.context.loggedIn){
             return <i className='fas fa-key login_icon' onClick={this.toggleLogin} />
         }
-        console.log();
-        
-        return <i className='fas fa-bars hamburger' onClick={this.toggleNav} />
+
+        return <Link className='log_out' onClick={this.logOut} to={'/'}>logout</Link>
     };
 
     render(){
@@ -152,7 +129,7 @@ export default class Header extends React.Component {
                 alt='Pantry Buddy logo'
                 onClick={() => this.props.history.push('/')}  
             />
-            { this.renderLoginOrHamburger() }
+            { this.renderLoginOrLogout() }
             { this.renderPopup() }
         </header>
         );

@@ -4,6 +4,14 @@ import Error from '../Error/Error';
 
 import StoreContext from '../../StoreContext';
 
+import meat from '../../assets/sausage.png';
+import vegetable from '../../assets/broccoli.png';
+import grain from '../../assets/loaf.png';
+import dairy from '../../assets/milk.png';
+import condiment from '../../assets/Salt_n_Pepper.png';
+import fruit from '../../assets/strawberry.png';
+import book from '../../assets/book.png';
+
 import './Pantry.css';
 
 export default class Pantry extends React.Component {
@@ -53,8 +61,8 @@ export default class Pantry extends React.Component {
                             onClick={this.handleIngredientClick}
                             style={
                                 this.state.userIngredients.find(item => item.id === i.id) 
-                                                                        ? {backgroundColor: '#16a085'} 
-                                                                        : {backgroundColor: '#c0392b'}
+                                                                        ? {background: 'linear-gradient(#16a085, #0b5345)'} 
+                                                                        : {background: 'linear-gradient(#c0392b, #6b2018)'}
                             }
                         >
                             {i.title}
@@ -68,9 +76,9 @@ export default class Pantry extends React.Component {
     renderPopup = () => {
         return(
             <div className='popupContainer'>
-                <span className='popup'>
+                <span className='Pantry_popup'>
                     <i className='closePopup far fa-times-circle' onClick={this.togglePopup} />
-                    <h1 className='popup_title'>{this.state.currentList === 'dairy' ? this.state.currentList : this.state.currentList + 's'}</h1>
+                    <h1 className='popup_title'>{this.state.currentList === 'dairy' || this.state.currentList === 'fruit' ? this.state.currentList : this.state.currentList + 's'}</h1>
                     <ul className='Pantry_list'>
                         { this.renderList() }
                     </ul>
@@ -87,20 +95,25 @@ export default class Pantry extends React.Component {
         });
     };
 
+    handleRecipesClick = () => {
+        this.props.history.push('/recipes');
+    };
+
     renderView = () => {
         if(this.context.loggedIn){
             return(
                 <div className='Pantry'>
                     <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, { this.context.userName !== '' ? this.context.userName : 'buddy' }!</h1>
                     <section className='Pantry_icons'>
-                        <i className='fas fa-drumstick-bite' id='meat' onClick={this.togglePopup}></i>
-                        <i className='fas fa-carrot' id='vegetable' onClick={this.togglePopup}></i>
-                        <i className='fas fa-cheese' id='dairy' onClick={this.togglePopup}></i>
-                        <i className='fas fa-bread-slice' id='grain' onClick={this.togglePopup}></i>
-                        <i className='fas fa-apple-alt' id='fruit' onClick={this.togglePopup}></i>
-                        <i className='fas fa-mortar-pestle' id='condiment' onClick={this.togglePopup}></i>
+                    <img src={meat} alt='meat' id='meat' onClick={this.togglePopup} />
+                    <img src={vegetable} alt='vegetable' id='vegetable' onClick={this.togglePopup} />
+                    <img src={dairy} alt='dairy' id='dairy' onClick={this.togglePopup} />
+                    <img src={grain} alt='grain' id='grain' onClick={this.togglePopup} />
+                    <img src={fruit} alt='fruit' id='fruit' onClick={this.togglePopup} />
+                    <img src={condiment} alt='condiment' id='condiment' onClick={this.togglePopup} />
                     </section>
                     { this.state.listOpen ? this.renderPopup() : null }
+                    <img src={book} alt='recipe_book' className='recipes' onClick={this.handleRecipesClick} />
                 </div>
             )        
         } else {

@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Register component renders UI correctly 1`] = `
-Array [
+<div
+  className="Register_main"
+>
   <h1
     className="Register_title"
   >
      You are on your way to some great meals! So close now...
-  </h1>,
+  </h1>
   <form
     className="Register"
     onSubmit={[Function]}
@@ -68,6 +70,6 @@ Array [
     >
       Register
     </button>
-  </form>,
-]
+  </form>
+</div>
 `;

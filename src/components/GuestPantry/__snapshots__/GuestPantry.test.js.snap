@@ -49,11 +49,11 @@ exports[`Pantry component renders UI correctly 1`] = `
       src="Salt_n_Pepper.png"
     />
   </section>
-  <button
+  <img
+    alt="recipe_book"
     className="guest_recipes"
     onClick={[Function]}
-  >
-    Recipes
-  </button>
+    src="book.png"
+  />
 </div>
 `;

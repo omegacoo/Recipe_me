@@ -27,7 +27,7 @@
     display: inline-block;
 }
 
-.popup {
+.Header .popup {
     z-index: 2;
     background-image: url('../../assets/postit.png');
     background-size: 60vw 100%;
@@ -104,29 +104,33 @@
     grid-column: 13;
     width: 30px;
     font-size: 4vh;
-    color: white;
+    color: black;
     margin-top: 1.5vh;
 }
 
 .log_out {
-    font-size: 2vh;
+    font-size: 3vh;
+    position: absolute;
+    right: 2vw;
+    top: 1vh;
+    text-shadow: 0 -1px 0 #000;
 }
 
-/* iPhone X 375x812 */
+/* iPhone X 375x812 Portrait */
 @media only screen and (min-width: 375px) and (min-height: 812px) {
-    .popup {
+    .Header .popup {
         top: -4vh;
         right: -85vw;
     }
 }
 
-/* iPad 768x1024*/
+/* iPad 768x1024 Portrait */
 @media only screen and (min-width: 768px) and (min-height: 1024px) {
     .login_icon {
         width: 2vh;
     }
 
-    .popup {
+    .Header .popup {
         top: -7vh;
         right: -90vw;
         width: 40vw;
@@ -134,11 +138,11 @@
         background-size: 40vw;
     }
 
-    .popup label {
+    .Header .popup label {
         font-size: 3vw;
     }
 
-    .popup input {
+    .Header .popup input {
         width: 30vw;
         height: 3vh;
         font-size: 2vh;

@@ -53,8 +53,8 @@ export default class GuestPantry extends React.Component {
                             onClick={this.handleIngredientClick}
                             style={
                                 this.state.userIngredients.find(item => item.id === i.id) 
-                                                                        ? {backgroundColor: '#16a085'} 
-                                                                        : {backgroundColor: '#c0392b'}
+                                                                        ? {background: 'linear-gradient(#16a085, #0b5345)'} 
+                                                                        : {background: 'linear-gradient(#c0392b, #6b2018)'}
                             }
                         >
                             {i.title}
@@ -68,9 +68,9 @@ export default class GuestPantry extends React.Component {
     renderPopup = () => {
         return(
             <div className='popupContainer'>
-                <span className='popup'>
+                <span className='Pantry_popup'>
                     <i className='closePopup far fa-times-circle' onClick={this.togglePopup} />
-                    <h1 className='popup_title'>{this.state.currentList === 'dairy' ? this.state.currentList : this.state.currentList + 's'}</h1>
+                    <h1 className='popup_title'>{this.state.currentList === 'dairy' || this.state.currentList === 'fruit' ? this.state.currentList : this.state.currentList + 's'}</h1>
                     <ul className='Pantry_list'>
                         { this.renderList() }
                     </ul>
