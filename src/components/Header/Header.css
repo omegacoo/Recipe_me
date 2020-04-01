@@ -70,7 +70,7 @@
     font-weight: bold;
 }
 
-.closePopup {
+.Header .closePopup {
     background-color: red;
     color: #F0EAD6;
     border-radius: 50%;

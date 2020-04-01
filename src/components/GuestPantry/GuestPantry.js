@@ -11,7 +11,7 @@ import condiment from '../../assets/Salt_n_Pepper.png';
 import fruit from '../../assets/strawberry.png';
 import book from '../../assets/book.png';
 
-import './GuestPantry.css';
+import '../Pantry/Pantry.css';
 
 export default class GuestPantry extends React.Component {
     static contextType = StoreContext;
@@ -48,16 +48,19 @@ export default class GuestPantry extends React.Component {
                 if(i.category === this.state.currentList){
                     return(
                         <li 
-                            id={i.id} 
                             key={i.id} 
-                            onClick={this.handleIngredientClick}
-                            style={
-                                this.state.userIngredients.find(item => item.id === i.id) 
-                                                                        ? {background: 'linear-gradient(#16a085, #0b5345)'} 
-                                                                        : {background: 'linear-gradient(#c0392b, #6b2018)'}
-                            }
                         >
-                            {i.title}
+                            <input 
+                                type='checkbox'
+                                id={i.id} 
+                                className='Pantry_checkbox'
+                                onChange={this.handleIngredientClick}
+                                checked={ this.state.userIngredients.find(item => item.id === i.id) 
+                                                                        ? true
+                                                                        : false
+                                }
+                            />
+                            <label className='checkbox_label' htmlFor={i.id}>{i.title}</label>
                         </li>
                     )
                 };
@@ -104,7 +107,7 @@ export default class GuestPantry extends React.Component {
                     <img src={condiment} alt='condiment' id='condiment' onClick={this.togglePopup} />
                 </section>
                 { this.state.listOpen ? this.renderPopup() : null }
-                <img src={book} alt='recipe_book' className='guest_recipes' onClick={this.handleRecipesClick} />
+                <img src={book} alt='recipe_book' className='recipes' onClick={this.handleRecipesClick} />
             </div>
         );
     };

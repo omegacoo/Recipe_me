@@ -56,16 +56,19 @@ export default class Pantry extends React.Component {
                 if(i.category === this.state.currentList){
                     return(
                         <li 
-                            id={i.id} 
                             key={i.id} 
-                            onClick={this.handleIngredientClick}
-                            style={
-                                this.state.userIngredients.find(item => item.id === i.id) 
-                                                                        ? {background: 'linear-gradient(#16a085, #0b5345)'} 
-                                                                        : {background: 'linear-gradient(#c0392b, #6b2018)'}
-                            }
                         >
-                            {i.title}
+                            <input 
+                                type='checkbox'
+                                id={i.id} 
+                                className='Pantry_checkbox'
+                                onChange={this.handleIngredientClick}
+                                checked={ this.state.userIngredients.find(item => item.id === i.id) 
+                                                                        ? true
+                                                                        : false
+                                }
+                            />
+                            <label className='checkbox_label' htmlFor={i.id}>{i.title}</label>
                         </li>
                     )
                 };
