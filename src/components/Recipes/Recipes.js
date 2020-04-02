@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Error from '../Error/Error';
-
 import RecipeCard from '../RecipeCard/RecipeCard';
 
 import './Recipes.css';
@@ -29,9 +28,12 @@ export default class Recipes extends React.Component {
             return(
                 <div className='Recipes'>
                     <h1 className='Recipes_title'>&nbsp;Let's see what you can make!</h1>
-                    <ul className='RecipesList'>
-                        {this.renderRecipes()}
-                    </ul>
+                    <section className='RecipesList_container'>
+                        <ul className='RecipesList'>
+                            {this.renderRecipes()}
+                        </ul>
+                    </section>
+                    <button className='ingredients' onClick={this.handleIngredientsClick}>Ingredients</button>
                 </div>
             )
         } else {

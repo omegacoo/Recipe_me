@@ -2,7 +2,7 @@ import React from 'react';
 
 import RecipeCard from '../RecipeCard/RecipeCard';
 
-import './GuestRecipes.css';
+import '../Recipes/Recipes.css';
 
 import StoreContext from '../../StoreContext';
 
@@ -30,10 +30,12 @@ export default class GuestRecipes extends React.Component {
         return(
             <div className='Recipes'>
                 <h1 className='Recipes_title'>&nbsp;Let's see what you can make!</h1>
-                <ul className='RecipesList'>
-                    {this.renderRecipes()}
-                </ul>
-                <button className='guest_ingredients' onClick={this.handleIngredientsClick}>Ingredients</button>
+                <section className='RecipesList_container'>
+                    <ul className='RecipesList'>
+                        {this.renderRecipes()}
+                    </ul>
+                </section>
+                <button className='ingredients' onClick={this.handleIngredientsClick}>Ingredients</button>
             </div>
         );
     };

@@ -9,13 +9,17 @@ exports[`Recipes component renders UI correctly 1`] = `
   >
      Let's see what you can make!
   </h1>
-  <ul
-    className="RecipesList"
+  <section
+    className="RecipesList_container"
   >
-    Sorry, no recipes found...
-  </ul>
+    <ul
+      className="RecipesList"
+    >
+      Sorry, no recipes found...
+    </ul>
+  </section>
   <button
-    className="guest_ingredients"
+    className="ingredients"
     onClick={[Function]}
   >
     Ingredients
