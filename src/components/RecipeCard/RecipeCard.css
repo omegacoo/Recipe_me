@@ -1,25 +1,28 @@
 .RecipeCard {
-    border: 2px solid black;
-    border-radius: 15px;
-    width: 60vw;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
     list-style: none;
     text-align: center;
-    background-color: #A5C2FF;
     overflow: hidden;
-    box-shadow: 5px 5px 3px;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-radius: 15px;
 }
 
 .RecipeCard_title {
     border-bottom: 1px solid black;
-    background-color: #6495ED;
     font-weight: bolder;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Indie Flower', cursive;
+    font-size: 3.5vh;
 }
 
 .RecipeCard_description  {
-    font-size: .8em;
+    font-size: 2vh;
     margin: 1vh;
 }
 
@@ -108,4 +111,9 @@
     white-space: pre-wrap;
     text-align: left;
     margin: 2vh;
+}
+
+/* iPad 768x1024 Portrait */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+    
 }
