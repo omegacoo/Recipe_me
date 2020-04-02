@@ -35,7 +35,7 @@ export default class GuestRecipes extends React.Component {
                         {this.renderRecipes()}
                     </ul>
                 </section>
-                <button className='ingredients' onClick={this.handleIngredientsClick}>Ingredients</button>
+                <button className='ingredients' onClick={this.handleIngredientsClick} />
             </div>
         );
     };

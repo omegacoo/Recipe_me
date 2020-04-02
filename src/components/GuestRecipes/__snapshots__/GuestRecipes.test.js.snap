@@ -21,8 +21,6 @@ exports[`Recipes component renders UI correctly 1`] = `
   <button
     className="ingredients"
     onClick={[Function]}
-  >
-    Ingredients
-  </button>
+  />
 </div>
 `;

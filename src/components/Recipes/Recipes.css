@@ -2,6 +2,9 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 -5px 10px -5px;
+    width: 100vw;
+    height: 100vh;
 }
 
 .Recipes_title {
@@ -12,37 +15,46 @@
 
 .RecipesList_container {
     background-image: url('../../assets/open_book.png');
-    background-size: 90% 90%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    margin-left: auto;
+    margin-left: 4%;
     margin-right: auto;
     display: block;
-    width: 95vw;
-    height: 60vh;
+    width: 90vw;
+    height: 55vh;
     padding: 2vh;
 }
 
 .RecipesList {
-    width: 85%;
-    margin-left: 4.5%;
+    width: 80%;
+    margin-left: 15%;
     margin-right: auto;
     margin-bottom: 1vh;
-    margin-top: .5vh;
-    height: 49vh;
+    height: 96%;
     overflow: scroll;
     padding: 1vh;
-    padding-left: 11vw;
     font-weight: bolder;
     border-radius: 15px;
+    background-color: #F0EAD6;
 }
 
 .Recipes .ingredients {
-    border: 5px solid black;
-    border-radius: 15px;
-    background-color: white;
-    padding: 10px;
+    background-image: url('../../assets/boxed_food.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 30vw;
+    height: 18vh;
+    border: none;
     display: block;
     margin-left: auto;
     margin-right: auto;
     font-weight: bolder;
+}
+
+/* iPad 768x1024 Portrait */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+    .Recipes {
+
+    }
 }

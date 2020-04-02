@@ -1,6 +1,6 @@
 /* Mobile Phone Portrait */
 .Pantry {
-    box-shadow: -1px -5px 10px;
+    box-shadow: 0 -5px 10px -5px;
 }
 
 .Pantry_title {
@@ -107,10 +107,6 @@
 }
 
 .recipes {
-    border-bottom: .5vh solid rgb(90, 88, 80);
-    border-right: .5vh solid rgb(90, 88, 80);
-    border-radius: 15px;
-    background-color: #F0EAD6;
     padding: 5px;
     display: block;
     margin-top: 4vh;
@@ -118,7 +114,6 @@
     margin-right: auto;
     font-weight: bolder;
     width: 30vw;
-    box-shadow: 10px 10px 10px black;
 }
 
 /* iPhone X 375x812 Portrait */

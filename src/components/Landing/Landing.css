@@ -1,7 +1,7 @@
 /* Mobile Phone Portrait */
 .Landing {
     height: 100vh;
-    box-shadow: -1px -5px 10px;
+    box-shadow: 0 -5px 10px -5px;
 }
 
 .description {
