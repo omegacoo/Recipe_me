@@ -81,7 +81,8 @@
     margin: 1vh;
     margin-top: 1.5vh;
     height: 5vh;
-    padding-top: .8vh;
+    overflow: scroll;
+    white-space: nowrap;
 }
 
 .Pantry_list li label {

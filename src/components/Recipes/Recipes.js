@@ -23,6 +23,10 @@ export default class Recipes extends React.Component {
         };
     };
 
+    handleIngredientsClick = () => {
+        this.props.history.push('/pantry');
+    };
+
     renderView = () => {
         if(this.context.loggedIn){
             return(
@@ -33,7 +37,7 @@ export default class Recipes extends React.Component {
                             {this.renderRecipes()}
                         </ul>
                     </section>
-                    <button className='ingredients' onClick={this.handleIngredientsClick}>Ingredients</button>
+                    <button className='ingredients' onClick={this.handleIngredientsClick}></button>
                 </div>
             )
         } else {
