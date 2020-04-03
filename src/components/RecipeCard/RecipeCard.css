@@ -113,7 +113,23 @@ mark {
     padding: 1vh;
     background-color: #F0EAD6;
     text-align: left;
-    overflow: scroll;
+    overflow-y: auto;
+}
+
+.Recipe_ingredients::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.Recipe_ingredients::-webkit-scrollbar:vertical {
+    width: 5px;
+}
+
+.Recipe_ingredients::-webkit-scrollbar:horizontal {
+    width: 11px;
+}
+
+.Recipe_ingredients::-webkit-scrollbar-thumb {
+    background-color: black;
 }
 
 .Recipe_ingredients li {
