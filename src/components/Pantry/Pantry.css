@@ -81,13 +81,22 @@
     margin: 1vh;
     margin-top: 1.5vh;
     height: 5vh;
-    overflow: scroll;
-    white-space: nowrap;
+    /* overflow: scroll; */
+    /* white-space: break-spaces; */
+    line-height: 2.3vh;
+    /* word-break: break-all; */
+}
+
+.Pantry_list li input {
+    float: left;
+    top: -1vh;
+    margin-right: 2vw;
 }
 
 .Pantry_list li label {
     font-family: 'Indie Flower', cursive;
     font-size: 3vh;
+    /* margin-left: 2vw; */
 }
 
 .Pantry_checkbox {
