@@ -41,7 +41,7 @@
     padding-right: 3vh;
     padding-bottom: 3vh;
     display: grid;
-    grid-template-rows: min-content 8% 5% 20% 5%;
+    grid-template-rows: min-content 10% 5% 20% 6%;
 }
 
 .title_container {
@@ -73,6 +73,7 @@
     justify-content: center;
     border-top: 1px solid black;
     width: fit-content;
+    height: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
@@ -113,7 +114,7 @@
 
 .Recipe_ingredients li {
     display: inline-block;
-    width: 48%;
+    width: 47%;
     margin: .2vh;
     margin-right: 1vw;
     border-bottom: .5px solid black;
@@ -121,6 +122,7 @@
 
 .Recipe_instructions_label {
     border-bottom: 2px solid black;
+    margin-top: 1vh;
 }
 
 .Recipe_instructions {
@@ -132,5 +134,11 @@
 
 /* iPad 768x1024 Portrait */
 @media only screen and (min-width: 768px) and (min-height: 1024px) {
-    
+    .RecipeCard_full .closePopup {
+        width: 4vw;
+    }
+
+    .RecipeCard_full_title {
+        width: 80%;
+    }
 }
