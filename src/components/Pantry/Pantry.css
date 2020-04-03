@@ -79,8 +79,8 @@
 
 .Pantry_list li {
     margin: 1vh;
-    margin-top: 1.5vh;
-    height: 5vh;
+    margin-top: 3vh;
+    height: fit-content;
     /* overflow: scroll; */
     /* white-space: break-spaces; */
     line-height: 2.3vh;
