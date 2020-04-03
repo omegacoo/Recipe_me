@@ -42,16 +42,20 @@ export default class RecipeCard extends React.Component {
         const instructions = this.props.recipe.instructions;
         let newInstructions = [];
         let count = 2;
+        newInstructions.push('<mark>');
         for(let i = 0; i < instructions.length; i++){
             if(instructions[i] === count.toString() && instructions[i + 1] === '.'){
-                newInstructions.push('\n\n' + instructions[i]);
+                newInstructions.push('\n\n<mark>' + instructions[i]);
                 count++;
+            } else if(instructions[i] === ':'){
+                newInstructions.push(':</mark>');
             } else {
                 newInstructions.push(instructions[i])
             };
         };
-        return <p className='Recipe_instructions'>{newInstructions}</p>
+        return <p className='Recipe_instructions' dangerouslySetInnerHTML={{ __html: newInstructions.join('')}} />
     };
+    // :&lt;/b&gt;
 
     renderView = () => {
         if(!this.state.cardOpen){
