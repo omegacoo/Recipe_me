@@ -13,3 +13,26 @@ body * {
     background-image: url('../../assets/background.png');
     background-size: cover;
 }
+
+@media screen and (orientation: portrait) {
+    .landscape_notice {
+        visibility: hidden;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .App {
+        visibility: hidden;
+    }
+
+    .landscape_notice {
+        visibility: visible;
+        opacity: 100%;
+        background-color: rgb(34, 122, 151);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        padding-top: 20%;
+    }
+}

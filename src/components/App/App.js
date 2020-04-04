@@ -32,12 +32,6 @@ export default class App extends React.Component {
     };
 
     componentDidMount = () => {
-        try {
-            window.screen.orientation.lock('portrait');            
-        } catch (error) {
-            console.log(error)
-        };
-
         this.fetchIngredients();
     };
 
@@ -252,6 +246,10 @@ export default class App extends React.Component {
                         component={GuestRecipes}
                     />
                 </StoreContext.Provider>
+                <div className='landscape_notice' >
+                    <h1>Please rotate your device</h1>
+                    <h3>We don't support landscape mode yet. Please go back to portrait mode for the best experience.</h3>
+                </div>
             </div>
         );
     };
