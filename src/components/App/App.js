@@ -32,8 +32,12 @@ export default class App extends React.Component {
     };
 
     componentDidMount = () => {
-        window.screen.orientation.lock('portrait');
-        
+        try {
+            window.screen.orientation.lock('portrait');            
+        } catch (error) {
+            console.log(error)
+        };
+
         this.fetchIngredients();
     };
 
