@@ -104,7 +104,7 @@ export default class Header extends React.Component {
                                 type='password'
                             />
                             <button className='login_button' type='submit'>login</button>
-                            <Link className='forgotInfo' to={'/forgotinfo'}>forgot username/password?</Link>
+                            {/* <Link className='forgotInfo' to={'/forgotinfo'}>forgot username/password?</Link> */}
                         </form>
                     </span>
                 </div>
@@ -113,11 +113,11 @@ export default class Header extends React.Component {
     };
 
     renderLoginOrLogout = () => {
-        if(!this.context.loggedIn){
+        if(!this.context.loggedIn && !this.state.logingIn){
             return <i className='fas fa-key login_icon' onClick={this.toggleLogin} />
-        }
-
-        return <Link className='log_out' onClick={this.logOut} to={'/'}>logout</Link>
+        } else if(this.context.loggedIn && !this.state.logingIn){
+            return <Link className='log_out' onClick={this.logOut} to={'/'}>logout</Link>
+        };    
     };
 
     render(){
