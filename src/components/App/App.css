@@ -21,18 +21,21 @@ body * {
 }
 
 @media screen and (orientation: landscape) {
-    .App {
-        visibility: hidden;
+    .App > .Header,
+    .App > .Landing,
+    .App > .Pantry,
+    .App > .Recipes {
+        display: none;
     }
 
     .landscape_notice {
         visibility: visible;
-        opacity: 100%;
         background-color: rgb(34, 122, 151);
-        height: 100%;
-        width: 100%;
         position: absolute;
         text-align: center;
-        padding-top: 20%;
+        height: 100vh;
+        width: 100vw;
+        padding-top: 35vh;
+        font-size: 5vh;
     }
 }
