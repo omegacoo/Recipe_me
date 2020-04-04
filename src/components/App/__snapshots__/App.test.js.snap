@@ -44,5 +44,15 @@ exports[`App component renders UI correctly 1`] = `
       Alpha v2.6.0
     </p>
   </div>
+  <div
+    className="landscape_notice"
+  >
+    <h1>
+      Please rotate your device
+    </h1>
+    <h3>
+      We don't support landscape mode yet. Please go back to portrait mode for the best experience.
+    </h3>
+  </div>
 </div>
 `;
