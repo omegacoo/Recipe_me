@@ -38,32 +38,6 @@
     position: absolute;
 }
 
-/* Mobile Phone Landscape */
-@media only screen and (max-width: 823px) and (max-height: 414px) {
-    .Landing {
-        text-align: center;
-    }
-    
-    .description {
-        font-size: 10vh;
-        margin-top: 10vh;
-    }
-
-    .tourButton, .registerButton {
-        display: inline;
-        width: 25vw;
-    }
-
-    .tourButton {
-        margin-right: 8vw;
-    }
-
-    .registerButton {
-        width: 35vw;
-        margin-left: 8vw;
-    }
-}
-
 /* iPhone X 375x812 Portrait */
 @media only screen and (min-width: 375px) and (min-height: 812px) {
     .description {
@@ -80,7 +54,7 @@
 }
 
 /* iPad 1024x768-1366x1024 Landscape */
-@media only screen 
+/* @media only screen 
 and (min-width: 1024px)
 and (max-width: 1366px)
 and (min-height: 768px) 
@@ -107,4 +81,4 @@ and (max-height: 1024px) {
         width: 40vw;
         margin-left: 5vw;
     }
-}
+} */
