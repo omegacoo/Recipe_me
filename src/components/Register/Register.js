@@ -83,7 +83,7 @@ export default class Register extends React.Component {
                     className='Register'
                     onSubmit={this.handleSubmit}
                 >
-                    <label htmlFor='Register_username'>Username: </label>
+                    <label htmlFor='Register_username'>Username</label>
                     <br/>
                     <input 
                         className='Register_username'
@@ -92,7 +92,7 @@ export default class Register extends React.Component {
                         onChange={this.handleUsernameChange}
                     />
                     <br/>
-                    <label htmlFor='Register_password'>Password: </label>
+                    <label htmlFor='Register_password'>Password</label>
                     <br/>
                     <input 
                         className='Register_password'
@@ -101,7 +101,7 @@ export default class Register extends React.Component {
                         onChange={this.handlePasswordChange}
                     />
                     <br/>
-                    <label htmlFor='Register_confirmPassword'>Confirm Password: </label>
+                    <label htmlFor='Register_confirmPassword'>Confirm Password</label>
                     <br/>
                     <input 
                         className='Register_confirmPassword'
@@ -110,7 +110,7 @@ export default class Register extends React.Component {
                         onChange={this.handleConfirmPasswordChange}
                     />
                     <br/>
-                    <label htmlFor='Register_email'>Email: </label>
+                    <label htmlFor='Register_email'>Email</label>
                     <br/>
                     <input 
                         className='Register_email'

@@ -21,7 +21,7 @@ export default class Landing extends React.Component {
                 <h1 className='description'>&nbsp;Ever wonder what you could throw together with all the odds and ends in your pantry?</h1>
                 <img src={tourImage} alt='tour image' className='tourButton' onClick={this.handleTourClick} />
                 <img src={registerImage} alt='register image' className='registerButton' onClick={this.handleRegisterClick} />
-                <p className='version'>Alpha v2.4.0</p>
+                <p className='version'>Alpha v2.6.0</p>
             </div>
         );
     };

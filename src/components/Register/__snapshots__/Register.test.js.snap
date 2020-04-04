@@ -16,7 +16,7 @@ exports[`Register component renders UI correctly 1`] = `
     <label
       htmlFor="Register_username"
     >
-      Username: 
+      Username
     </label>
     <br />
     <input
@@ -29,7 +29,7 @@ exports[`Register component renders UI correctly 1`] = `
     <label
       htmlFor="Register_password"
     >
-      Password: 
+      Password
     </label>
     <br />
     <input
@@ -42,7 +42,7 @@ exports[`Register component renders UI correctly 1`] = `
     <label
       htmlFor="Register_confirmPassword"
     >
-      Confirm Password: 
+      Confirm Password
     </label>
     <br />
     <input
@@ -55,7 +55,7 @@ exports[`Register component renders UI correctly 1`] = `
     <label
       htmlFor="Register_email"
     >
-      Email: 
+      Email
     </label>
     <br />
     <input
