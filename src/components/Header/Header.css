@@ -163,7 +163,7 @@
 }
 
 /* Desktop */
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1025px) {
     .logo {
         height: 15vh;
     }

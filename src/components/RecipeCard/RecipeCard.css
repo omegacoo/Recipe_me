@@ -116,7 +116,8 @@ mark {
     overflow-y: auto;
 }
 
-.Recipe_ingredients::-webkit-scrollbar {
+.Recipe_ingredients::-webkit-scrollbar,
+.Recipe_instructions::-webkit-scrollbar {
     -webkit-appearance: none;
 }
 
@@ -149,7 +150,12 @@ mark {
     white-space: pre-wrap;
     text-align: left;
     margin: 2vh;
-    overflow: scroll;
+    overflow: auto;
+}
+
+.RecipeCard_full .closePopup:active {
+    box-shadow: none;
+    left: 1vw;
 }
 
 /* iPad 768x1024 Portrait */
@@ -160,5 +166,27 @@ mark {
 
     .RecipeCard_full_title {
         width: 80%;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .RecipeCard:hover,
+    .RecipeCard_title:hover,
+    .RecipeCard_description:hover {
+        cursor: pointer;
+    }
+
+    .RecipeCard_full {
+        width: 50vw;
+        left: 25vw;
+    }
+
+    .Recipe_instructions {
+        margin-right: 3vh;
+    }
+
+    .RecipeCard_full .closePopup {
+        left: 1.2vw;
     }
 }

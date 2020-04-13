@@ -193,7 +193,7 @@
 }
 
 /* Desktop */
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1025px) {
     .Pantry_title {
         font-size: 5vw;
     }

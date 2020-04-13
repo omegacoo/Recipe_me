@@ -32,7 +32,7 @@
     margin-right: auto;
     margin-bottom: 1vh;
     height: 96%;
-    overflow: scroll;
+    overflow: auto;
     padding: 1vh;
     font-weight: bolder;
     font-size: 2vh;
@@ -82,7 +82,7 @@
 }
 
 /* Desktop */
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1025px) {
     .Recipes_title {
         font-size: 5vw;
     }
