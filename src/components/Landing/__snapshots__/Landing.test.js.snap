@@ -24,7 +24,7 @@ exports[`Landing component renders UI correctly 1`] = `
   <p
     className="version"
   >
-    Alpha v2.6.0
+    Beta v1.0.0
   </p>
 </div>
 `;
