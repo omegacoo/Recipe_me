@@ -45,8 +45,8 @@ exports[`Pantry component renders UI correctly 1`] = `
       src="strawberry.png"
     />
     <img
-      alt="condiment"
-      id="condiment"
+      alt="other"
+      id="other"
       onClick={[Function]}
       src="Salt_n_Pepper.png"
     />
