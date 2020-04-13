@@ -50,3 +50,20 @@
 @media only screen and (min-width: 768px) and (min-height: 1024px) {
     
 }
+
+/* Desktop */
+@media screen and (min-width: 1366px) {
+    .Register_title {
+        text-align: center;
+    }
+
+    .Register {
+        width: 30vw;
+        padding: 5vh;
+        padding-top: 3vh;
+    }
+
+    .Register button {
+        width: 55%;
+    }
+}
