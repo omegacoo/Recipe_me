@@ -8,7 +8,7 @@ import meat from '../../assets/sausage.png';
 import vegetable from '../../assets/broccoli.png';
 import grain from '../../assets/loaf.png';
 import dairy from '../../assets/milk.png';
-import condiment from '../../assets/Salt_n_Pepper.png';
+import other from '../../assets/Salt_n_Pepper.png';
 import fruit from '../../assets/strawberry.png';
 import book from '../../assets/book.png';
 
@@ -113,7 +113,7 @@ export default class Pantry extends React.Component {
                     <img src={dairy} alt='dairy' id='dairy' onClick={this.togglePopup} />
                     <img src={grain} alt='grain' id='grain' onClick={this.togglePopup} />
                     <img src={fruit} alt='fruit' id='fruit' onClick={this.togglePopup} />
-                    <img src={condiment} alt='condiment' id='condiment' onClick={this.togglePopup} />
+                    <img src={other} alt='other' id='other' onClick={this.togglePopup} />
                     </section>
                     { this.state.listOpen ? this.renderPopup() : null }
                     <img src={book} alt='recipe_book' className='recipes' onClick={this.handleRecipesClick} />
