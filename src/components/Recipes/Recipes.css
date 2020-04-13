@@ -61,6 +61,7 @@
 .Recipes .ingredients:active {
     width: 7vw;
     height: 14vh;
+    margin-top: 3vh;
 }
 
 /* iPad 768x1024 Portrait */
