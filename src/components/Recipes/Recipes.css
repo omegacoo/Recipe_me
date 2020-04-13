@@ -54,6 +54,15 @@
     font-weight: bolder;
 }
 
+.Recipes .ingredients:hover {
+    cursor: pointer;
+}
+
+.Recipes .ingredients:active {
+    width: 7vw;
+    height: 14vh;
+}
+
 /* iPad 768x1024 Portrait */
 @media only screen and (min-width: 768px) and (min-height: 1024px) {
     .Recipes_title {
@@ -68,5 +77,26 @@
 
     .Recipes .ingredients {
         width: 20vw;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1366px) {
+    .Recipes_title {
+        font-size: 5vw;
+    }
+
+    .RecipesList_container {
+        width: 30vw;
+        height: 50vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .Recipes .ingredients {
+        width: 8vw;
+        height: 15vh;
+        background-size: 100% 100%;
+        margin-top: 2vh;
     }
 }

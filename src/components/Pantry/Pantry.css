@@ -81,10 +81,7 @@
     margin: 1vh;
     margin-top: 3vh;
     height: fit-content;
-    /* overflow: scroll; */
-    /* white-space: break-spaces; */
     line-height: 2.3vh;
-    /* word-break: break-all; */
 }
 
 .Pantry_list li input {
@@ -96,7 +93,6 @@
 .Pantry_list li label {
     font-family: 'Indie Flower', cursive;
     font-size: 3vh;
-    /* margin-left: 2vw; */
 }
 
 .Pantry_checkbox {
@@ -129,6 +125,29 @@
     margin-right: auto;
     font-weight: bolder;
     width: 30vw;
+}
+
+.Pantry_icons img:hover,
+.Pantry_checkbox:hover,
+.Pantry_popup li:hover,
+.Pantry_list li label:hover,
+.recipes:hover {
+    cursor: pointer;
+}
+
+.Pantry_popup .closePopup:active {
+    box-shadow: none;
+    left: 2.3vw;
+}
+
+.Pantry_icons img:active {
+    width: 16vh;
+    margin: 3vh;
+}
+
+.recipes:active {
+    width: 14vw;
+    margin-top: 5vh;
 }
 
 /* iPhone X 375x812 Portrait */
@@ -170,5 +189,41 @@
     .Pantry_popup .closePopup {
         width: fit-content;
         top: 5vh;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1366px) {
+    .Pantry_title {
+        font-size: 5vw;
+    }
+
+    .Pantry_icons {
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 18vh 18vh;
+        margin-top: 5vh;
+    }
+
+    .Pantry_popup {
+        width: 35vw;
+        left: 35vw;
+        top: -50vh;
+    }
+
+    .Pantry_popup .closePopup {
+        left: 2.5vw;
+    }
+
+    .Pantry_checkbox {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .popup_title {
+        margin-top: 8vh;
+    }
+
+    .recipes {
+        width: 15vw;
     }
 }
