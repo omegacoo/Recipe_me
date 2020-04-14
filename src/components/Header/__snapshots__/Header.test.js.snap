@@ -8,7 +8,7 @@ exports[`Header component renders UI correctly 1`] = `
     alt="Pantry Buddy logo"
     className="logo"
     onClick={[Function]}
-    src="pantry.png"
+    src="pantry.webp"
   />
   <a
     className="log_out"

@@ -11,7 +11,7 @@ exports[`App component renders UI correctly 1`] = `
       alt="Pantry Buddy logo"
       className="logo"
       onClick={[Function]}
-      src="pantry.png"
+      src="pantry.webp"
     />
     <i
       className="fas fa-key login_icon"
@@ -30,13 +30,13 @@ exports[`App component renders UI correctly 1`] = `
       alt="tour image"
       className="tourButton"
       onClick={[Function]}
-      src="tour.png"
+      src="tour.webp"
     />
     <img
       alt="register image"
       className="registerButton"
       onClick={[Function]}
-      src="register.png"
+      src="register.webp"
     />
     <p
       className="version"

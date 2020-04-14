@@ -18,44 +18,44 @@ exports[`Pantry component renders UI correctly 1`] = `
       alt="meat"
       id="meat"
       onClick={[Function]}
-      src="sausage.png"
+      src="sausage.webp"
     />
     <img
       alt="vegetable"
       id="vegetable"
       onClick={[Function]}
-      src="broccoli.png"
+      src="broccoli.webp"
     />
     <img
       alt="dairy"
       id="dairy"
       onClick={[Function]}
-      src="milk.png"
+      src="milk.webp"
     />
     <img
       alt="grain"
       id="grain"
       onClick={[Function]}
-      src="loaf.png"
+      src="loaf.webp"
     />
     <img
       alt="fruit"
       id="fruit"
       onClick={[Function]}
-      src="strawberry.png"
+      src="strawberry.webp"
     />
     <img
       alt="other"
       id="other"
       onClick={[Function]}
-      src="Salt_n_Pepper.png"
+      src="Salt_n_Pepper.webp"
     />
   </section>
   <img
     alt="recipe_book"
     className="recipes"
     onClick={[Function]}
-    src="book.png"
+    src="book.webp"
   />
 </div>
 `;
