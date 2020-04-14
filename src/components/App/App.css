@@ -16,13 +16,13 @@ body * {
 
 @media screen and (orientation: portrait) {
     .landscape_notice {
-        visibility: hidden;
+        display: none;
     }
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape) {
     .landscape_notice {
-        visibility: hidden;
+        display: none;
     }
 }
 
