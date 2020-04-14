@@ -68,7 +68,7 @@
 .Pantry_list {
     height: 65%;
     width: 70%;
-    overflow: scroll;
+    overflow: auto;
     background-color: transparent;
     border: none;
     margin-left: 12%;
