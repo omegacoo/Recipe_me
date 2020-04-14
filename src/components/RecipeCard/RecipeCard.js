@@ -27,7 +27,7 @@ export default class RecipeCard extends React.Component {
             ingredients = ingredients.map(i => i = {...i, ...this.context.ingredients.find(I => I.id === i.ingredient_id)});
             
             return ingredients.map(i => 
-                <li key={i.ingredient_id} id={i.ingredient_id}>{i.quantity} {i.unit} {i.title}</li>    
+                <li key={i.ingredient_id} id={i.ingredient_id}>{i.quantity} - {i.unit} {i.title}</li>    
             )
         } else {
             ingredients = ingredients.map(i => i = this.context.guestIngredients.find(gI => gI.id === i));
