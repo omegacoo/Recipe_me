@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import config from '../../config';
 import StoreContext from '../../StoreContext';
 
-import logo from '../../assets/pantry.png';
+import logo from '../../assets/pantry.webp';
 
 import './Header.css';
 

@@ -4,13 +4,13 @@ import Error from '../Error/Error';
 
 import StoreContext from '../../StoreContext';
 
-import meat from '../../assets/sausage.png';
-import vegetable from '../../assets/broccoli.png';
-import grain from '../../assets/loaf.png';
-import dairy from '../../assets/milk.png';
-import other from '../../assets/Salt_n_Pepper.png';
-import fruit from '../../assets/strawberry.png';
-import book from '../../assets/book.png';
+import meat from '../../assets/sausage.webp';
+import vegetable from '../../assets/broccoli.webp';
+import grain from '../../assets/loaf.webp';
+import dairy from '../../assets/milk.webp';
+import other from '../../assets/Salt_n_Pepper.webp';
+import fruit from '../../assets/strawberry.webp';
+import book from '../../assets/book.webp';
 
 import './Pantry.css';
 

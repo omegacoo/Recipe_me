@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import registerImage from '../../assets/register.png';
-import tourImage from '../../assets/tour.png';
+import registerImage from '../../assets/register.webp';
+import tourImage from '../../assets/tour.webp';
 
 import './Landing.css';
 

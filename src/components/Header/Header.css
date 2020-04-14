@@ -1,7 +1,7 @@
 /* Mobile Phone Portrait */
 .Header {
     height: 7vh;
-    background-image: url('../../assets/marble.jpg');
+    background-image: url('../../assets/marble.webp');
     background-size: cover;
     display: grid;
     grid-template-columns: 7vh;
@@ -29,7 +29,7 @@
 
 .Header .popup {
     z-index: 2;
-    background-image: url('../../assets/postit.png');
+    background-image: url('../../assets/postit.webp');
     background-size: 60vw 100%;
     background-repeat: no-repeat;
     color: black;

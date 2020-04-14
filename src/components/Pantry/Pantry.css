@@ -38,7 +38,7 @@
 
 .Pantry_popup {
     z-index: 1;
-    background-image: url('../../assets/pad.png');
+    background-image: url('../../assets/pad.webp');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -104,7 +104,7 @@
 }
 
 .Pantry_checkbox:checked {
-    content: url('../../assets/check.png');
+    content: url('../../assets/check.webp');
 }
 
 .popup_title {
