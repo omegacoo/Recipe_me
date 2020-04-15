@@ -153,11 +153,6 @@ mark {
     overflow: auto;
 }
 
-.RecipeCard_full .closePopup:active {
-    box-shadow: none;
-    left: 1vw;
-}
-
 /* iPad 768x1024 Portrait */
 @media only screen and (min-width: 768px) and (min-height: 1024px) {
     .RecipeCard_full .closePopup {
@@ -188,5 +183,10 @@ mark {
 
     .RecipeCard_full .closePopup {
         left: 1.2vw;
+    }
+
+    .RecipeCard_full .closePopup:active {
+        box-shadow: none;
+        left: 1vw;
     }
 }

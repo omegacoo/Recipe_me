@@ -87,34 +87,6 @@
     top: 1vh;
 }
 
-.logo:hover, 
-.login_icon:hover,
-.login_button:hover,
-.closePopup:hover {
-    cursor: pointer;
-}
-
-.logo:active {
-    margin: 1.3vw;
-}
-
-.login_icon:active {
-    margin-top: 1.3vh;
-    margin-left: 1.3vw;
-}
-
-.login_button:active {
-    margin-top: 2.8vh;
-    margin-right: 3vw;
-    box-shadow: none;
-}
-
-.Header .closePopup:active {
-    right: 1.2vw;
-    top: .8vh;
-    box-shadow: none;
-}
-
 /* iPhone X 375x812 Portrait */
 @media only screen and (min-width: 375px) and (min-height: 812px) {
     .Header .popup {
@@ -191,5 +163,33 @@
 
     .login_button {
         margin-top: 2.5vh;
+    }
+
+    .logo:hover, 
+    .login_icon:hover,
+    .login_button:hover,
+    .closePopup:hover {
+        cursor: pointer;
+    }
+    
+    .logo:active {
+        margin: 1.3vw;
+    }
+    
+    .login_icon:active {
+        margin-top: 1.3vh;
+        margin-left: 1.3vw;
+    }
+    
+    .login_button:active {
+        margin-top: 2.8vh;
+        margin-right: 3vw;
+        box-shadow: none;
+    }
+    
+    .Header .closePopup:active {
+        right: 1.2vw;
+        top: .8vh;
+        box-shadow: none;
     }
 }

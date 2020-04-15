@@ -127,29 +127,6 @@
     width: 30vw;
 }
 
-.Pantry_icons img:hover,
-.Pantry_checkbox:hover,
-.Pantry_popup li:hover,
-.Pantry_list li label:hover,
-.recipes:hover {
-    cursor: pointer;
-}
-
-.Pantry_popup .closePopup:active {
-    box-shadow: none;
-    left: 2.3vw;
-}
-
-.Pantry_icons img:active {
-    width: 16vh;
-    margin: 3vh;
-}
-
-.recipes:active {
-    width: 14vw;
-    margin-top: 5vh;
-}
-
 /* iPhone X 375x812 Portrait */
 @media only screen and (min-width: 375px) and (min-height: 812px) {
     .Pantry_title {
@@ -225,5 +202,28 @@
 
     .recipes {
         width: 15vw;
+    }
+
+    .Pantry_icons img:hover,
+    .Pantry_checkbox:hover,
+    .Pantry_popup li:hover,
+    .Pantry_list li label:hover,
+    .recipes:hover {
+        cursor: pointer;
+    }
+    
+    .Pantry_popup .closePopup:active {
+        box-shadow: none;
+        left: 2.3vw;
+    }
+    
+    .Pantry_icons img:active {
+        width: 16vh;
+        margin: 3vh;
+    }
+    
+    .recipes:active {
+        width: 14vw;
+        margin-top: 5vh;
     }
 }
