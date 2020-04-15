@@ -30,13 +30,13 @@ exports[`App component renders UI correctly 1`] = `
       alt="tour image"
       className="tourButton"
       onClick={[Function]}
-      src="tour.webp"
+      src="tour.png"
     />
     <img
       alt="register image"
       className="registerButton"
       onClick={[Function]}
-      src="register.webp"
+      src="register.png"
     />
     <p
       className="version"
