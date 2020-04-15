@@ -37,7 +37,7 @@ mark {
     left: 0;
     top: 10vh;
     z-index: 1;
-    background-image: url('../../assets/notecard.webp');
+    background-image: url('../../assets/notecard.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     margin: 3vh;

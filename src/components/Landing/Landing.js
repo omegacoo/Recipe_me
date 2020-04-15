@@ -1,7 +1,7 @@
 import React from 'react';
 
-import registerImage from '../../assets/register.webp';
-import tourImage from '../../assets/tour.webp';
+import registerImage from '../../assets/register.png';
+import tourImage from '../../assets/tour.png';
 
 import './Landing.css';
 

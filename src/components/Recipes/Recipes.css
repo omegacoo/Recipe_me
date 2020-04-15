@@ -15,7 +15,7 @@
 }
 
 .RecipesList_container {
-    background-image: url('../../assets/open_book.webp');
+    background-image: url('../../assets/open_book.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin-left: 4%;
@@ -41,7 +41,7 @@
 }
 
 .Recipes .ingredients {
-    background-image: url('../../assets/boxed_food.webp');
+    background-image: url('../../assets/boxed_food.png');
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: 100%;
