@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeCard component renders UI correctly 1`] = `
+<li
+  className="RecipeCard"
+  id="3"
+  onClick={[Function]}
+>
+  <section
+    className="RecipeCard_title"
+    id="3"
+  >
+    Bruschetta with tomato and basil
+  </section>
+  <section
+    className="RecipeCard_description"
+    id="3"
+  >
+    Chopped fresh tomatoes with garlic, basil, olive oil, and vinegar, served on toasted slices of french bread.
+  </section>
+</li>
+`;

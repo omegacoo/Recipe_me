@@ -55,7 +55,6 @@ export default class RecipeCard extends React.Component {
         };
         return <p className='Recipe_instructions' dangerouslySetInnerHTML={{ __html: newInstructions.join('')}} />
     };
-    // :&lt;/b&gt;
 
     renderView = () => {
         if(!this.state.cardOpen){
