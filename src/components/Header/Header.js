@@ -77,13 +77,15 @@ export default class Header extends React.Component {
 
     handleUsernameChange = e => {
         this.setState({
-            username: e.target.value
+            username: e.target.value,
+            error: null
         });
     };
 
     handlePasswordChange = e => {
         this.setState({
-            password: e.target.value
+            password: e.target.value,
+            error: null
         });
     };
 

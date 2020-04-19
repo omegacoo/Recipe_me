@@ -34,7 +34,7 @@
 
 #Register_error {
     margin-bottom: -2vh;
-    font-size: 20px;
+    font-size: 2vh;
     color: red;
 }
 
@@ -60,7 +60,7 @@
     }
 
     .Register {
-        width: 30vw;
+        width: 45vw;
     }
 
     .Register button {

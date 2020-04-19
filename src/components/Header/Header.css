@@ -65,6 +65,7 @@
     margin-bottom: -2vh;
     font-size: 10px;
     color: red;
+    text-align: center;
 }
 
 .forgotInfo {
@@ -76,7 +77,7 @@
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1vh;
+    margin-top: 2.5vh;
     margin-bottom: 1vh;
     background-color: #F0EAD6;
     border: 1px solid black;
@@ -123,12 +124,17 @@
         width: 30vw;
         height: 3vh;
         font-size: 2vh;
-        margin-bottom: 2vh;
+        margin-bottom: 1vh;
+    }
+
+    #Login_error {
+        font-size: 1.5vh;
+        margin-bottom: .5vh;
     }
 
     .login_button {
         font-size: 3vw;
-        margin-top: 0;
+        margin-top: 2vh;
     }
 
     .navLink {
