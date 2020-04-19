@@ -15,25 +15,29 @@ export default class Register extends React.Component {
 
     handleUsernameChange = e => {
         this.setState({
-            username: e.target.value
+            username: e.target.value,
+            error: null
         });
     };
 
     handlePasswordChange = e => {
         this.setState({
-            password: e.target.value
+            password: e.target.value,
+            error: null
         });
     };
 
     handleConfirmPasswordChange = e => {
         this.setState({
-            confirmPassword: e.target.value
+            confirmPassword: e.target.value,
+            error: null
         });
     };
     
     handleEmailChange = e => {
         this.setState({
-            email: e.target.value
+            email: e.target.value,
+            error: null
         });
     };
 
@@ -45,12 +49,27 @@ export default class Register extends React.Component {
                 error: 'passwords must match'
             });
             return false
+        } else if(this.state.username.length < 3){
+            this.setState({
+                error: 'username must be at least 3 characters'
+            });
+            return false
+        } else if(this.state.password.length < 6){
+            this.setState({
+                error: 'password must be at least 6 characters'
+            });
+            return false
+        } else if(!this.validateEmail(this.state.email)){
+            this.setState({
+                error: 'please enter a valid email address'
+            });
+            return false
         };
         
         const myBody = {
-            user_name: this.state.username,
+            user_name: this.state.username.toLowerCase(),
             password: this.state.password,
-            email: this.state.email
+            email: this.state.email.toLowerCase()
         };
 
         let myHeaders = new Headers();
@@ -64,15 +83,32 @@ export default class Register extends React.Component {
 
         fetch(config.API_ENDPOINT + '/api/register', fetchOptions)
             .then(res => {
-                if(!res.ok){
-                    throw new Error(res.statusText)
+                if(res.ok){
+                    console.log('User created successfully');
+                    this.props.history.push('/');
                 };
-                console.log('User created successfully');
-                this.props.history.push('/');
+                res = res.json()
+                    .then(resJson => {
+                        if(!res.ok){
+                            throw new Error(resJson.error.message)   
+                        };
+                    })
+                    .catch(err => {
+                        if(err.message === 'Username or email is already in use'){
+                            this.setState({
+                                error: err.message
+                            });
+                        };
+                    })
             })
-            .catch(err => {
-                console.log(err);
-            })
+    };
+
+    validateEmail(email){
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+        {
+            return true
+        }
+            return false
     };
 
     render(){
@@ -119,6 +155,7 @@ export default class Register extends React.Component {
                         onChange={this.handleEmailChange}
                     />
                     <br/>
+                    {this.state.error ? <h3 id='Register_error' role='error'>{this.state.error}</h3> : null}
                     <button 
                         type='submit'
                     >

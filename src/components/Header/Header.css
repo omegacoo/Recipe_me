@@ -61,6 +61,12 @@
     box-shadow: 3px 3px 5px black;
 }
 
+#Login_error {
+    margin-bottom: -2vh;
+    font-size: 10px;
+    color: red;
+}
+
 .forgotInfo {
     font-size: 1.7vh;
 }
@@ -148,7 +154,7 @@
         width: 15vw;
         height: 20vh;
         background-size: 100% 100%;
-        top: -18.5vh;
+        top: -12%;
         right: -92vw;
     }
 

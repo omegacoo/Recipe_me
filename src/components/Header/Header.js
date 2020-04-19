@@ -14,7 +14,8 @@ export default class Header extends React.Component {
         username: '',
         password: '',
         userId: null,
-        logingIn: false
+        logingIn: false,
+        error: null,
     };
 
     toggleLogin = () => {
@@ -32,9 +33,13 @@ export default class Header extends React.Component {
 
         fetch(config.API_ENDPOINT + '/api/auth/login',  { method: 'POST', body: myBody, headers: myHeaders })
             .then(res => {
-                if(!res.ok){
-                    throw new Error(res.status) 
-                };                
+                if(res.status === 401){
+                    throw new Error('Incorrect user_name or password') 
+                };
+                this.setState({
+                    error: null
+                });
+                
                 const Xtoken = res.headers.get('X-token');
                 const userId = res.headers.get('user_id');
 
@@ -52,7 +57,9 @@ export default class Header extends React.Component {
                 this.props.history.push('/pantry');
             })
             .catch(err => {
-                console.log(err);
+                this.setState({
+                    error: err.message
+                });
             })
             
     };
@@ -103,6 +110,7 @@ export default class Header extends React.Component {
                                 onChange={this.handlePasswordChange}
                                 type='password'
                             />
+                            {this.state.error ? <h3 id='Login_error' role='error'>{this.state.error}</h3> : null}
                             <button className='login_button' type='submit'>login</button>
                             {/* <Link className='forgotInfo' to={'/forgotinfo'}>forgot username/password?</Link> */}
                         </form>

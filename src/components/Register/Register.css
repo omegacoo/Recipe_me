@@ -32,6 +32,12 @@
     font-size: 3vh;
 }
 
+#Register_error {
+    margin-bottom: -2vh;
+    font-size: 20px;
+    color: red;
+}
+
 .Register button {
     margin-left: auto;
     margin-right: auto;
@@ -46,15 +52,27 @@
     font-weight: bolder;
 }
 
-/* iPad 768x1024 Portrait */
-@media only screen and (min-width: 768px) and (min-height: 1024px) {
-    
+/* iPad 768x1024 Landscape */
+@media only screen and (min-width: 1024px) and (min-height: 768px) {
+    .Register_title {
+        text-align: center;
+        margin-top: 10vh;
+    }
+
+    .Register {
+        width: 30vw;
+    }
+
+    .Register button {
+        width: 55%;
+    }
 }
 
 /* Desktop */
 @media screen and (min-width: 1366px) {
     .Register_title {
         text-align: center;
+        margin-top: 10vh;
     }
 
     .Register {
