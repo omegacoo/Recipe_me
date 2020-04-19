@@ -5,7 +5,7 @@
 
 .Register_title {
     margin: 4vh;
-    text-align: justify;
+    text-align: center;
     font-size: 5vh;
 }
 
@@ -30,6 +30,7 @@
 
 .Register input {
     font-size: 3vh;
+    width: 90%;
 }
 
 #Register_error {
