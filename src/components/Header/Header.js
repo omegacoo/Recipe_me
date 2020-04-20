@@ -114,7 +114,6 @@ export default class Header extends React.Component {
                             />
                             {this.state.error ? <h3 id='Login_error' role='error'>{this.state.error}</h3> : null}
                             <button className='login_button' type='submit'>login</button>
-                            {/* <Link className='forgotInfo' to={'/forgotinfo'}>forgot username/password?</Link> */}
                         </form>
                     </span>
                 </div>
