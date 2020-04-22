@@ -32,7 +32,7 @@
     box-shadow: 10px 10px 10px black;
 }
 
-.GuestPantry_ .popupContainer {
+.GuestPantry .GuestPantry_popupContainer {
     position: absolute;
 }
 
@@ -54,7 +54,7 @@
     text-align: center;
 }
 
-.GuestPantry_popup .closePopup {
+.GuestPantry_popup .GuestPantry_closePopup {
     background-color: red;
     color: #F0EAD6;
     border-radius: 50%;
@@ -107,7 +107,7 @@
     content: url('../../assets/check.png');
 }
 
-.popup_title {
+.GuestPantry_popup_title {
     margin-top: 7vh;
     font-size: 3vh;
     text-shadow: 0 -1px 0 #000;
