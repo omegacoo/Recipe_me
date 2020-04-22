@@ -84,7 +84,6 @@ export default class Register extends React.Component {
         fetch(config.API_ENDPOINT + '/api/register', fetchOptions)
             .then(res => {
                 if(res.ok){
-                    console.log('User created successfully');
                     this.props.history.push('/');
                 };
                 res = res.json()

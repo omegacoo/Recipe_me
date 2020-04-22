@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import config from '../../config';
 import StoreContext from '../../StoreContext';
 
-import logo from '../../assets/pantry.webp';
+import logo from '../../assets/pantry.png';
 
 import './Header.css';
 
@@ -112,7 +112,7 @@ export default class Header extends React.Component {
                                 onChange={this.handlePasswordChange}
                                 type='password'
                             />
-                            {this.state.error ? <h3 id='Login_error' role='error'>{this.state.error}</h3> : null}
+                            {this.state.error ? <h3 id='Login_error'>{this.state.error}</h3> : null}
                             <button className='login_button' type='submit'>login</button>
                         </form>
                     </span>

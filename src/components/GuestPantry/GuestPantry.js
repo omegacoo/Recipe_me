@@ -11,7 +11,7 @@ import condiment from '../../assets/Salt_n_Pepper.png';
 import fruit from '../../assets/strawberry.png';
 import book from '../../assets/book.png';
 
-import '../Pantry/Pantry.css';
+import './GuestPantry.css';
 
 export default class GuestPantry extends React.Component {
     static contextType = StoreContext;
@@ -53,14 +53,14 @@ export default class GuestPantry extends React.Component {
                             <input 
                                 type='checkbox'
                                 id={i.id} 
-                                className='Pantry_checkbox'
+                                className='GuestPantry_checkbox'
                                 onChange={this.handleIngredientClick}
                                 checked={ this.state.userIngredients.find(item => item.id === i.id) 
                                                                         ? true
                                                                         : false
                                 }
                             />
-                            <label className='checkbox_label' htmlFor={i.id}>{i.title}</label>
+                            <label className='GuestPantry_checkbox_label' htmlFor={i.id}>{i.title}</label>
                         </li>
                     )
                 };
@@ -70,11 +70,11 @@ export default class GuestPantry extends React.Component {
 
     renderPopup = () => {
         return(
-            <div className='popupContainer'>
-                <span className='Pantry_popup'>
-                    <i className='closePopup far fa-times-circle' onClick={this.togglePopup} />
-                    <h1 className='popup_title'>{this.state.currentList === 'dairy' || this.state.currentList === 'fruit' ? this.state.currentList : this.state.currentList + 's'}</h1>
-                    <ul className='Pantry_list'>
+            <div className='GuestPantry_popupContainer'>
+                <span className='GuestPantry_popup'>
+                    <i className='GuestPantry_closePopup far fa-times-circle' onClick={this.togglePopup} />
+                    <h1 className='GuestPantry_popup_title'>{this.state.currentList === 'dairy' || this.state.currentList === 'fruit' ? this.state.currentList : this.state.currentList + 's'}</h1>
+                    <ul className='GuestPantry_list'>
                         { this.renderList() }
                     </ul>
                 </span>
@@ -96,9 +96,9 @@ export default class GuestPantry extends React.Component {
 
     render(){
         return(
-            <div className='Pantry'>
-                <h1 className='Pantry_title'>&nbsp;Let's fill that Pantry, Guest!</h1>
-                <section className='Pantry_icons'>
+            <div className='GuestPantry'>
+                <h1 className='GuestPantry_title'>&nbsp;Let's fill that Pantry, Guest!</h1>
+                <section className='GuestPantry_icons'>
                     <img src={meat} alt='meat' id='meat' onClick={this.togglePopup} />
                     <img src={vegetable} alt='vegetable' id='vegetable' onClick={this.togglePopup} />
                     <img src={dairy} alt='dairy' id='dairy' onClick={this.togglePopup} />
@@ -107,7 +107,7 @@ export default class GuestPantry extends React.Component {
                     <img src={condiment} alt='condiment' id='condiment' onClick={this.togglePopup} />
                 </section>
                 { this.state.listOpen ? this.renderPopup() : null }
-                <img src={book} alt='recipe_book' className='recipes' onClick={this.handleRecipesClick} />
+                <img src={book} alt='recipe_book' className='GuestPantry_recipes' onClick={this.handleRecipesClick} />
             </div>
         );
     };

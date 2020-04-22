@@ -1,0 +1,229 @@
+/* Mobile Phone Portrait */
+.GuestPantry_ {
+    box-shadow: 0 -5px 10px -5px;
+}
+
+.GuestPantry_title {
+    margin: 4vh;
+    margin-bottom: 0vh;
+    margin-top: 2vh;
+    text-align: center;
+    font-size: 10vw;
+}
+
+.GuestPantry_icons {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 18vh 18vh 18vh;
+}
+
+.GuestPantry_icons img {
+    border-bottom: .5vh solid rgb(90, 88, 80);
+    border-right: .5vh solid rgb(90, 88, 80);
+    border-radius: 15px;
+    margin: 2vh;
+    padding-top: 1px;
+    background-color: #F0EAD6;
+    overflow: hidden;
+    width: 17vh;
+    box-shadow: 10px 10px 10px black;
+}
+
+.GuestPantry_ .popupContainer {
+    position: absolute;
+}
+
+.GuestPantry_popup {
+    z-index: 1;
+    background-image: url('../../assets/pad.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color: black;
+    padding: 2vh;
+    position: absolute;
+    width: min-content;
+    font-weight: bold;
+    width: 90vw;
+    height: 70vh;
+    top: -60vh;
+    left: 10vw;
+    text-align: center;
+}
+
+.GuestPantry_popup .closePopup {
+    background-color: red;
+    color: #F0EAD6;
+    border-radius: 50%;
+    font-size: 3vh;
+    position: absolute;
+    left: 7vw;
+    top: 5vh;
+    box-shadow: -3px 0px 3px black;
+}
+
+.GuestPantry_list {
+    height: 65%;
+    width: 70%;
+    overflow: auto;
+    background-color: transparent;
+    border: none;
+    margin-left: 12%;
+    margin-right: auto;
+    text-align: left;
+    list-style: none;
+}
+
+.GuestPantry_list li {
+    margin: 1vh;
+    margin-top: 3vh;
+    height: fit-content;
+    line-height: 2.3vh;
+}
+
+.GuestPantry_list li input {
+    float: left;
+    top: -1vh;
+    margin-right: 2vw;
+}
+
+.GuestPantry_list li label {
+    font-family: 'Indie Flower', cursive;
+    font-size: 3vh;
+}
+
+.GuestPantry_checkbox {
+    position: relative;
+    top: 1vw;
+    appearance: none;
+    width: 6vw;
+    height: 6vw;
+}
+
+.GuestPantry_checkbox:checked {
+    content: url('../../assets/check.png');
+}
+
+.popup_title {
+    margin-top: 7vh;
+    font-size: 3vh;
+    text-shadow: 0 -1px 0 #000;
+    border-bottom: 1px solid black;
+    width: 30%;
+    margin-left: 29%;
+    margin-right: auto;
+}
+
+.GuestPantry_recipes {
+    padding: 5px;
+    display: block;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bolder;
+    width: 30vw;
+}
+
+/* iPhone X 375x812 Portrait */
+@media only screen and (min-width: 375px) and (min-height: 812px) {
+    .GuestPantry_title {
+        margin-top: 5vh;
+    }
+}
+
+/* iPad 768x1024 Portrait */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+    .GuestPantry_title {
+        text-align: center;
+        margin-top: 4vh;
+        margin-bottom: -2vh;
+    }
+    
+    .GuestPantry_icons {
+        grid-template-rows: 20vh 20vh 20vh;
+    }
+    
+    .GuestPantry_icons img {
+        width: 16vh;
+    }
+
+    .GuestPantry_recipes {
+        width: 15vh;
+        margin-top: -1vh;
+    }
+
+    .GuestPantry_popup {
+        margin-top: -8vh;
+    }
+
+    .GuestPantry_popup li {
+        font-size: 2.5vh;
+    }
+
+    .GuestPantry_popup .closePopup {
+        width: fit-content;
+        top: 5vh;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .GuestPantry_title {
+        font-size: 5vw;
+    }
+
+    .GuestPantry_icons {
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 18vh 18vh;
+        margin-top: 5vh;
+    }
+
+    .GuestPantry_popup {
+        width: 35vw;
+        left: 35vw;
+        top: -50vh;
+    }
+
+    .GuestPantry_popup .closePopup {
+        left: 2.5vw;
+    }
+
+    .GuestPantry_checkbox {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .GuestPantry_popup_title {
+        margin-top: 8vh;
+    }
+
+    .GuestPantry_recipes {
+        width: 15vw;
+    }
+
+    .GuestPantry_icons img:hover,
+    .GuestPantry_checkbox:hover,
+    .GuestPantry_popup li:hover,
+    .GuestPantry_list li label:hover,
+    .recipes:hover {
+        cursor: pointer;
+    }
+    
+    .GuestPantry_popup .closePopup:active {
+        box-shadow: none;
+        left: 2.3vw;
+    }
+    
+    .GuestPantry_icons img:active {
+        width: 16vh;
+        margin: 3vh;
+    }
+    
+    .GuestPantry_recipes:active {
+        width: 14vw;
+        margin-top: 5vh;
+    }
+}
