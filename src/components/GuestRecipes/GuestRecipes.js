@@ -2,12 +2,18 @@ import React from 'react';
 
 import RecipeCard from '../RecipeCard/RecipeCard';
 
-import '../Recipes/Recipes.css';
+import arrow from '../../assets/arrow.png';
+
+import './GuestRecipes.css';
 
 import StoreContext from '../../StoreContext';
 
 export default class GuestRecipes extends React.Component {
     static contextType = StoreContext;
+
+    state = {
+        guide: true
+    };
 
     renderRecipes = () => {
         if(this.context.availableGuestRecipes.length > 0){
@@ -26,6 +32,12 @@ export default class GuestRecipes extends React.Component {
         this.props.history.push('/guestpantry')
     };
 
+    renderGuide = () => {
+        if(this.state.guide){
+            return <img src={arrow} alt='arrow' className='arrow pulse' />
+        };
+    };
+
     render(){
         return(
             <div className='Recipes'>
@@ -35,6 +47,7 @@ export default class GuestRecipes extends React.Component {
                         {this.renderRecipes()}
                     </ul>
                 </section>
+                { this.renderGuide() }
                 <button className='ingredients' onClick={this.handleIngredientsClick} />
             </div>
         );

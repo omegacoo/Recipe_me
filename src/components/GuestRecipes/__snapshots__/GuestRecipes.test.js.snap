@@ -18,6 +18,11 @@ exports[`Recipes component renders UI correctly 1`] = `
       Sorry, no recipes found...
     </ul>
   </section>
+  <img
+    alt="arrow"
+    className="arrow pulse"
+    src="arrow.png"
+  />
   <button
     className="ingredients"
     onClick={[Function]}

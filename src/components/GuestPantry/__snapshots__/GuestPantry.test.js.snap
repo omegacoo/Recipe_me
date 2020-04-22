@@ -50,6 +50,11 @@ exports[`Pantry component renders UI correctly 1`] = `
     />
   </section>
   <img
+    alt="arrow"
+    className="arrow_one pulse"
+    src="arrow.png"
+  />
+  <img
     alt="recipe_book"
     className="GuestPantry_recipes"
     onClick={[Function]}

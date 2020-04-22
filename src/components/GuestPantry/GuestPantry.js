@@ -10,6 +10,8 @@ import dairy from '../../assets/milk.png';
 import condiment from '../../assets/Salt_n_Pepper.png';
 import fruit from '../../assets/strawberry.png';
 import book from '../../assets/book.png';
+import arrow from '../../assets/arrow.png';
+import arrowAlt from '../../assets/arrowAlt.png';
 
 import './GuestPantry.css';
 
@@ -20,7 +22,57 @@ export default class GuestPantry extends React.Component {
         currentList: '',
         listOpen: false,
         baseIngredients: this.context.guestIngredients,
-        userIngredients: this.context.guestUserIngredients
+        userIngredients: this.context.guestUserIngredients,
+        guideStep: 1
+    };
+
+    renderGuide = () => {
+        let element;
+
+        switch (this.state.guideStep) {
+            case 1:
+                element = <img src={arrow} alt='arrow' className='arrow_one pulse' />
+                break;
+            case 2:
+                element = <img src={arrow} alt='arrow' className='arrow_two pulse' />
+                break;
+            case 3:
+                element = <img src={arrow} alt='arrow' className='arrow_three pulse' />
+                break;  
+            case 4:
+                element = <img src={arrow} alt='arrow' className='arrow_four pulse' />
+                break; 
+            case 5:
+                element = <img src={arrowAlt} alt='arrow' className='arrow_five pulse' />
+                break;
+            case 6:
+                element = <img src={arrow} alt='arrow' className='arrow_six pulse' />
+                break;
+            case 7:
+                element = <img src={arrow} alt='arrow' className='arrow_seven pulse' />
+                break;
+            case 8:
+                element = <img src={arrowAlt} alt='arrow' className='arrow_eight pulse' />
+                break;
+            case 9:
+                element = <img src={arrow} alt='arrow' className='arrow_nine pulse' />
+                break;
+            case 10:
+                element = <img src={arrow} alt='arrow' className='arrow_ten pulse' />
+                break;
+            case 11:
+                element = <img src={arrow} alt='arrow' className='arrow_eleven pulse' />
+                break;
+            case 12:
+                element = <img src={arrowAlt} alt='arrow' className='arrow_twelve pulse' />
+                break;
+            case 13:
+                element = <img src={arrow} alt='arrow' className='arrow_thirteen pulse' />
+                break;
+            default:
+                break;
+        };
+        return element
     };
 
     handleIngredientClick = e => {
@@ -38,7 +90,33 @@ export default class GuestPantry extends React.Component {
                     ...this.state.userIngredients,
                     item
                 ]
-            });
+            });            
+            
+            if(item.title === 'egg' && this.state.guideStep === 2){
+                this.setState({
+                    guideStep: 3
+                });
+            } else if(item.title === 'milk' && this.state.guideStep === 3){
+                this.setState({
+                    guideStep: 4
+                });
+            } else if(item.title === 'butter' && this.state.guideStep === 4){
+                this.setState({
+                    guideStep: 5
+                });
+            } else if(item.title === 'bread' && this.state.guideStep === 7){
+                this.setState({
+                    guideStep: 8
+                });
+            } else if(item.title === 'cinnamon' && this.state.guideStep === 10){
+                this.setState({
+                    guideStep: 11
+                })
+            } else if(item.title === 'maple syrup' && this.state.guideStep === 11){
+                this.setState({
+                    guideStep: 12
+                });
+            };
         };
     };
 
@@ -83,6 +161,32 @@ export default class GuestPantry extends React.Component {
     };
 
     togglePopup = e => {
+        if(this.state.guideStep === 1 && e.target.id === 'dairy'){
+            this.setState({
+                guideStep: 2
+            });
+        } else if(this.state.guideStep === 5){
+            this.setState({
+                guideStep: 6
+            });
+        } else if(this.state.guideStep === 6 && e.target.id === 'grain'){
+            this.setState({
+                guideStep: 7
+            });
+        } else if(this.state.guideStep === 8){
+            this.setState({
+                guideStep: 9
+            });
+        } else if(this.state.guideStep === 9 && e.target.id === 'condiment'){
+            this.setState({
+                guideStep: 10
+            });
+        } else if(this.state.guideStep === 12){
+            this.setState({
+                guideStep: 13
+            });
+        };
+
         this.setState({
             currentList: e.target.id,
             listOpen: !this.state.listOpen
@@ -90,6 +194,10 @@ export default class GuestPantry extends React.Component {
     };
 
     handleRecipesClick = () => {
+        this.setState({
+            guideStep: 1
+        });
+
         this.context.setAvailableGuestRecipes();
         this.props.history.push('/guestrecipes');
     };
@@ -107,6 +215,7 @@ export default class GuestPantry extends React.Component {
                     <img src={condiment} alt='condiment' id='condiment' onClick={this.togglePopup} />
                 </section>
                 { this.state.listOpen ? this.renderPopup() : null }
+                { this.renderGuide() }
                 <img src={book} alt='recipe_book' className='GuestPantry_recipes' onClick={this.handleRecipesClick} />
             </div>
         );

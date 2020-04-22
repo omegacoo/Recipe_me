@@ -6,14 +6,6 @@ import tourImage from '../../assets/tour.png';
 import './Landing.css';
 
 export default class Landing extends React.Component {
-    componentDidMount = () => {
-        window.addEventListener('load', this.sendGreeting);
-    };
-
-    sendGreeting = () => {
-        setTimeout(() => alert('Select "Tour" if this is your first time!'), 10);
-    };
-
     handleRegisterClick = () => {
         this.props.history.push('/register');
     };

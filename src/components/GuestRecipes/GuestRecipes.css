@@ -1,0 +1,124 @@
+.GuestRecipes {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 -5px 10px -5px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.GuestRecipes_title {
+    margin: 4vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    font-size: 10vw;
+}
+
+.GuestRecipesList_container {
+    background-image: url('../../assets/open_book.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 4%;
+    margin-right: auto;
+    display: block;
+    width: 90vw;
+    height: 55vh;
+    padding: 2vh;
+}
+
+.GuestRecipesList {
+    width: 80%;
+    margin-left: 15%;
+    margin-right: auto;
+    margin-bottom: 1vh;
+    height: 96%;
+    overflow: auto;
+    padding: 1vh;
+    font-weight: bolder;
+    font-size: 2vh;
+    border-radius: 15px;
+    background-color: #F0EAD6;
+}
+
+.GuestRecipes .ingredients {
+    background-image: url('../../assets/boxed_food.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 30vw;
+    height: 18vh;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bolder;
+}
+
+.arrow {
+    width: 50%;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+}
+
+/* iPad 768x1024 Portrait */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+    .GuestRecipes_title {
+        font-size: 8vw;
+        margin-bottom: 0;
+    }
+
+    .GuestRecipesList_container {
+        width: 80vw;
+        margin-left: 8%;
+    }
+
+    .GuestRecipes .ingredients {
+        width: 20vw;
+    }
+
+    .arrow {
+        width: 50%;
+        position: absolute;
+        top: 20%;
+        left: 5%;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .GuestRecipes_title {
+        font-size: 5vw;
+    }
+
+    .GuestRecipesList_container {
+        width: 30vw;
+        height: 50vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .GuestRecipes .ingredients {
+        width: 8vw;
+        height: 15vh;
+        background-size: 100% 100%;
+        margin-top: 2vh;
+    }
+
+    .GuestRecipes .ingredients:hover {
+        cursor: pointer;
+    }
+    
+    .GuestRecipes .ingredients:active {
+        width: 7vw;
+        height: 14vh;
+        margin-top: 3vh;
+    }
+
+    .arrow {
+        width: 20%;
+        position: absolute;
+        top: 20%;
+        left: 30%;
+    }    
+}
