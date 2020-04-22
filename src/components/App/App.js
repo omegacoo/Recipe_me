@@ -31,6 +31,22 @@ export default class App extends React.Component {
         guestUserIngredients: []
     };
 
+    componentWillMount = () => {
+        [
+            '../../assets/arrow.png', '../../assets/arrowAlt.png', '../../assets/background.png',
+            '../../assets/book.png', '../../assets/boxed_food.png', '../../assets/broccoli.png',
+            '../../assets/check.png', '../../assets/loaf.png', '../../assets/marble.png',
+            '../../assets/milk.png', '../../assets/notecard.png', '../../assets/open_book.png',
+            '../../assets/pad.png', '../../assets/pantry.png', '../../assets/postit.png',
+            '../../assets/register.png', '../../assets/Salt_n_Pepper.png', '../../assets/sausage.png',
+            '../../assets/strawberry.png', '../../assets/tour.png'
+        ].map(src => {
+            let image = new Image();
+            image.src = src;
+            return image
+        });
+    };
+
     componentDidMount = () => {
         this.fetchIngredients();
     };
