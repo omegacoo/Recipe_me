@@ -130,27 +130,27 @@
 .arrow_one {
     width: 30%;
     position: absolute;
-    top: 45%;
+    top: 46%;
 }
 
 .arrow_two {
     width: 30%;
     position: absolute;
-    top: 27%;
+    top: 28%;
     z-index: 3;
 }
 
 .arrow_three {
     width: 30%;
     position: absolute;
-    top: 32%;
+    top: 33%;
     z-index: 3;
 }
 
 .arrow_four {
     width: 30%;
     position: absolute;
-    top: 37%;
+    top: 38%;
     z-index: 3;
 }
 
@@ -165,7 +165,7 @@
 .arrow_six {
     width: 30%;
     position: absolute;
-    top: 45%;
+    top: 46%;
     left: 40%;
     z-index: 3;
 }
@@ -173,7 +173,7 @@
 .arrow_seven {
     width: 30%;
     position: absolute;
-    top: 27%;
+    top: 28%;
     z-index: 3;
 }
 
@@ -188,21 +188,21 @@
 .arrow_nine {
     width: 30%;
     position: absolute;
-    top: 62%;
+    top: 63%;
     left: 40%;
 }
 
 .arrow_ten {
     width: 30%;
     position: absolute;
-    top: 27%;
+    top: 28%;
     z-index: 3;
 }
 
 .arrow_eleven {
     width: 30%;
     position: absolute;
-    top: 32%;
+    top: 33%;
     z-index: 3;
 }
 
@@ -217,7 +217,7 @@
 .arrow_thirteen {
     width: 30%;
     position: absolute;
-    top: 80%;
+    top: 81%;
     left: 20%;
     z-index: 3;
 }
