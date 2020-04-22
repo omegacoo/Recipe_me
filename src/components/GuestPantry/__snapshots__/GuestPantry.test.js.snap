@@ -2,15 +2,15 @@
 
 exports[`Pantry component renders UI correctly 1`] = `
 <div
-  className="Pantry"
+  className="GuestPantry"
 >
   <h1
-    className="Pantry_title"
+    className="GuestPantry_title"
   >
      Let's fill that Pantry, Guest!
   </h1>
   <section
-    className="Pantry_icons"
+    className="GuestPantry_icons"
   >
     <img
       alt="meat"
@@ -51,7 +51,7 @@ exports[`Pantry component renders UI correctly 1`] = `
   </section>
   <img
     alt="recipe_book"
-    className="recipes"
+    className="GuestPantry_recipes"
     onClick={[Function]}
     src="book.png"
   />

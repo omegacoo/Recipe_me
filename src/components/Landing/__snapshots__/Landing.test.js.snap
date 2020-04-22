@@ -10,13 +10,13 @@ exports[`Landing component renders UI correctly 1`] = `
      Ever wonder what you could throw together with all the odds and ends in your pantry?
   </h1>
   <img
-    alt="tour image"
+    alt="tour"
     className="tourButton"
     onClick={[Function]}
     src="tour.png"
   />
   <img
-    alt="register image"
+    alt="register"
     className="registerButton"
     onClick={[Function]}
     src="register.png"
