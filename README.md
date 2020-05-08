@@ -49,5 +49,9 @@ Recipe Card:
 
 - [Live](https://pantry-buddy.com)
 
+## Backend:
+
+- [Repo](https://github.com/omegacoo/recipe_me_server)
+
 ## Author:
 * **Ben Sumser**
